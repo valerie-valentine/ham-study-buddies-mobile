@@ -12,7 +12,10 @@
 /[Aa]ssets/[Ff]irebase/
 /[Aa]ssets/[Ff]irebase.meta
 /[Aa]ssets/[Pp]lugins/
-
+/[Aa]ssets/Editor\ Default\ Resources/
+/[Aa]ssets/ExternalDependencyManager/
+/[Aa]ssets/StreamingAssets/
+/[Aa]ssets/Template/
 
 
 # MemoryCaptures can get excessive in size.
