@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>899857718448-f9toamdavee6d0g62fq4sj4r23envmos.apps.googleusercontent.com</string>
+	<string>899857718448-jktj15hhs6nrrv0ohevkhf1mra27s50a.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.899857718448-f9toamdavee6d0g62fq4sj4r23envmos</string>
+	<string>com.googleusercontent.apps.899857718448-jktj15hhs6nrrv0ohevkhf1mra27s50a</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDGpscNqbRrtlQzwzWgHQsk5p78am2famI</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.adacapstones.hamstudybuddiezyvett</string>
+	<string>com.adacapstones.hamstudybuddiez</string>
 	<key>PROJECT_ID</key>
 	<string>hamstudybudsyvett</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:899857718448:ios:77c7ab81fd8842ccfe2f75</string>
+	<string>1:899857718448:ios:19608474061bb650fe2f75</string>
 </dict>
 </plist>
