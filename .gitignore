@@ -16,6 +16,7 @@
 /[Aa]ssets/ExternalDependencyManager/
 /[Aa]ssets/StreamingAssets/
 /[Aa]ssets/Template/
+/[Aa]ssets/GoogleService-Info.plist
 
 
 # MemoryCaptures can get excessive in size.
