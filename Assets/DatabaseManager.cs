@@ -24,12 +24,11 @@ public class DatabaseManager : MonoBehaviour
     void AddDataToFirestore()
     {
         // Your Firestore data insertion code here...
-        DocumentReference docRef = db.Collection("Pokemon").Document("Genger");
+        DocumentReference docRef = db.Collection("Pokemon").Document("Pikachu");
 
         Dictionary<string, object> user = new Dictionary<string, object>
         {
-            { "Type", "Ghost" },
-            { "move", "Payback" },
+            { "Type", "Electric" },
         };
 
         docRef.SetAsync(user).ContinueWithOnMainThread(task =>
