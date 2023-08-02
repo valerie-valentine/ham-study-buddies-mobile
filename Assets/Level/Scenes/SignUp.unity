@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &218459754
+--- !u!1 &228735014
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,37 +131,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 218459756}
-  - component: {fileID: 218459755}
+  - component: {fileID: 228735016}
+  - component: {fileID: 228735015}
   m_Layer: 0
-  m_Name: FirebaseAuthentication
+  m_Name: FirebaseAuth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &218459755
+--- !u!114 &228735015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218459754}
+  m_GameObject: {fileID: 228735014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4b4a19b4e63e48a899913341332e34b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b3919c614c9a49e2829bb8757e1a0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &218459756
+--- !u!4 &228735016
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218459754}
+  m_GameObject: {fileID: 228735014}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9233266, y: -0.0118404515, z: -0.44399172}
+  m_LocalPosition: {x: 2.9439971, y: -0.20217106, z: 2401.3708}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2858,4 +2858,4 @@ SceneRoots:
   - {fileID: 364189808}
   - {fileID: 1264942375}
   - {fileID: 1101578951}
-  - {fileID: 218459756}
+  - {fileID: 228735016}
