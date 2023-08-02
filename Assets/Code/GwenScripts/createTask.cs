@@ -11,12 +11,15 @@ public class AddTask : MonoBehaviour
     public string taskName;
     public TMP_InputField taskInputField;
     public Button okTaskButton;
+
+    public TMP_Text taskText;
     FirebaseFirestore db;
 
     void Awake()
     {
         // Initialize the FirebaseFirestore instance in the Awake method
         db = FirebaseFirestore.DefaultInstance;
+        taskText.enabled = false;
 
     }
 
@@ -34,7 +37,7 @@ public class AddTask : MonoBehaviour
         // Your Firestore data insertion code here...
         DocumentReference docRef = db.Collection("tasks").Document($"{taskName}");
 
-        
+
         
 
         Dictionary<string, object> task = new Dictionary<string, object>
@@ -56,6 +59,9 @@ public class AddTask : MonoBehaviour
                 Debug.LogError("Error adding data to Firestore: " + task.Exception);
             }
         });
+
+        okTaskButton.interactable = false;
+
     }
 }
 
@@ -66,18 +72,5 @@ public class AddTask : MonoBehaviour
 
 
 
-// public class NewBehaviourScript : MonoBehaviour
-// {
-//     // Start is called before the first frame update
-//     void Start()
-//     {
-        
-//     }
 
-//     // Update is called once per frame
-//     void Update()
-//     {
-        
-//     }
-// }
 

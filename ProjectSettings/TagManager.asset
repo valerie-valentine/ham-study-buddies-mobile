@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: notepad
+    uniqueID: 1632490007
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
