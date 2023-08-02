@@ -19,14 +19,14 @@ public class AddTask : MonoBehaviour
     {
         // Initialize the FirebaseFirestore instance in the Awake method
         db = FirebaseFirestore.DefaultInstance;
-        taskText.enabled = false;
+
 
     }
 
     void Start()
     {
         // Call the method to add data to Firestore
-        
+        taskText.enabled = false;
         okTaskButton.onClick.AddListener(AddTaskToFirestore);
         AddTaskToFirestore();
     }
@@ -37,7 +37,12 @@ public class AddTask : MonoBehaviour
         // Your Firestore data insertion code here...
         DocumentReference docRef = db.Collection("tasks").Document($"{taskName}");
 
+        taskText.SetText(taskName);
+        taskText.enabled = true;
 
+        if(taskText.text == taskName){
+            System.Console.WriteLine("LETSGOOO");
+        }
         
 
         Dictionary<string, object> task = new Dictionary<string, object>
