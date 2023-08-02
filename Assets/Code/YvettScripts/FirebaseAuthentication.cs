@@ -9,7 +9,7 @@ public class FirebaseAuthentication : MonoBehaviour
     {
         EnableAuthentication();
 
-        SignUp("gitcommitme@gmail.com", "123456");
+        SignUp("nnewyael@gmail.com", "123456");
     }
 
     // Update is called once per frame
