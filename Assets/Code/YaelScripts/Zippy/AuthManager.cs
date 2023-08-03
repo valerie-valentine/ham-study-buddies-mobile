@@ -4,6 +4,9 @@ using Firebase;
 using Firebase.Auth;
 using TMPro;
 using System.Threading.Tasks;
+using Firebase.Firestore;
+using Firebase.Extensions;
+using System.Collections.Generic;
 
 public class AuthManager : MonoBehaviour
 {
@@ -28,8 +31,14 @@ public class AuthManager : MonoBehaviour
     public TMP_InputField passwordRegisterVerifyField;
     public TMP_Text warningRegisterText;
 
+    FirebaseFirestore db;
+
+
     void Awake()
     {
+        // Initialize the FirebaseFirestore instance in the Awake method
+        db = FirebaseFirestore.DefaultInstance;
+        
         //Check that all of the necessary dependencies for Firebase are present on the system
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
@@ -112,7 +121,7 @@ public class AuthManager : MonoBehaviour
         }
     }
 
-    private IEnumerator Register(string _email, string _password, string _username)
+    internal IEnumerator Register(string _email, string _password, string _username)
     {
         if (_username == "")
         {
@@ -160,12 +169,38 @@ public class AuthManager : MonoBehaviour
             {
                 //User has now been created
                 //Now get the result
+
                 User = new FirebaseUser(RegisterTask.Result.User);
+                
 
                 if (User != null)
                 {
-                    //Create a user profile and set the username
-                    UserProfile profile = new UserProfile { DisplayName = _username };
+                    
+                 // Your Firestore data insertion code here...
+                DocumentReference docRef = db.Collection("Users").Document(User.UserId);
+
+                Dictionary<string, object> user = new Dictionary<string, object>
+                        {
+                             {"username", _username},
+                             { "money", 0 },
+                             { "inventory", new List<string>() },
+                             { "hamster", "" }
+                        };
+    
+                        docRef.SetAsync(user).ContinueWithOnMainThread(task =>
+                        {
+                            if (task.IsCompleted)
+                            {
+                                Debug.Log("Added new user to the  users collection.");
+                            }
+                            else if (task.IsFaulted)
+                            {
+                                Debug.LogError("Error adding data to Firestore: " + task.Exception);
+                            }
+                        });
+
+                        //Create a user profile and set the username
+                        UserProfile profile = new UserProfile { DisplayName = _username };
 
                     //Call the Firebase auth update user profile function passing the profile with the username
                     Task ProfileTask = User.UpdateUserProfileAsync(profile);
@@ -191,4 +226,6 @@ public class AuthManager : MonoBehaviour
             }
         }
     }
+
+
 }
