@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 175382791}
   - component: {fileID: 175382794}
   m_Layer: 5
-  m_Name: signIn
+  m_Name: start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,8 +279,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -137}
-  m_SizeDelta: {x: 251.16, y: 47.98}
+  m_AnchoredPosition: {x: 0, y: -149.96}
+  m_SizeDelta: {x: 185.55, y: 54.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &175382791
 MonoBehaviour:
@@ -346,7 +346,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4d3a23bb8f0b149f4a58b214f11683a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: baa632d89e9224015a434f67a7ab8ec7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -640,7 +640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1177016807
 RectTransform:
   m_ObjectHideFlags: 0
