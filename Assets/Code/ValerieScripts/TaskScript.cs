@@ -6,13 +6,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class AddTask : MonoBehaviour
-{   
+public class TaskScript : MonoBehaviour
+{
     public string taskName;
-    public TMP_InputField taskInputField;
-    public Button okTaskButton;
-
-    public TMP_Text taskText;
+    public GameObject InputField;
+    public TMP_Text TextDisplay;
     FirebaseFirestore db;
 
     void Awake()
@@ -20,69 +18,72 @@ public class AddTask : MonoBehaviour
         // Initialize the FirebaseFirestore instance in the Awake method
         db = FirebaseFirestore.DefaultInstance;
 
-
     }
 
-    void Start()
+    private void Start()
     {
-        // Call the method to add data to Firestore
-        taskText.enabled = false;
-        okTaskButton.onClick.AddListener(AddTaskToFirestore);
-        AddTaskToFirestore();
+        TextDisplay.enabled = false;
+    }
+
+    public void StoreName()
+    {
+        taskName = InputField.GetComponent<TMP_InputField>().text;
+        TextDisplay.SetText(taskName);
+        TextDisplay.enabled = true;
+
+        if (taskName != null)
+        {
+            //InputField.enabled = false;
+            InputField.SetActive(false);
+        }
+
+        //AddTaskToFirestore();
     }
 
     public void AddTaskToFirestore()
     {
-        taskName = taskInputField.GetComponent<TMP_InputField>().text;
-        // Your Firestore data insertion code here...
         DocumentReference docRef = db.Collection("tasks").Document($"{taskName}");
 
-        taskText.SetText(taskName);
-        taskText.enabled = true;
-
-        
 
         Dictionary<string, object> task = new Dictionary<string, object>
         {
-            
+
             {"task", $"{taskName}"},
             {"isComplete", false}
-            
+
         };
 
         docRef.SetAsync(task).ContinueWithOnMainThread(task =>
         {
             if (task.IsCompleted)
             {
-                Debug.Log("it worked");
+                Debug.Log("Noice! It worked!");
             }
             else if (task.IsFaulted)
             {
                 Debug.LogError("Error adding data to Firestore: " + task.Exception);
             }
         });
+   
+        }
 
-        okTaskButton.interactable = false;
-
-        if (taskName != null)
+    public void MarkTaskComplete()
+    {
+        if (TextDisplay.text == $"<s>{taskName}</s>")
         {
-            System.Console.WriteLine("Not Empty");
+            TextDisplay.SetText(taskName);
         }
         else
         {
-            System.Console.WriteLine("Empty");
+            TextDisplay.SetText($"<s>{taskName}</s>");
         }
-
+        
     }
 
+    public void ClearTask()
+    {
+        TextDisplay.enabled = false;
+        InputField.SetActive(true);
+        InputField.GetComponent<TMP_InputField>().text = "";
+    }
 }
-
-
-
-
-
-
-
-
-
-
