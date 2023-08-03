@@ -37,7 +37,7 @@ public class TaskScript : MonoBehaviour
             InputField.SetActive(false);
         }
 
-        //AddTaskToFirestore();
+        AddTaskToFirestore();
     }
 
     public void AddTaskToFirestore()
