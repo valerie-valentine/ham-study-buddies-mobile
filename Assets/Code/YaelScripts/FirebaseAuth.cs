@@ -8,12 +8,14 @@ using Firebase;
 public class FirebaseAuthentication : MonoBehaviour
 {
     FirebaseAuth auth;
-    // Start is called before the first frame update
+    FirebaseUser user;
+
+
     void Start()
     {
         EnableAuthentication();
 
-        SignUp("nnewyael@gmail.com", "123456");
+     
     }
 
     // Update is called once per frame
@@ -63,14 +65,12 @@ public class FirebaseAuthentication : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 result.User.DisplayName, result.User.UserId);
         });
-
-
-
-
+      
     }
 
+   
     public void SignOut()
     {
-
+        auth.SignOut();
     }
 }
