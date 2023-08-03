@@ -9,14 +9,11 @@ EditorBuildSettings:
     path: Assets/Level/Scenes/StartPage.unity
     guid: 70cdae24752f74e1185d98af861e32c0
   - enabled: 1
-    path: Assets/Level/Scenes/SignUp.unity
-    guid: 8b4294efb29364f93be973d24dfb2470
-  - enabled: 1
-    path: Assets/Level/Scenes/NewUser.unity
-    guid: 856d158c8dc434212aed446497a9efa4
-  - enabled: 1
     path: Assets/Level/Scenes/SignIn.unity
     guid: 7885f0b49042b4733b060b244e056a84
+  - enabled: 1
+    path: Assets/Level/Scenes/PickAHamster.unity
+    guid: 856d158c8dc434212aed446497a9efa4
   - enabled: 1
     path: Assets/Level/Scenes/MainPage.unity
     guid: 8b52ad40cab0b4ee0a117e81f50c7ec7
