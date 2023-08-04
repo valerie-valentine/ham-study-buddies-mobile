@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Firebase.Firestore;
 using Firebase.Extensions;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class AuthManager : MonoBehaviour
 {
@@ -210,6 +211,7 @@ public class AuthManager : MonoBehaviour
                             if (task.IsCompleted)
                             {
                                 Debug.Log("Added new user to the  users collection.");
+                                SceneManager.LoadScene("PickAHamster");
                             }
                             else if (task.IsFaulted)
                             {
