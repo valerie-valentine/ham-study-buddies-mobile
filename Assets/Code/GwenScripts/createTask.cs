@@ -27,8 +27,8 @@ public class AddTask : MonoBehaviour
     {
         // Call the method to add data to Firestore
         taskText.enabled = false;
-        okTaskButton.onClick.AddListener(AddTaskToFirestore);
-        // AddTaskToFirestore();
+        okTaskButton.onClick.AddListener(MarkTaskComplete);
+        MarkTaskComplete();
     }
 
     public void AddTaskToFirestore()
@@ -40,17 +40,14 @@ public class AddTask : MonoBehaviour
         taskText.SetText(taskName);
         taskText.enabled = true;
 
-        if(taskText.text == taskName){
-            System.Console.WriteLine("LETSGOOO");
-        }
-        
+
 
         Dictionary<string, object> task = new Dictionary<string, object>
         {
-            
+
             {"task", $"{taskName}"},
             {"isComplete", false}
-            
+
         };
 
         docRef.SetAsync(task).ContinueWithOnMainThread(task =>
@@ -65,13 +62,28 @@ public class AddTask : MonoBehaviour
             }
         });
 
-        okTaskButton.interactable = false;
-        if(taskName != null){
+        //okTaskButton.interactable = false;
+
+        if (taskName != null)
+        {
             taskInputField.SetActive(false);
-        }
-        
+        };
 
     }
+       public void MarkTaskComplete()
+        {
+            if (taskText.text == $"<s>{taskName}</s>")
+            {
+                taskText.SetText(taskName);
+            }
+            else
+            {
+                taskText.SetText($"<s>{taskName}</s>");
+            }
+
+        }
+
+
 }
 
 

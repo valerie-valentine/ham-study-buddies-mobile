@@ -15,9 +15,8 @@ public class ScenesManager : MonoBehaviour
     public enum Scene
     {
         StartPage,
-        SignUp,
-        NewUser,
         SignIn,
+        PickAHamster,
         MainPage
     }
 
@@ -44,13 +43,8 @@ public class ScenesManager : MonoBehaviour
     }
 
 
-    public void LoadSignUpPage()
+    public void LoadPickAHamsterPage()
     {
-        SceneManager.LoadScene(Scene.SignUp.ToString());
-    }
-
-    public void LoadNewUserPage()
-    {
-        SceneManager.LoadScene(Scene.NewUser.ToString());
+        SceneManager.LoadScene(Scene.PickAHamster.ToString());
     }
 }
