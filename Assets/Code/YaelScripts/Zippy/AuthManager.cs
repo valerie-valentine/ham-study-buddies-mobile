@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Firebase.Firestore;
 using Firebase.Extensions;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class AuthManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class AuthManager : MonoBehaviour
     public TMP_InputField passwordLoginField;
     public TMP_Text warningLoginText;
     public TMP_Text confirmLoginText;
+    public TMP_Text welcomeLoginText;
 
     //Register variables
     [Header("Register")]
@@ -75,6 +77,22 @@ public class AuthManager : MonoBehaviour
         StartCoroutine(Register(emailRegisterField.text, passwordRegisterField.text, usernameRegisterField.text));
     }
 
+    public void Logout()
+    {
+        if(auth != null)
+        {
+            auth.SignOut();
+            Debug.Log("User signed out!");
+
+        }
+        else
+        {
+            Debug.LogError("Sign out failed!");
+        }
+
+
+    }
+
     private IEnumerator Login(string _email, string _password)
     {
         //Call the Firebase auth signin function passing the email and password
@@ -118,6 +136,7 @@ public class AuthManager : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
+            welcomeLoginText.text = $"Welcome {User.DisplayName}";
         }
     }
 
@@ -192,6 +211,7 @@ public class AuthManager : MonoBehaviour
                             if (task.IsCompleted)
                             {
                                 Debug.Log("Added new user to the  users collection.");
+                                SceneManager.LoadScene("PickAHamster");
                             }
                             else if (task.IsFaulted)
                             {
@@ -226,6 +246,5 @@ public class AuthManager : MonoBehaviour
             }
         }
     }
-
 
 }
