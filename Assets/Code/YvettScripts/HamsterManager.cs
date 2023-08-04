@@ -2,11 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Firestore;
 using Firebase.Auth;
-using Firebase.Extensions;
-using Firebase;
 
 
-public class UpdateInventory : MonoBehaviour
+public class HamsterManager : MonoBehaviour
 {
     FirebaseFirestore db;
     FirebaseUser currentUser;

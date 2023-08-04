@@ -1297,7 +1297,7 @@ GameObject:
   - component: {fileID: 1585485990}
   - component: {fileID: 1585485991}
   m_Layer: 0
-  m_Name: InventoryManager
+  m_Name: HamsterManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
