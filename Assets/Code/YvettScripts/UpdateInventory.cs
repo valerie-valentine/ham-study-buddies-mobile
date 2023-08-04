@@ -10,18 +10,17 @@ public class UpdateInventory : MonoBehaviour
     FirebaseFirestore db;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // Initialize the FirebaseFirestore instance in the Awake method
         db = FirebaseFirestore.DefaultInstance;
         //FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        //UpdateHamsterToUser();
-        GetHamster();
+        UpdateHamsterToUser();
+        //GetHamster();
     }
 
     // Update to User
@@ -35,13 +34,12 @@ public class UpdateInventory : MonoBehaviour
 
         Dictionary<string, object> update = new Dictionary<string, object>
             {
-                { "favColor", "blue" } // Hamster.Name?
+                { "favColor", "pink" } // Hamster.Name?
             };
         usersDocRef.SetAsync(update, SetOptions.MergeAll);
         Debug.Log("Hamster has been updated.");
     }
 
-    // do I have to destroy the object immediately?
     void GetHamster()
     {
         // GET from hamster
