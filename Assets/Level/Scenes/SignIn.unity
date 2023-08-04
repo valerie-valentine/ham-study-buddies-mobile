@@ -1409,7 +1409,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 685836192}
         m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
-        m_MethodName: LoadNewUserPage
+        m_MethodName: LoadPickAHamsterPage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
