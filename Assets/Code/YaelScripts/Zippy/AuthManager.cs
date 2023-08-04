@@ -82,8 +82,7 @@ public class AuthManager : MonoBehaviour
         {
             auth.SignOut();
             Debug.Log("User signed out!");
-            confirmLoginText.text = "";
-            welcomeLoginText.text = "";
+
         }
         else
         {
