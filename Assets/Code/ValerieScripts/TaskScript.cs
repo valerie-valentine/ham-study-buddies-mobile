@@ -12,6 +12,8 @@ public class TaskScript : MonoBehaviour
     public GameObject InputField;
     public TMP_Text TextDisplay;
     FirebaseFirestore db;
+    public Button clearTaskButton;
+    public Button CheckCompleteButton;
 
     void Awake()
     {
@@ -23,6 +25,10 @@ public class TaskScript : MonoBehaviour
     private void Start()
     {
         TextDisplay.enabled = false;
+        clearTaskButton.onClick.AddListener(DeleteTask);
+        CheckCompleteButton.onClick.AddListener(MarkTaskComplete);
+        DeleteTask();
+        MarkTaskComplete();
     }
 
     public void StoreName()
@@ -80,10 +86,17 @@ public class TaskScript : MonoBehaviour
         
     }
 
-    public void ClearTask()
+    public void DeleteTask()
     {
+        if (taskName != "" && taskName != null)
+        {
+            DocumentReference docRef = db.Collection("tasks").Document(taskName);
+            docRef.DeleteAsync();
+        }
+
         TextDisplay.enabled = false;
         InputField.SetActive(true);
         InputField.GetComponent<TMP_InputField>().text = "";
     }
+
 }

@@ -9,7 +9,7 @@ using TMPro;
 public class AddTask : MonoBehaviour
 {   
     public string taskName;
-    public TMP_InputField taskInputField;
+    public GameObject taskInputField;
     public Button okTaskButton;
 
     public TMP_Text taskText;
@@ -27,8 +27,8 @@ public class AddTask : MonoBehaviour
     {
         // Call the method to add data to Firestore
         taskText.enabled = false;
-        okTaskButton.onClick.AddListener(AddTaskToFirestore);
-        AddTaskToFirestore();
+        okTaskButton.onClick.AddListener(MarkTaskComplete);
+        MarkTaskComplete();
     }
 
     public void AddTaskToFirestore()
@@ -40,14 +40,14 @@ public class AddTask : MonoBehaviour
         taskText.SetText(taskName);
         taskText.enabled = true;
 
-        
+
 
         Dictionary<string, object> task = new Dictionary<string, object>
         {
-            
+
             {"task", $"{taskName}"},
             {"isComplete", false}
-            
+
         };
 
         docRef.SetAsync(task).ContinueWithOnMainThread(task =>
@@ -62,18 +62,27 @@ public class AddTask : MonoBehaviour
             }
         });
 
-        okTaskButton.interactable = false;
+        //okTaskButton.interactable = false;
 
         if (taskName != null)
         {
-            System.Console.WriteLine("Not Empty");
-        }
-        else
-        {
-            System.Console.WriteLine("Empty");
-        }
+            taskInputField.SetActive(false);
+        };
 
     }
+       public void MarkTaskComplete()
+        {
+            if (taskText.text == $"<s>{taskName}</s>")
+            {
+                taskText.SetText(taskName);
+            }
+            else
+            {
+                taskText.SetText($"<s>{taskName}</s>");
+            }
+
+        }
+
 
 }
 
