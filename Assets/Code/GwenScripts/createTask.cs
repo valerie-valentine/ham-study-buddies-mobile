@@ -9,7 +9,7 @@ using TMPro;
 public class AddTask : MonoBehaviour
 {   
     public string taskName;
-    public TMP_InputField taskInputField;
+    public GameObject taskInputField;
     public Button okTaskButton;
 
     public TMP_Text taskText;
@@ -28,7 +28,7 @@ public class AddTask : MonoBehaviour
         // Call the method to add data to Firestore
         taskText.enabled = false;
         okTaskButton.onClick.AddListener(AddTaskToFirestore);
-        AddTaskToFirestore();
+        // AddTaskToFirestore();
     }
 
     public void AddTaskToFirestore()
@@ -66,6 +66,10 @@ public class AddTask : MonoBehaviour
         });
 
         okTaskButton.interactable = false;
+        if(taskName != null){
+            taskInputField.SetActive(false);
+        }
+        
 
     }
 }
