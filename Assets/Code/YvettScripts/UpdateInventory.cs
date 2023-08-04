@@ -17,11 +17,11 @@ public class UpdateInventory : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        //UpdateHamsterToUser(name);
-        //GetHamster();
-    }
+    //void Start()
+    //{
+    //    //UpdateHamsterToUser(name);
+    //    //GetHamster();
+    //}
 
     //void GetHamster()
     //{
@@ -52,7 +52,22 @@ public class UpdateInventory : MonoBehaviour
 
     // Update to User
     // name string input here
-    void UpdateHamsterToUser(string name)
+    //public void UpdateHamsterToUser(string name)
+    //{
+    //    // GET from hamster ( we need to put in a function call
+    //    // UPDATE to user
+    //    // think this route needs the returned value from GetHamster()
+
+    //    DocumentReference usersDocRef = db.Collection("Users").Document("test");
+
+    //    Dictionary<string, object> update = new Dictionary<string, object>
+    //        {
+    //            { "hamster", name }
+    //        };
+    //    usersDocRef.SetAsync(update, SetOptions.MergeAll);
+    //    Debug.Log($"Hamster {name} has been added to user.");
+    //}
+    public void UpdateHamsterToUser(string name)
     {
         // GET from hamster ( we need to put in a function call
         // UPDATE to user
@@ -65,7 +80,18 @@ public class UpdateInventory : MonoBehaviour
                 { "hamster", name }
             };
         usersDocRef.SetAsync(update, SetOptions.MergeAll);
-        Debug.Log("Hamster has been updated.");
+        Debug.Log($"Hamster {name} has been added to user.");
     }
+    // back-burner: write logic to compare name to document in Hamster collection, populate that info somewhere
+    // where would we even store this logic?
+
+    // associate hamster to specific user
+    // populate specific hamster on main screen
+    // Hamster manager? hiding and populating items - like with the buttons
+    // all hamsters are inactive, until active trigger is activated
+    // logic on awake
+    // how do we persist that data from one to another, get from user?
+    // call has which hamster and switcheroo hamster awake
+
 }
 
