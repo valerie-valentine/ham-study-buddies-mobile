@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Firestore;
 using Firebase.Auth;
+using UnityEngine.SceneManagement;
 
 
 public class HamsterManager : MonoBehaviour
@@ -32,6 +33,8 @@ public class HamsterManager : MonoBehaviour
                 { "hamster", name }
             };
         usersDocRef.SetAsync(update, SetOptions.MergeAll);
+        SceneManager.LoadScene("MainPage");
+
         Debug.Log($"Hamster {name} has been added to {currentUser.DisplayName}.");
     }
 
