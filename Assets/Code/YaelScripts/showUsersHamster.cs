@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Auth;
 using Firebase.Firestore;
-using Firebase.Extensions;
+using System.Threading.Tasks;
 
 
 public class showUsersHamster : MonoBehaviour
 {
     FirebaseFirestore db;
     FirebaseUser currentUser;
+
 
     public GameObject[] hamsters;
 
@@ -39,23 +40,22 @@ public class showUsersHamster : MonoBehaviour
 
     void Start()
     {
-
-        GetHamster();
+        ShowUsersHamster();
     }
 
+   
 
 
-    public void ShowUsersHamster(int hamsterIndex)
+    //conditionals, if name, get by index 
+
+    public async void ShowUsersHamster()
     {
-        if (hamsterIndex < 0 || hamsterIndex >= hamsters.Length)
-        {
-            Debug.LogWarning("Invalid hamster index!");
-            return;
-        }
+        string hamsterNameValue = await GetHamster();
+
 
         for (int i = 0; i < hamsters.Length; i++)
         {
-            if (i == hamsterIndex)
+            if (hamsters[i].name == hamsterNameValue)
                 hamsters[i].SetActive(true);
             else
                 hamsters[i].SetActive(false);
@@ -65,26 +65,31 @@ public class showUsersHamster : MonoBehaviour
 
 
 
-        //we want to get current user by their id
-        //and get the string name of their hamster
-        //return string of the hamsters name and use it to validate hamster?
-        internal void GetHamster()
+
+   //async function returning a task string , with async you need await 
+    public async Task<string> GetHamster()
+    {
+
+        DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId);
+        DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
         {
 
-            DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId);
-            docRef.GetSnapshotAsync().ContinueWithOnMainThread(task =>
+            if (snapshot.Exists)
             {
-                DocumentSnapshot snapshot = task.Result;
-                if (snapshot.Exists)
-                {
-                    string hamsterName = snapshot.GetValue<string>("hamster");
-                    Debug.Log("Hamster Name: " + hamsterName);
-                }
-                else
-                {
-                    Debug.Log(System.String.Format("Document {0} does not exist!", snapshot.Id));
-                }
-            });
+                string hamsterName = snapshot.GetValue<string>("hamster");
+                Debug.Log("Hamster Name: " + hamsterName);
+                return hamsterName;
 
-    }
+            }
+            else
+            {
+                Debug.Log(System.String.Format("Document {0} does not exist!", snapshot.Id));
+                return null;
+
+            }
+          
+        }
+
+    } 
+ 
 }
