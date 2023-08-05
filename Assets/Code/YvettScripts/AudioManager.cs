@@ -11,9 +11,19 @@ public class AudioManager : MonoBehaviour
     //public AudioClip nameOfSFX1;
     //public AudioClip nameOfSFX2;
 
+    public static AudioManager instance;
+
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()
