@@ -137,6 +137,7 @@ public class AuthManager : MonoBehaviour
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
             welcomeLoginText.text = $"Welcome {User.DisplayName}";
+            SceneManager.LoadScene("MainPage");
         }
     }
 
