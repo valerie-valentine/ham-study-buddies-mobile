@@ -11,6 +11,11 @@ public class AudioManager : MonoBehaviour
     //public AudioClip nameOfSFX1;
     //public AudioClip nameOfSFX2;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Start()
     {
         musicSource.clip= background;
@@ -21,6 +26,15 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
+    }
+
+    // toggle music
+    public void ToggleMusic()
+    {
+        // if (click once, stop), if click again, continue?
+        musicSource.clip = background;
+        musicSource.Stop();
+        Debug.Log("Audio has been toggled off");
     }
 }
 
