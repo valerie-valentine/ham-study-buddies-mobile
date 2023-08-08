@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Timer : MonoBehaviour
+
+public class PomoTimer : MonoBehaviour
 {
     public float timeValue;
     public TMP_Text timeText;
@@ -12,12 +13,21 @@ public class Timer : MonoBehaviour
     public Button increaseButton;
     public Button decreaseButton;
     public Button StopButton;
+    public GameObject blushies;
     public float currency;
+    public CurrencyManager currencyManager;
 
+    public void Awake()
+    {
+        //Must instantiate a new instance of CurrencyManager to be able to use in another script
+        currencyManager = FindObjectOfType<CurrencyManager>();
+    }
 
     void Start()
     {
         timeValue = 0;
+        blushies.SetActive(false);
+
     }
 
     void Update()
@@ -26,12 +36,14 @@ public class Timer : MonoBehaviour
             if (timeValue > 0)
             {
                 timeValue -= Time.deltaTime;
+                blushies.SetActive(true);
             }
             else
             {
                 timeValue = 0;
+
             }
-           Display(timeValue);
+            Display(timeValue);
 
             if (timeValue < 6)
             {
@@ -48,9 +60,11 @@ public class Timer : MonoBehaviour
                 increaseButton.enabled = true;
                 decreaseButton.enabled = true;
             }
-            Debug.Log(currency);
         }
-
+        else
+        {
+            blushies.SetActive(false);
+        }
     }
 
     void Display(float timeToDisplay)
@@ -66,28 +80,28 @@ public class Timer : MonoBehaviour
         timeText.SetText(string.Format("{0:00}:{1:00}", minutes, seconds));
     }
 
-    public void StartTimer()
+    public async void StartTimer()
     {
         timerActive = true;
         increaseButton.enabled = false;
         decreaseButton.enabled = false;
         currency = timeValue / 300;
 
+        float? currentBank = await currencyManager.GetCurrency();
+        currencyManager.UpdateCurrency(currentBank.Value + currency);
     }
 
     public void StopTimer()
     {
-        
         timerActive = false;
         timeValue = 0;
         increaseButton.enabled = true;
         decreaseButton.enabled = true;
-        Debug.Log(currency);
         Display(timeValue);
         currency = 0;
     }
 
-   public void IncreaseTime()
+    public void IncreaseTime()
     {
         if (timeValue < 3600)
         {
@@ -102,8 +116,10 @@ public class Timer : MonoBehaviour
         {
             timeValue -= 300;
             Display(timeValue);
-
         }
     }
 
 }
+
+
+
