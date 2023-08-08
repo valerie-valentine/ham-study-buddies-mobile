@@ -73,24 +73,22 @@ public class UIEquipItems : MonoBehaviour
 
     public void EquipHeadgear(int Index)
     {
-        for (int i = 0; i < headgear.Length; i++)
-        {
-            if (i != Index)
-            {
-                equippedHeadgear[i].SetActive(false);
-            }
-            else
-            {
-                equippedHeadgear[i].SetActive(true);
-                headgear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped"; //this isnt working
-            }
+        if(equippedHeadgear[Index].activeSelf){
+            headgear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
+            equippedHeadgear[Index].SetActive(false);
+    
+        } else {
 
+            for (int i = 0; i < headgear.Length; i++)
+        {
+            equippedHeadgear[i].SetActive(false);
+            headgear[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
         }
 
         //when i click BUTTON equippedHeadgear needs to toggle on and off
         GameObject itemToToggle = equippedHeadgear[Index];
-        itemToToggle.SetActive(!itemToToggle.activeSelf); //toggling isnt happening
-
+        itemToToggle.SetActive(true); //toggling isnt happening
+        headgear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
 
     }
 
@@ -98,133 +96,176 @@ public class UIEquipItems : MonoBehaviour
 
 
 
-    //public void EquipEyewear(int Index)
-    //{
-    //    for (int i = 0; i < shoppingFurniture.Length; i++)
-    //    {
-    //        if (i == Index)
-    //            ownedFurniture[i].SetActive(true);
-    //        shoppingFurniture[Index].interactable = false;
 
+    // public void EquipEyewear(int Index)
+    // {
+    //     if(equippedEyewear[Index].activeSelf){
+    //         eyewear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //         equippedEyewear[Index].SetActive(false);
+    
+    //     } else {
 
-    //        shoppingFurniture[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+    //         for (int i = 0; i < eyewear.Length; i++)
+    //     {
+    //         equippedEyewear[i].SetActive(false);
+    //         eyewear[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //     }
 
-
-    //    }
-    //}
+    //     //when i click BUTTON equippedHeadgear needs to toggle on and off
+    //     GameObject itemToToggle = equippedEyewear[Index];
+    //     itemToToggle.SetActive(true); //toggling isnt happening
+    //     eyewear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+    // }
 
 
     ////
-    //public void EquipNeckwear(int Index)
-    //{
-    //    for (int i = 0; i < shoppingFurniture.Length; i++)
-    //    {
-    //        if (i == Index)
-    //            ownedFurniture[i].SetActive(true);
-    //        shoppingFurniture[Index].interactable = false;
+    // public void EquipNeckwear(int Index)
+    // {
+    //     if(equippedNeckwear[Index].activeSelf){
+    //         neckwear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //         equippedNeckwear[Index].SetActive(false);
+    
+    //     } else {
 
+    //         for (int i = 0; i < neckwear.Length; i++)
+    //     {
+    //         equippedNeckwear[i].SetActive(false);
+    //         neckwear[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //     }
 
-    //        shoppingFurniture[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+    //     //when i click BUTTON equippedHeadgear needs to toggle on and off
+    //     GameObject itemToToggle = equippedNeckwear[Index];
+    //     itemToToggle.SetActive(true); //toggling isnt happening
+    //     neckwear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
 
+    // }
+    
 
-    //    }
-    //}
+    // public void EquipHandheld(int Index)
+    // {
+    //     if(equippedHandheld[Index].activeSelf){
+    //         handheld[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //         equippedHandheld[Index].SetActive(false);
+    
+    //     } else {
 
-    //public void EquipHandheld(int Index)
-    //{
-    //    for (int i = 0; i < shoppingFurniture.Length; i++)
-    //    {
-    //        if (i == Index)
-    //            ownedFurniture[i].SetActive(true);
-    //        shoppingFurniture[Index].interactable = false;
+    //         for (int i = 0; i < handheld.Length; i++)
+    //     {
+    //         equippedHandheld[i].SetActive(false);
+    //         handheld[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //     }
 
+    //     //when i click BUTTON equippedHeadgear needs to toggle on and off
+    //     GameObject itemToToggle = equippedHandheld[Index];
+    //     itemToToggle.SetActive(true); //toggling isnt happening
+    //     handheld[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+    // }
 
-    //        shoppingFurniture[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+    // public void EquipBody(int Index)
+    // {
+    //     if(equippedBody[Index].activeSelf){
+    //         body[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //         equippedBody[Index].SetActive(false);
+    
+    //     } else {
 
+    //         for (int i = 0; i < body.Length; i++)
+    //     {
+    //         equippedBody[i].SetActive(false);
+    //         body[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //     }
 
-    //    }
-    //}
-
-    //public void EquipBody(int Index)
-    //{
-    //    for (int i = 0; i < shoppingFurniture.Length; i++)
-    //    {
-    //        if (i == Index)
-    //            ownedFurniture[i].SetActive(true);
-    //        shoppingFurniture[Index].interactable = false;
-
-
-    //        shoppingFurniture[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-
-
-    //    }
-    //}
+    //     //when i click BUTTON equippedHeadgear needs to toggle on and off
+    //     GameObject itemToToggle = equippedBody[Index];
+    //     itemToToggle.SetActive(true); //toggling isnt happening
+    //     body[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+    // }
 
     ////furniture equip by section
 
-    //public void EquipCouches(int Index)
-    //{
-    //    for (int i = 0; i < shoppingFurniture.Length; i++)
-    //    {
-    //        if (i == Index)
-    //            ownedFurniture[i].SetActive(true);
-    //        shoppingFurniture[Index].interactable = false;
+    // public void EquipCouches(int Index)
+    // {
+    //     if(equippedCouch[Index].activeSelf){
+    //         couches[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //         equippedCouch[Index].SetActive(false);
+    
+    //     } else {
+
+    //         for (int i = 0; i < couches.Length; i++)
+    //     {
+    //         equippedCouch[i].SetActive(false);
+    //         couches[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //     }
+
+    //     //when i click BUTTON equippedHeadgear needs to toggle on and off
+    //     GameObject itemToToggle = equippedCouch[Index];
+    //     itemToToggle.SetActive(true); //toggling isnt happening
+    //     couches[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+    // }
 
 
-    //        shoppingFurniture[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+    // public void EquipTables(int Index)
+    // {
+    //     if(equippedTable[Index].activeSelf){
+    //         tables[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //         equippedTable[Index].SetActive(false);
+    
+    //     } else {
+
+    //         for (int i = 0; i < tables.Length; i++)
+    //     {
+    //         equippedTable[i].SetActive(false);
+    //         tables[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //     }
+
+    //     //when i click BUTTON equippedHeadgear needs to toggle on and off
+    //     GameObject itemToToggle = equippedTable[Index];
+    //     itemToToggle.SetActive(true); //toggling isnt happening
+    //     tables[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+    // }
 
 
-    //    }
-    //}
+    // public void EquipRugs(int Index)
+    // {
+    //     if(equippedRug[Index].activeSelf){
+    //         rugs[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //         equippedRug[Index].SetActive(false);
+    
+    //     } else {
+
+    //         for (int i = 0; i < rugs.Length; i++)
+    //     {
+    //         equippedRug[i].SetActive(false);
+    //         rugs[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //     }
+
+    //     //when i click BUTTON equippedHeadgear needs to toggle on and off
+    //     GameObject itemToToggle = equippedRug[Index];
+    //     itemToToggle.SetActive(true); //toggling isnt happening
+    //     rugs[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+    // }
 
 
-    //public void EquipTables(int Index)
-    //{
-    //    for (int i = 0; i < shoppingFurniture.Length; i++)
-    //    {
-    //        if (i == Index)
-    //            ownedFurniture[i].SetActive(true);
-    //        shoppingFurniture[Index].interactable = false;
+    // public void EquipDecor(int Index)
+    // {
+    //     if(equippedDecor[Index].activeSelf){
+    //         decor[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //         equippedDecor[Index].SetActive(false);
+    
+    //     } else {
+
+    //         for (int i = 0; i < decor.Length; i++)
+    //     {
+    //         equippedDecor[i].SetActive(false);
+    //         decor[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //     }
+
+    //     //when i click BUTTON equippedHeadgear needs to toggle on and off
+    //     GameObject itemToToggle = equippedDecor[Index];
+    //     itemToToggle.SetActive(true); //toggling isnt happening
+    //     decor[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+    // }
 
 
-    //        shoppingFurniture[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-
-
-    //    }
-    //}
-
-
-    //public void EquipRugs(int Index)
-    //{
-    //    for (int i = 0; i < shoppingFurniture.Length; i++)
-    //    {
-    //        if (i == FurnitureIndex)
-    //            ownedFurniture[i].SetActive(true);
-    //        shoppingFurniture[Index].interactable = false;
-
-
-    //        shoppingFurniture[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-
-
-    //    }
-    //}
-
-
-    //public void EquipDecor(int Index)
-    //{
-    //    for (int i = 0; i < shoppingFurniture.Length; i++)
-    //    {
-    //        if (i == Index)
-    //            ownedFurniture[i].SetActive(true);
-    //        shoppingFurniture[Index].interactable = false;
-
-
-    //        shoppingFurniture[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-
-
-    //    }
-    //}
-
-
-
+    }
 }
