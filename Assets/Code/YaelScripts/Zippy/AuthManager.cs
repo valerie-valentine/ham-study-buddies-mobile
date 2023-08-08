@@ -83,6 +83,8 @@ public class AuthManager : MonoBehaviour
         {
             auth.SignOut();
             Debug.Log("User signed out!");
+            SceneManager.LoadScene("StartPage");
+
 
         }
         else

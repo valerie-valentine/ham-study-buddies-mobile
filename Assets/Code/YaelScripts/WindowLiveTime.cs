@@ -9,13 +9,13 @@ public class WindowLiveTime : MonoBehaviour
     public GameObject Rainbow; // 3pm to 5pm
     public GameObject Sunset;  // 7pm to 8pm
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         UpdateSkyObjects(); // Call the method once at start to set the initial state
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         UpdateSkyObjects(); // Call the method in Update to update the state every frame
