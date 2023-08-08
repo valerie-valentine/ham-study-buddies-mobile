@@ -43,21 +43,30 @@ public class UIBuyItems : MonoBehaviour
         for (int i = 0; i < shoppingFurniture.Length; i++)
         {
             if (i == FurnitureIndex)
-                     ownedFurniture[i].SetActive(true);
+                ownedFurniture[i].SetActive(true);
             shoppingFurniture[FurnitureIndex].interactable = false;
             //change shopping furniture button tmp text to "owned"
             shoppingFurniture[FurnitureIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
 
 
         }
-        
     }
+    // exactly the same as buy furniture but separation of concerns
 
-    //make a function that iterates over shopping furniture
-    //set active the owned furniture button [i]== shopping furniture button[i]
-    //disable shopping furniture button [i] (will grey it out!)
+    public void BuyAccessories(int ItemIndex)
+        {
+            for (int i = 0; i < shoppingAccessories.Length; i++)
+            {
+                if (i == ItemIndex)
+                    ownedAccessories[i].SetActive(true);
+                shoppingAccessories[ItemIndex].interactable = false;
+                
+                shoppingAccessories[ItemIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
 
-    //repeat for shopping accessories
 
-    //i made them separate so we can easily add more furniture and accessories
-}
+            }
+
+        }
+
+  }
+

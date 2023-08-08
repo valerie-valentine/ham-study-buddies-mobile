@@ -1,16 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIEquipItems : MonoBehaviour
 {
-    //set variables here
-    //gameobject list owned furniture
-    //gameobject list room furniture
+    //game objects for head
+    //objects for eyes
+    //neck
+    //hands
+    // body
 
-   //gameobject list owen accessories
-   //gameobject list room accessories
+    public Button[] headgear;
+    public Button[] eyewear;
+    public Button[] neckwear;
+    public Button[] handheld;
+    public Button[] body;
+
+    //object for couch
+    //table
+    //rug
+    //decor
+
+    public Button[] couches;
+    public Button[] tables;
+    public Button[] rugs;
+    public Button[] decor;
+
     
+
     void Awake()
     {
        //instances here
