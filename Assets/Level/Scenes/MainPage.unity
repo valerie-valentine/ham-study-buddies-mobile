@@ -529,7 +529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &24098789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2105,8 +2105,10 @@ MonoBehaviour:
   equippedHeadgear:
   - {fileID: 895513789}
   - {fileID: 1909961504}
-  eyewear: []
-  equippedEyewear: []
+  eyewear:
+  - {fileID: 1365179695}
+  equippedEyewear:
+  - {fileID: 42760781}
   neckwear: []
   equippedNeckwear: []
   handheld: []
