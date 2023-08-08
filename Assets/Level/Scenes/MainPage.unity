@@ -2100,8 +2100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   headgear:
-  - {fileID: 24098788}
-  - {fileID: 52190949}
+  - {fileID: 24098790}
+  - {fileID: 52190951}
   equippedHeadgear:
   - {fileID: 895513789}
   - {fileID: 1909961504}
