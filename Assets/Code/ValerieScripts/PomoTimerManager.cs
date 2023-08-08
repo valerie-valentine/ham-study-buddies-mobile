@@ -16,6 +16,9 @@ public class PomoTimer : MonoBehaviour
     public GameObject blushies;
     public float currency;
     public CurrencyManager currencyManager;
+    public GameObject seedInfoDisplay;
+    public TMP_Text seedText;
+
 
     public void Awake()
     {
@@ -27,6 +30,7 @@ public class PomoTimer : MonoBehaviour
     {
         timeValue = 0;
         blushies.SetActive(false);
+        seedInfoDisplay.SetActive(false);
 
     }
 
@@ -87,8 +91,11 @@ public class PomoTimer : MonoBehaviour
         decreaseButton.enabled = false;
         currency = timeValue / 300;
 
+        StartCoroutine(ShowAndHideSeedInfo());
+
         float? currentBank = await currencyManager.GetCurrency();
         currencyManager.UpdateCurrency(currentBank.Value + currency);
+
     }
 
     public void StopTimer()
@@ -117,6 +124,16 @@ public class PomoTimer : MonoBehaviour
             timeValue -= 300;
             Display(timeValue);
         }
+    }
+
+    public IEnumerator ShowAndHideSeedInfo()
+    {
+        seedText.SetText($"Sweet! You'll earn {currency} seeds for this task!");
+        seedInfoDisplay.SetActive(true);
+
+        yield return new WaitForSeconds(10); // Wait for the specified duration
+
+        seedInfoDisplay.SetActive(false); // Hide the display after the duration
     }
 
 }
