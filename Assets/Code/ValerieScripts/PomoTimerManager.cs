@@ -12,11 +12,15 @@ public class PomoTimer : MonoBehaviour
     public bool timerActive = false;
     public Button increaseButton;
     public Button decreaseButton;
+    public Button StartButton;
     public Button StopButton;
+    public GameObject Continue;
+    public GameObject Quit;
     public GameObject blushies;
     public float currency;
     public CurrencyManager currencyManager;
     public GameObject seedInfoDisplay;
+    public GameObject stopConfirmation;
     public TMP_Text seedText;
 
 
@@ -31,12 +35,16 @@ public class PomoTimer : MonoBehaviour
         timeValue = 0;
         blushies.SetActive(false);
         seedInfoDisplay.SetActive(false);
-
+        stopConfirmation.SetActive(false);
+        Continue.SetActive(false);
+        Quit.SetActive(false);
     }
 
     void Update()
     {
         if (timerActive == true) {
+            StartButton.enabled = false;
+
             if (timeValue > 0)
             {
                 timeValue -= Time.deltaTime;
@@ -67,7 +75,9 @@ public class PomoTimer : MonoBehaviour
         }
         else
         {
+            StartButton.enabled = true;
             blushies.SetActive(false);
+            StopButton.enabled = false;
         }
     }
 
@@ -100,13 +110,34 @@ public class PomoTimer : MonoBehaviour
 
     public void StopTimer()
     {
+        stopConfirmation.SetActive(true);
+        Continue.SetActive(true);
+        Quit.SetActive(true);
+    }
+
+    public void ContinueTimer()
+    {
+        stopConfirmation.SetActive(false);
+        Continue.SetActive(false);
+        Quit.SetActive(false);
+    }
+
+    public async void QuitTimer()
+    {
         timerActive = false;
         timeValue = 0;
         increaseButton.enabled = true;
         decreaseButton.enabled = true;
         Display(timeValue);
-        currency = 0;
+
+        float? currentBankAgain = await currencyManager.GetCurrency();
+        currencyManager.UpdateCurrency(currentBankAgain.Value - currency);
+        stopConfirmation.SetActive(false);
+        seedInfoDisplay.SetActive(false);
+        Continue.SetActive(false);
+        Quit.SetActive(false);
     }
+    
 
     public void IncreaseTime()
     {
