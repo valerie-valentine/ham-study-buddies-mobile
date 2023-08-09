@@ -553,7 +553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 331002898}
   SFXSource: {fileID: 1493935728}
-  background: {fileID: 8300000, guid: d8f26fa3aa7c142eb9322de92fc021ad, type: 3}
+  background: {fileID: 8300000, guid: 3f4204ecc73ea475aacc7ae6547e2d34, type: 3}
 --- !u!1 &600883980
 GameObject:
   m_ObjectHideFlags: 0
