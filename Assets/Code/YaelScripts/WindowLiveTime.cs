@@ -8,6 +8,7 @@ public class WindowLiveTime : MonoBehaviour
     public GameObject Sunrise; // 7am to 8am
     public GameObject Rainbow; // 3pm to 5pm
     public GameObject Sunset;  // 7pm to 8pm
+    public GameObject NegaBingus; //1am to 5am
 
    
     void Start()
@@ -26,9 +27,11 @@ public class WindowLiveTime : MonoBehaviour
         System.DateTime currentTime = System.DateTime.Now;
 
         // Check the current time and activate/deactivate the corresponding game objects
-        Night.SetActive(currentTime.Hour >= 20 || currentTime.Hour < 7);
+        Night.SetActive((currentTime.Hour >= 20 && currentTime.Hour < 23) || (currentTime.Hour >= 2 && currentTime.Hour < 7));
+        NegaBingus.SetActive(currentTime.Hour >= 23 || currentTime.Hour < 2);
         Sunrise.SetActive(currentTime.Hour >= 7 && currentTime.Hour < 8);
         Rainbow.SetActive(currentTime.Hour >= 15 && currentTime.Hour < 17);
         Sunset.SetActive(currentTime.Hour >= 19 && currentTime.Hour < 20);
+        
     }
 }
