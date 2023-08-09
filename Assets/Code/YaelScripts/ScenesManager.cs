@@ -7,9 +7,13 @@ public class ScenesManager : MonoBehaviour
 {
     public static ScenesManager Instance;
 
+    public AudioManager audioManager;
+
     private void Awake()
     {
         Instance = this;
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
     }
 
     public enum Scene
@@ -28,13 +32,14 @@ public class ScenesManager : MonoBehaviour
     public void LoadMainPage()
     {
         SceneManager.LoadScene(Scene.MainPage.ToString());
+        audioManager.SetCurrentSceneMusic(audioManager.gameBackground); // Change music for this scene
     }
 
 
     public void LoadStartPage()
     {
         SceneManager.LoadScene(Scene.StartPage.ToString());
-
+        audioManager.SetCurrentSceneMusic(audioManager.startMenuBackground); // Change music for this scene
     }
 
     public void LoadSignInPage()

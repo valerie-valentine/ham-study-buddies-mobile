@@ -7,9 +7,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource SFXSource;
 
     [Header("Audio Clips")]
-    public AudioClip background;
+    public AudioClip startMenuBackground;
+    public AudioClip gameBackground;
     //public AudioClip nameOfSFX1;
     //public AudioClip nameOfSFX2;
+    private AudioClip currentSceneMusic;
 
     public static AudioManager instance;
 
@@ -28,7 +30,21 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        musicSource.clip= background;
+        //musicSource.clip = startMenuBackground;
+        //musicSource.Play();
+        currentSceneMusic = startMenuBackground; // Set initial music
+        PlayCurrentSceneMusic();
+    }
+
+    public void SetCurrentSceneMusic(AudioClip musicClip)
+    {
+        currentSceneMusic = musicClip;
+        PlayCurrentSceneMusic();
+    }
+
+    private void PlayCurrentSceneMusic()
+    {
+        musicSource.clip = currentSceneMusic;
         musicSource.Play();
     }
 
@@ -42,7 +58,7 @@ public class AudioManager : MonoBehaviour
     public void ToggleMusic()
     {
         // if (click once, stop), if click again, continue?
-        musicSource.clip = background;
+        musicSource.clip = startMenuBackground;
         musicSource.Stop();
         Debug.Log("Audio has been toggled off");
     }
