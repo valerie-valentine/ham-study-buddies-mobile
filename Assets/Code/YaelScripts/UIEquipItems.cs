@@ -51,6 +51,9 @@ public class UIEquipItems : MonoBehaviour
     public Button[] rugs;
     public GameObject[] equippedRug;
 
+    public Button[] wallpapers;
+    public GameObject[] equippedWallpaper;
+
 
 
 
@@ -70,8 +73,6 @@ public class UIEquipItems : MonoBehaviour
 
     }
 
-    //body equip by section, maybe theres a better way? this is making lists out of
-    //accessories we dont want to overlap.
 
     public void EquipHeadgear(int Index)
     {
@@ -101,24 +102,25 @@ public class UIEquipItems : MonoBehaviour
     
     public void EquipEyewear(int Index)
         {
-            if (equippedEyewear[Index].activeSelf)
+        if (equippedEyewear[Index].activeSelf)
+        {
+            eyewear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
+            equippedEyewear[Index].SetActive(false);
+        }
+        else
+        {
+            for (int i = 0; i < eyewear.Length; i++)
             {
-                eyewear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
-                equippedEyewear[Index].SetActive(false);
+                equippedEyewear[i].SetActive(false);
+                eyewear[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
-            else
-            {
-                for (int i = 0; i < eyewear.Length; i++)
-                {
-                    equippedEyewear[i].SetActive(false);
-                    eyewear[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
-                }
-            }
+
 
 
             GameObject itemToToggle = equippedEyewear[Index];
             itemToToggle.SetActive(true);
             eyewear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+        }
 
         }
 
@@ -138,12 +140,13 @@ public class UIEquipItems : MonoBehaviour
                 equippedNeckwear[i].SetActive(false);
                 neckwear[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
-        }
+       
 
 
         GameObject itemToToggle = equippedNeckwear[Index];
         itemToToggle.SetActive(true);
         neckwear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+        }
 
     }
 
@@ -164,12 +167,12 @@ public class UIEquipItems : MonoBehaviour
                 equippedHandheld[i].SetActive(false);
                 handheld[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
-        }
 
 
         GameObject itemToToggle = equippedHandheld[Index];
         itemToToggle.SetActive(true);
         handheld[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+        }
 
     }
 
@@ -190,12 +193,12 @@ public class UIEquipItems : MonoBehaviour
                 equippedBody[i].SetActive(false);
                 body[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
-        }
 
 
         GameObject itemToToggle = equippedBody[Index];
         itemToToggle.SetActive(true);
         body[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+        }
 
     }
 
@@ -215,17 +218,15 @@ public class UIEquipItems : MonoBehaviour
         else
         {
 
-            for (int i = 0; i < body.Length; i++)
+            for (int i = 0; i < decor.Length; i++)
             {
                 equippedDecor[i].SetActive(false);
                 decor[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
-        }
-
-
         GameObject itemToToggle = equippedDecor[Index];
         itemToToggle.SetActive(true);
         decor[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+        }
 
     }
 
@@ -242,17 +243,17 @@ public class UIEquipItems : MonoBehaviour
         else
         {
 
-            for (int i = 0; i < body.Length; i++)
+            for (int i = 0; i < couches.Length; i++)
             {
                 equippedCouch[i].SetActive(false);
                 couches[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
-        }
 
 
         GameObject itemToToggle = equippedCouch[Index];
         itemToToggle.SetActive(true);
         couches[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+        }
 
     }
 
@@ -267,17 +268,17 @@ public class UIEquipItems : MonoBehaviour
         else
         {
 
-            for (int i = 0; i < body.Length; i++)
+            for (int i = 0; i < tables.Length; i++)
             {
                 equippedTable[i].SetActive(false);
                 tables[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
-        }
 
 
         GameObject itemToToggle = equippedTable[Index];
         itemToToggle.SetActive(true);
         tables[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+        }
 
     }
 
@@ -292,17 +293,45 @@ public class UIEquipItems : MonoBehaviour
         else
         {
 
-            for (int i = 0; i < body.Length; i++)
+            for (int i = 0; i < rugs.Length; i++)
             {
                 equippedRug[i].SetActive(false);
                 rugs[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
-        }
+      
 
 
         GameObject itemToToggle = equippedRug[Index];
         itemToToggle.SetActive(true);
         rugs[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+        }
+
+    }
+
+
+    public void EquipWallpapers(int Index)
+    {
+        if (equippedWallpaper[Index].activeSelf)
+        {
+            wallpapers[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
+            equippedWallpaper[Index].SetActive(false);
+
+        }
+        else
+        {
+
+            for (int i = 0; i < wallpapers.Length; i++)
+            {
+                equippedWallpaper[i].SetActive(false);
+                wallpapers[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
+            }
+
+
+
+            GameObject itemToToggle = equippedWallpaper[Index];
+            itemToToggle.SetActive(true);
+            wallpapers[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+        }
 
     }
 
