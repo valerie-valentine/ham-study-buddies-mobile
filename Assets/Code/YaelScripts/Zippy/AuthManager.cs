@@ -205,7 +205,6 @@ public class AuthManager : MonoBehaviour
                         {
                              {"username", _username},
                              { "money", 0 },
-                             { "inventory", new List<string>() },
                              { "hamster", "" }
                         };
     
@@ -214,7 +213,55 @@ public class AuthManager : MonoBehaviour
                             if (task.IsCompleted)
                             {
                                 Debug.Log("Added new user to the  users collection.");
-                                SceneManager.LoadScene("PickAHamster");
+
+                                CollectionReference inventoryCollectionRef = docRef.Collection("inventory");
+
+                                // Create an array of inventory data (example data)
+                                List<Dictionary<string, object>> inventoryDataList = new List<Dictionary<string, object>>
+                                {
+                                    new Dictionary<string, object>
+                                    {
+                                        {"name", "broom"},
+                                        {"type", "furniture"},
+                                        {"equipped", false}
+                                    },
+                                    new Dictionary<string, object>
+                                    {
+                                        {"name", "cardboard box"},
+                                        {"type", "furniture"},
+                                        {"equipped", false }
+                                    },
+                                    new Dictionary<string, object>
+                                    {
+                                        {"name", "head leaf"},
+                                        {"type", "accessories"},
+                                        {"equipped", false }
+                                    },
+                                    new Dictionary<string, object>
+                                    {
+                                        {"name", "hair bows"},
+                                        {"type", "accessories"},
+                                        {"equipped", false }
+                                    }
+                                };
+
+                                foreach (var inventoryData in inventoryDataList)
+                                {
+                                    inventoryCollectionRef.AddAsync(inventoryData).ContinueWithOnMainThread(inventoryTask =>
+                                    {
+                                        if (inventoryTask.IsCompleted)
+                                        {
+                                            Debug.Log("Inventory data added to subcollection.");
+
+                                            // Load the "PickAHamster" scene here
+                                            SceneManager.LoadScene("PickAHamster");
+                                        }
+                                        else if (inventoryTask.IsFaulted)
+                                        {
+                                            Debug.LogError("Error adding inventory data to Firestore: " + inventoryTask.Exception);
+                                        }
+                                    });
+                                }
                             }
                             else if (task.IsFaulted)
                             {
