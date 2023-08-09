@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 2292773}
   - component: {fileID: 2292772}
   m_Layer: 5
-  m_Name: rug1
+  m_Name: FuzzyRug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 8254922}
   - component: {fileID: 8254921}
   m_Layer: 5
-  m_Name: table1buy
+  m_Name: CoffeeTableBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 24098791}
   - component: {fileID: 24098790}
   m_Layer: 5
-  m_Name: valHeadphonesOwn
+  m_Name: ValHeadphones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -938,7 +938,7 @@ GameObject:
   - component: {fileID: 42201976}
   - component: {fileID: 42201977}
   m_Layer: 0
-  m_Name: boba
+  m_Name: BobaDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1022,7 +1022,7 @@ GameObject:
   - component: {fileID: 42760782}
   - component: {fileID: 42760783}
   m_Layer: 0
-  m_Name: AnselGlasses
+  m_Name: AnselGlassesDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1294,7 +1294,7 @@ GameObject:
   - component: {fileID: 52190952}
   - component: {fileID: 52190951}
   m_Layer: 5
-  m_Name: sunhatOwn
+  m_Name: Sunhat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1425,7 +1425,7 @@ GameObject:
   - component: {fileID: 57363616}
   - component: {fileID: 57363617}
   m_Layer: 0
-  m_Name: movingbox
+  m_Name: MovingBoxDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2107,22 +2107,64 @@ MonoBehaviour:
   - {fileID: 1909961504}
   eyewear:
   - {fileID: 1365179695}
+  - {fileID: 2041143982}
   equippedEyewear:
   - {fileID: 42760781}
-  neckwear: []
-  equippedNeckwear: []
-  handheld: []
-  equippedHandheld: []
-  body: []
-  equippedBody: []
-  couches: []
-  equippedCouch: []
-  tables: []
-  equippedTable: []
-  rugs: []
-  equippedRug: []
-  decor: []
-  equippedDecor: []
+  - {fileID: 368576685}
+  neckwear:
+  - {fileID: 649180280}
+  - {fileID: 1268586593}
+  equippedNeckwear:
+  - {fileID: 1516487181}
+  - {fileID: 1206294989}
+  handheld:
+  - {fileID: 1648651975}
+  - {fileID: 1176674430}
+  - {fileID: 772092325}
+  - {fileID: 841432444}
+  equippedHandheld:
+  - {fileID: 1484383068}
+  - {fileID: 364596713}
+  - {fileID: 42201975}
+  - {fileID: 1674549759}
+  body:
+  - {fileID: 337236036}
+  - {fileID: 1531423132}
+  - {fileID: 1588499359}
+  - {fileID: 1598766046}
+  equippedBody:
+  - {fileID: 2018949937}
+  - {fileID: 954595663}
+  - {fileID: 1634732970}
+  - {fileID: 1354327931}
+  decor:
+  - {fileID: 1423037892}
+  - {fileID: 586363816}
+  - {fileID: 774846367}
+  - {fileID: 1794293862}
+  equippedDecor:
+  - {fileID: 539106517}
+  - {fileID: 1705382517}
+  - {fileID: 1014021840}
+  - {fileID: 1410605049}
+  couches:
+  - {fileID: 1858748589}
+  - {fileID: 973742652}
+  equippedCouch:
+  - {fileID: 381467078}
+  - {fileID: 585637637}
+  tables:
+  - {fileID: 931058968}
+  - {fileID: 1639369976}
+  equippedTable:
+  - {fileID: 1377159363}
+  - {fileID: 1942684967}
+  rugs:
+  - {fileID: 2292772}
+  - {fileID: 1537226335}
+  equippedRug:
+  - {fileID: 1774869755}
+  - {fileID: 131348979}
 --- !u!1 &114044082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,7 +2444,7 @@ GameObject:
   - component: {fileID: 131348980}
   - component: {fileID: 131348981}
   m_Layer: 0
-  m_Name: rug2
+  m_Name: WovenRugDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3111,7 +3153,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bookshelf
+  m_text: Modern Bookshelf
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa39791b947de4eaaa65c2766be24728, type: 2}
   m_sharedMaterial: {fileID: -8498197465688492438, guid: aa39791b947de4eaaa65c2766be24728, type: 2}
@@ -4741,7 +4783,7 @@ GameObject:
   - component: {fileID: 286051076}
   - component: {fileID: 286051075}
   m_Layer: 5
-  m_Name: AnselGlasses
+  m_Name: AnselGlassesBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5030,7 +5072,7 @@ GameObject:
   - component: {fileID: 337236037}
   - component: {fileID: 337236036}
   m_Layer: 5
-  m_Name: gwenShirtOwn
+  m_Name: GwenShirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5283,7 +5325,7 @@ GameObject:
   - component: {fileID: 364596714}
   - component: {fileID: 364596715}
   m_Layer: 0
-  m_Name: strawberrycow
+  m_Name: PinkCowDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5367,7 +5409,7 @@ GameObject:
   - component: {fileID: 368576686}
   - component: {fileID: 368576687}
   m_Layer: 0
-  m_Name: sunglasses
+  m_Name: SunglassesRoomDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5585,7 +5627,7 @@ GameObject:
   - component: {fileID: 381467080}
   - component: {fileID: 381467079}
   m_Layer: 0
-  m_Name: couch1
+  m_Name: PinkCouchDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5924,7 +5966,7 @@ GameObject:
   - component: {fileID: 398185738}
   - component: {fileID: 398185737}
   m_Layer: 5
-  m_Name: apron
+  m_Name: ApronBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6459,7 +6501,7 @@ GameObject:
   - component: {fileID: 443731745}
   - component: {fileID: 443731744}
   m_Layer: 5
-  m_Name: rug1buy
+  m_Name: FuzzyRugBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7081,7 +7123,7 @@ GameObject:
   - component: {fileID: 539106518}
   - component: {fileID: 539106519}
   m_Layer: 0
-  m_Name: lamp1
+  m_Name: LilLampDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7618,7 +7660,7 @@ GameObject:
   - component: {fileID: 585637638}
   - component: {fileID: 585637639}
   m_Layer: 0
-  m_Name: couch2
+  m_Name: PapasanDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7704,7 +7746,7 @@ GameObject:
   - component: {fileID: 586363817}
   - component: {fileID: 586363816}
   m_Layer: 5
-  m_Name: lamp2
+  m_Name: LavaLamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8297,7 +8339,7 @@ GameObject:
   - component: {fileID: 643766870}
   - component: {fileID: 643766869}
   m_Layer: 5
-  m_Name: sunglasses
+  m_Name: SunglassesBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8430,7 +8472,7 @@ GameObject:
   - component: {fileID: 649180281}
   - component: {fileID: 649180280}
   m_Layer: 5
-  m_Name: yaelScarfOWn
+  m_Name: YaelScarf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8819,7 +8861,7 @@ GameObject:
   - component: {fileID: 695044490}
   - component: {fileID: 695044489}
   m_Layer: 5
-  m_Name: uniform
+  m_Name: UniformBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8968,16 +9010,16 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1377159364}
-  - {fileID: 1942684968}
-  - {fileID: 1774869756}
-  - {fileID: 131348980}
   - {fileID: 539106518}
   - {fileID: 1705382518}
   - {fileID: 1014021841}
   - {fileID: 1410605050}
   - {fileID: 381467080}
   - {fileID: 585637638}
+  - {fileID: 1377159364}
+  - {fileID: 1942684968}
+  - {fileID: 1774869756}
+  - {fileID: 131348980}
   - {fileID: 57363616}
   - {fileID: 1107102398}
   m_Father: {fileID: 0}
@@ -9383,7 +9425,7 @@ GameObject:
   - component: {fileID: 772092326}
   - component: {fileID: 772092325}
   m_Layer: 5
-  m_Name: bobaOwn
+  m_Name: Boba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9504,7 +9546,7 @@ GameObject:
   - component: {fileID: 774846368}
   - component: {fileID: 774846367}
   m_Layer: 5
-  m_Name: bookshelf1
+  m_Name: LadderShelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9625,7 +9667,7 @@ GameObject:
   - component: {fileID: 788096948}
   - component: {fileID: 788096947}
   m_Layer: 5
-  m_Name: pinkcow
+  m_Name: PinkCowBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9897,7 +9939,7 @@ GameObject:
   - component: {fileID: 818701715}
   - component: {fileID: 818701714}
   m_Layer: 5
-  m_Name: bowtie
+  m_Name: BowtieBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10030,7 +10072,7 @@ GameObject:
   - component: {fileID: 841432445}
   - component: {fileID: 841432444}
   m_Layer: 5
-  m_Name: ramenOwn
+  m_Name: Ramen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10419,7 +10461,7 @@ GameObject:
   - component: {fileID: 857766300}
   - component: {fileID: 857766299}
   m_Layer: 5
-  m_Name: bookshelf2buy
+  m_Name: ModernBookshelfBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10903,7 +10945,7 @@ GameObject:
   - component: {fileID: 880816560}
   - component: {fileID: 880816559}
   m_Layer: 5
-  m_Name: rug2buy
+  m_Name: WovenRugBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11257,7 +11299,7 @@ GameObject:
   - component: {fileID: 895513790}
   - component: {fileID: 895513791}
   m_Layer: 0
-  m_Name: ValHeadphones
+  m_Name: ValHeadphonesDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11717,7 +11759,7 @@ GameObject:
   - component: {fileID: 931058969}
   - component: {fileID: 931058968}
   m_Layer: 5
-  m_Name: table1
+  m_Name: CoffeeTable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11970,7 +12012,7 @@ GameObject:
   - component: {fileID: 954595664}
   - component: {fileID: 954595665}
   m_Layer: 0
-  m_Name: overalls
+  m_Name: OverallsDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12056,7 +12098,7 @@ GameObject:
   - component: {fileID: 962161559}
   - component: {fileID: 962161558}
   m_Layer: 5
-  m_Name: couch2buy
+  m_Name: PapasanBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12273,7 +12315,7 @@ GameObject:
   - component: {fileID: 973742653}
   - component: {fileID: 973742652}
   m_Layer: 5
-  m_Name: couch2
+  m_Name: Papasan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12526,7 +12568,7 @@ GameObject:
   - component: {fileID: 1014021841}
   - component: {fileID: 1014021842}
   m_Layer: 0
-  m_Name: bookshelf1
+  m_Name: LadderShelfDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13704,7 +13746,7 @@ GameObject:
   - component: {fileID: 1136440832}
   - component: {fileID: 1136440831}
   m_Layer: 5
-  m_Name: Yaelscarf
+  m_Name: YaelScarfBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14055,7 +14097,7 @@ GameObject:
   - component: {fileID: 1153761241}
   - component: {fileID: 1153761240}
   m_Layer: 5
-  m_Name: bookshelf1buy
+  m_Name: LadderShelfBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14674,7 +14716,7 @@ GameObject:
   - component: {fileID: 1176674431}
   - component: {fileID: 1176674430}
   m_Layer: 5
-  m_Name: 'pinkCowOwn '
+  m_Name: PinkCow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15059,7 +15101,7 @@ GameObject:
   - component: {fileID: 1206294990}
   - component: {fileID: 1206294991}
   m_Layer: 0
-  m_Name: bowtie
+  m_Name: BowtieRoomDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15383,7 +15425,7 @@ GameObject:
   - component: {fileID: 1232014036}
   - component: {fileID: 1232014035}
   m_Layer: 5
-  m_Name: lamp1buy
+  m_Name: LilLampBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15516,7 +15558,7 @@ GameObject:
   - component: {fileID: 1241262455}
   - component: {fileID: 1241262454}
   m_Layer: 5
-  m_Name: couch1buy
+  m_Name: PinkCouchBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15649,7 +15691,7 @@ GameObject:
   - component: {fileID: 1268586594}
   - component: {fileID: 1268586593}
   m_Layer: 5
-  m_Name: bowtieOwn
+  m_Name: Bowtie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16177,7 +16219,7 @@ GameObject:
   - component: {fileID: 1329962163}
   - component: {fileID: 1329962162}
   m_Layer: 5
-  m_Name: boba
+  m_Name: BobaBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16308,7 +16350,7 @@ GameObject:
   - component: {fileID: 1354327932}
   - component: {fileID: 1354327933}
   m_Layer: 0
-  m_Name: apron1
+  m_Name: ApronDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16478,7 +16520,7 @@ GameObject:
   - component: {fileID: 1365179696}
   - component: {fileID: 1365179695}
   m_Layer: 5
-  m_Name: anselGlassesOwn
+  m_Name: AnselGlasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16547,7 +16589,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1365179696}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 104415262}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1365179696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16597,7 +16651,7 @@ GameObject:
   - component: {fileID: 1377159364}
   - component: {fileID: 1377159365}
   m_Layer: 0
-  m_Name: coffeeTable1
+  m_Name: CoffeeTableDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16683,7 +16737,7 @@ GameObject:
   - component: {fileID: 1377885450}
   - component: {fileID: 1377885449}
   m_Layer: 5
-  m_Name: YvettFrog
+  m_Name: YvettFrogBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17403,7 +17457,7 @@ GameObject:
   - component: {fileID: 1410605050}
   - component: {fileID: 1410605051}
   m_Layer: 0
-  m_Name: bookshelf2
+  m_Name: ModernBookshelfDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17489,7 +17543,7 @@ GameObject:
   - component: {fileID: 1412907615}
   - component: {fileID: 1412907614}
   m_Layer: 5
-  m_Name: overalls
+  m_Name: OverallsBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17809,7 +17863,7 @@ GameObject:
   - component: {fileID: 1423037893}
   - component: {fileID: 1423037892}
   m_Layer: 5
-  m_Name: lamp1
+  m_Name: LilLamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18291,7 +18345,7 @@ GameObject:
   - component: {fileID: 1481946362}
   - component: {fileID: 1481946361}
   m_Layer: 5
-  m_Name: hat1
+  m_Name: SunhatBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18609,7 +18663,7 @@ GameObject:
   - component: {fileID: 1484383069}
   - component: {fileID: 1484383070}
   m_Layer: 0
-  m_Name: YvettFrog
+  m_Name: YvettFrogDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18826,7 +18880,7 @@ GameObject:
   - component: {fileID: 1516487182}
   - component: {fileID: 1516487183}
   m_Layer: 0
-  m_Name: YaelScarf
+  m_Name: YaelScarfDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18912,7 +18966,7 @@ GameObject:
   - component: {fileID: 1531423133}
   - component: {fileID: 1531423132}
   m_Layer: 5
-  m_Name: overallsOwn
+  m_Name: Overalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19033,7 +19087,7 @@ GameObject:
   - component: {fileID: 1537226336}
   - component: {fileID: 1537226335}
   m_Layer: 5
-  m_Name: rug2
+  m_Name: WovenRug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20031,7 +20085,7 @@ GameObject:
   - component: {fileID: 1588499360}
   - component: {fileID: 1588499359}
   m_Layer: 5
-  m_Name: uniformOwn
+  m_Name: Uniform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20152,7 +20206,7 @@ GameObject:
   - component: {fileID: 1598766047}
   - component: {fileID: 1598766046}
   m_Layer: 5
-  m_Name: ApronOwn
+  m_Name: Apron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20583,7 +20637,7 @@ GameObject:
   - component: {fileID: 1634732971}
   - component: {fileID: 1634732972}
   m_Layer: 0
-  m_Name: schooluniform
+  m_Name: UniformDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20669,7 +20723,7 @@ GameObject:
   - component: {fileID: 1639369977}
   - component: {fileID: 1639369976}
   m_Layer: 5
-  m_Name: table2
+  m_Name: ModernTable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20924,7 +20978,7 @@ GameObject:
   - component: {fileID: 1648651976}
   - component: {fileID: 1648651975}
   m_Layer: 5
-  m_Name: yvettFrogOwn
+  m_Name: YvettFrog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21263,7 +21317,7 @@ GameObject:
   - component: {fileID: 1674549760}
   - component: {fileID: 1674549761}
   m_Layer: 0
-  m_Name: ramen
+  m_Name: RamenDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21481,7 +21535,7 @@ GameObject:
   - component: {fileID: 1705382518}
   - component: {fileID: 1705382519}
   m_Layer: 0
-  m_Name: lamp2
+  m_Name: LavaLampDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21567,7 +21621,7 @@ GameObject:
   - component: {fileID: 1716133082}
   - component: {fileID: 1716133081}
   m_Layer: 5
-  m_Name: ValHeadphones
+  m_Name: ValHeadphonesBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22013,7 +22067,7 @@ GameObject:
   - component: {fileID: 1774869756}
   - component: {fileID: 1774869757}
   m_Layer: 0
-  m_Name: rug1
+  m_Name: FuzzyRugDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22396,7 +22450,7 @@ GameObject:
   - component: {fileID: 1794293863}
   - component: {fileID: 1794293862}
   m_Layer: 5
-  m_Name: bookshelf2
+  m_Name: ModernBookshelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22837,7 +22891,7 @@ GameObject:
   - component: {fileID: 1858748590}
   - component: {fileID: 1858748589}
   m_Layer: 5
-  m_Name: couch1
+  m_Name: PinkCouch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23223,7 +23277,7 @@ GameObject:
   - component: {fileID: 1909961505}
   - component: {fileID: 1909961506}
   m_Layer: 0
-  m_Name: hat1
+  m_Name: SunhatDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23441,7 +23495,7 @@ GameObject:
   - component: {fileID: 1942684968}
   - component: {fileID: 1942684969}
   m_Layer: 0
-  m_Name: coffeetable2
+  m_Name: ModernTableDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23660,7 +23714,7 @@ GameObject:
   - component: {fileID: 2001955624}
   - component: {fileID: 2001955623}
   m_Layer: 5
-  m_Name: lamp2buy
+  m_Name: LavaLampbuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23877,7 +23931,7 @@ GameObject:
   - component: {fileID: 2016720785}
   - component: {fileID: 2016720784}
   m_Layer: 5
-  m_Name: GwenShirt
+  m_Name: GwenShirtBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24128,7 +24182,7 @@ GameObject:
   - component: {fileID: 2018949938}
   - component: {fileID: 2018949939}
   m_Layer: 0
-  m_Name: GwenShirt
+  m_Name: GwenShirtDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24482,7 +24536,7 @@ GameObject:
   - component: {fileID: 2041143983}
   - component: {fileID: 2041143982}
   m_Layer: 5
-  m_Name: sunglassesOWn
+  m_Name: Sunglasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24802,7 +24856,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: School Uniform
+  m_text: Uniform
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa39791b947de4eaaa65c2766be24728, type: 2}
   m_sharedMaterial: {fileID: -8498197465688492438, guid: aa39791b947de4eaaa65c2766be24728, type: 2}
@@ -25347,7 +25401,7 @@ GameObject:
   - component: {fileID: 2105148935}
   - component: {fileID: 2105148934}
   m_Layer: 5
-  m_Name: ramen
+  m_Name: RamenBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25555,7 +25609,7 @@ GameObject:
   - component: {fileID: 2144921637}
   - component: {fileID: 2144921636}
   m_Layer: 5
-  m_Name: table2buy
+  m_Name: ModernTableBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
