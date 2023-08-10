@@ -37,20 +37,7 @@ public class CurrencyManager : MonoBehaviour
 
     void Start()
     {
-        GetCurrrencyOnStart();
-
-        // Initialize Firebase and then start the timer
-        //    FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
-        //    {
-        //        if (task.IsCompleted)
-        //        {
-        //            Debug.Log("Successfully initialized Firebase dependencies");
-        //        }
-        //        else
-        //        {
-        //            Debug.LogError("Failed to initialize Firebase dependencies.");
-        //        }
-        //    });
+        _ = GetCurrency();
     }
 
     public async Task<float?> GetCurrency()
@@ -72,11 +59,6 @@ public class CurrencyManager : MonoBehaviour
             Debug.Log("Currency data not available or document does not exist.");
             return null;
         }
-    }
-
-    public void GetCurrrencyOnStart()
-    {
-        _ = GetCurrency();
     }
 
     public void UpdateCurrency(float? money)

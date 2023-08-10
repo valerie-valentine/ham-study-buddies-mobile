@@ -15,7 +15,7 @@ public class InventoryManager : MonoBehaviour
     public CurrencyManager currencyManager;
     public float currency;
     public float? userBank;
-    
+
 
     // Start is called before the first frame update
     void Awake()
@@ -76,7 +76,6 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-
     public void AddItemUserInventory(string name, string type)
     {
         DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId).Collection("inventory").Document();
@@ -118,7 +117,7 @@ public class InventoryManager : MonoBehaviour
 
                     Dictionary<string, object> updatedValue = new Dictionary<string, object>
             {
-                { "equipped", !equippedStatus } 
+                { "equipped", !equippedStatus }
             };
 
                     docToUpdateRef.UpdateAsync(updatedValue).ContinueWithOnMainThread(updateTask =>
