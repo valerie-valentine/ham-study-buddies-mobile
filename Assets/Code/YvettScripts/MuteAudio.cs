@@ -9,10 +9,12 @@ public class MuteAudio : MonoBehaviour
         if (muted)
         {
             AudioListener.volume = 0;
+            Debug.Log("TOGGLE BUTTON: Audio has been MUTED");
         }
         else
         {
             AudioListener.volume = 1;
+            Debug.Log("TOGGLE BUTTON: Audio has been resumed");
         }
     }
 }

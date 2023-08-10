@@ -553,7 +553,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 331002898}
   SFXSource: {fileID: 1493935728}
-  background: {fileID: 8300000, guid: 3f4204ecc73ea475aacc7ae6547e2d34, type: 3}
+  startMenuBackground: {fileID: 8300000, guid: d7621c64136d14c3292c5ef5cd210721, type: 3}
+  gameBackground: {fileID: 8300000, guid: 3f4204ecc73ea475aacc7ae6547e2d34, type: 3}
 --- !u!1 &600883980
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161aaf10e10d54be596ecb8826ed00b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
 --- !u!1 &1493935726
 GameObject:
   m_ObjectHideFlags: 0

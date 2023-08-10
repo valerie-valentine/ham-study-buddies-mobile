@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Firebase.Auth;
 
 public class ScenesManager : MonoBehaviour
 {
@@ -9,11 +10,12 @@ public class ScenesManager : MonoBehaviour
 
     public AudioManager audioManager;
 
+    public FirebaseAuth auth;
+
     private void Awake()
     {
         Instance = this;
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-
     }
 
     public enum Scene
@@ -32,14 +34,14 @@ public class ScenesManager : MonoBehaviour
     public void LoadMainPage()
     {
         SceneManager.LoadScene(Scene.MainPage.ToString());
-        audioManager.SetCurrentSceneMusic(audioManager.gameBackground); // Change music for this scene
+        audioManager.SetCurrentSceneMusic(audioManager.gameBackground);
     }
 
 
     public void LoadStartPage()
     {
         SceneManager.LoadScene(Scene.StartPage.ToString());
-        audioManager.SetCurrentSceneMusic(audioManager.startMenuBackground); // Change music for this scene
+        audioManager.SetCurrentSceneMusic(audioManager.startMenuBackground);
     }
 
     public void LoadSignInPage()

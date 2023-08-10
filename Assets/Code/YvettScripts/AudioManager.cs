@@ -25,26 +25,26 @@ public class AudioManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            Debug.Log("Audio Manager has been destroyed");
         }
     }
 
     private void Start()
     {
-        //musicSource.clip = startMenuBackground;
-        //musicSource.Play();
-        currentSceneMusic = startMenuBackground; // Set initial music
-        PlayCurrentSceneMusic();
+        currentSceneMusic = startMenuBackground;
+        PlayCurrentSceneMusic(currentSceneMusic);
     }
 
     public void SetCurrentSceneMusic(AudioClip musicClip)
     {
         currentSceneMusic = musicClip;
-        PlayCurrentSceneMusic();
+        PlayCurrentSceneMusic(currentSceneMusic);
     }
 
-    private void PlayCurrentSceneMusic()
+    private void PlayCurrentSceneMusic(AudioClip currentSceneMusic)
     {
         musicSource.clip = currentSceneMusic;
+        AudioListener.volume = 1;
         musicSource.Play();
     }
 
@@ -52,15 +52,6 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
-    }
-
-    // toggle music
-    public void ToggleMusic()
-    {
-        // if (click once, stop), if click again, continue?
-        musicSource.clip = startMenuBackground;
-        musicSource.Stop();
-        Debug.Log("Audio has been toggled off");
     }
 }
 
