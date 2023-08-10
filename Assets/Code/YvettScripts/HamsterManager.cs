@@ -11,13 +11,11 @@ public class HamsterManager : MonoBehaviour
 {
     FirebaseFirestore db;
     FirebaseUser currentUser;
-    public AuthManager authManager;
 
     void Awake()
     {
         db = FirebaseFirestore.DefaultInstance;
         currentUser = AuthManager.instance.User;
-
         Debug.Log($"Ready to update hamster for {currentUser.DisplayName}");
     }
 
