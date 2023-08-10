@@ -33,7 +33,7 @@ public class InventoryManager : MonoBehaviour
 
     public void GetInventory()
     {
-        Debug.Log("In GetInventory function");
+
         Query allInventoryQuery = db.Collection("Users").Document("RIICyeIxCvTWSUaxHvbSXOkbbXY2").Collection("inventory");
         allInventoryQuery.GetSnapshotAsync().ContinueWithOnMainThread(task =>
         {
@@ -51,7 +51,7 @@ public class InventoryManager : MonoBehaviour
         });
     }
 
-    public async void ChargeUser(string inputString)
+    public async void BuyItemDatabase(string inputString)
     {
         string delimiter = "_";
         List<string> stringList = new List<string>();
@@ -72,8 +72,6 @@ public class InventoryManager : MonoBehaviour
             float? updatedBank = userBank - price;
             currencyManager.UpdateCurrency(updatedBank);
             AddItemUserInventory(name, type);
-            // need to either call addfurniture function or addaccessories function
-            // 
         }
     }
 
@@ -102,71 +100,48 @@ public class InventoryManager : MonoBehaviour
         });
     }
 
+    public void EquipUserItem(string name)
+    {
+        CollectionReference inventoryRef = db.Collection("Users").Document("RIICyeIxCvTWSUaxHvbSXOkbbXY2").Collection("inventory");
+        Query query = inventoryRef.WhereEqualTo("name", name);
+        query.GetSnapshotAsync().ContinueWithOnMainThread(querySnapshotTask =>
+        {
+            if (querySnapshotTask.IsCompleted)
+            {
+                foreach (DocumentSnapshot documentSnapshot in querySnapshotTask.Result.Documents)
+                {
+                    DocumentReference docToUpdateRef = documentSnapshot.Reference;
+                    Dictionary<string, object> documentData = documentSnapshot.ToDictionary();
 
+                    // Get the current value of the "equipped" field
+                    bool equippedStatus = (bool)documentData["equipped"];
 
+                    // Create a dictionary with the updated value
+                    Dictionary<string, object> updatedValue = new Dictionary<string, object>
+            {
+                { "equipped", !equippedStatus } 
+            };
 
+                    // Update the document with the new value
+                    docToUpdateRef.UpdateAsync(updatedValue).ContinueWithOnMainThread(updateTask =>
+                    {
+                        if (updateTask.IsCompleted)
+                        {
+                            Debug.Log($"Document {docToUpdateRef.Id} updated successfully.");
+                        }
+                        else if (updateTask.IsFaulted)
+                        {
+                            Debug.LogError($"Error updating document {docToUpdateRef.Id}: {updateTask.Exception}");
+                        }
+                    });
+                }
+            }
+            else if (querySnapshotTask.IsFaulted)
+            {
+                Debug.LogError($"Error querying documents: {querySnapshotTask.Exception}");
+            }
+        });
+    }
 
-    //public void AddFurnitureUserDb(string name)
-    //{
-
-    //    // Your Firestore data insertion code here...
-    //    DocumentReference docRef = db.Collection("Users").Document("RIICyeIxCvTWSUaxHvbSXOkbbXY2").Collection("inventory").Document();
-
-    //    Dictionary<string, object> item = new Dictionary<string, object>
-    //    {
-    //        { "name", name },
-    //        { "type", "furniture" },
-    //        {"equipped", false }
-    //    };
-
-    //    docRef.SetAsync(item).ContinueWithOnMainThread(task =>
-    //    {
-    //        if (task.IsCompleted)
-    //        {
-    //            Debug.Log($"Added {name} to User's inventory");
-    //        }
-    //        else if (task.IsFaulted)
-    //        {
-    //            Debug.LogError("Error adding data to Firestore: " + task.Exception);
-    //        }
-    //    });
-    //}
-    //Post-item
-    //Post item to users inventory (item data - string: name, string: type)
-    //We are going to hard code this data into UI
-    //In our function we'll hard-code equipped to false
-
-    //Buy-item
-    //Params: (string: name, string: type, int: price)
-    // call get currency
-    // calculate the difference of item & userbank to see if user has enough
-    // if statement - if user has enough currency call Post-item
-    // call update currency
-    // else - return message to user (NEED more seeds!!!)
-
-    //public void AddAccessoriesUserDb(string name)
-    //{
-
-    //    // Your Firestore data insertion code here...
-    //    DocumentReference docRef = db.Collection("Users").Document("RIICyeIxCvTWSUaxHvbSXOkbbXY2").Collection("inventory").Document();
-
-    //    Dictionary<string, object> item = new Dictionary<string, object>
-    //    {
-    //        { "name", name },
-    //        { "type", "accessories" },
-    //        {"equipped", false }
-    //    };
-
-    //    docRef.SetAsync(item).ContinueWithOnMainThread(task =>
-    //    {
-    //        if (task.IsCompleted)
-    //        {
-    //            Debug.Log($"Added {name} to User's inventory");
-    //        }
-    //        else if (task.IsFaulted)
-    //        {
-    //            Debug.LogError("Error adding data to Firestore: " + task.Exception);
-    //        }
-    //    });
 }
 
