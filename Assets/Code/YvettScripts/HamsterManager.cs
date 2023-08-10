@@ -28,7 +28,6 @@ public class HamsterManager : MonoBehaviour
         }
 
         DocumentReference usersDocRef = db.Collection("Users").Document(currentUser.UserId);
-        Debug.Log($"Current User: {currentUser}");
 
         Dictionary<string, object> update = new Dictionary<string, object>
             {

@@ -21,7 +21,6 @@ public class LogOutManager : MonoBehaviour
         if (auth != null)
         {
             auth.SignOut();
-            Debug.Log("NEW SCRIPT!");
             Debug.Log($"User {displayName} signed out!");
             ScenesManager.Instance.LoadStartPage();
         }
