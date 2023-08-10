@@ -14,12 +14,13 @@ public class CurrencyManager : MonoBehaviour
 {
     FirebaseFirestore db;
     public TMP_Text currencyText;
-    //FirebaseUser currentUser;
+    public static AuthManager instance;
+    FirebaseUser currentUser;
 
     public void Awake()
     {
-        db = FirebaseFirestore.DefaultInstance;
-        //currentUser = FirebaseAuth.DefaultInstance.CurrentUser;
+        //db = FirebaseFirestore.DefaultInstance;
+        currentUser = AuthManager.instance.User;
     }
 
     void Start()
@@ -27,22 +28,22 @@ public class CurrencyManager : MonoBehaviour
         GetCurrrencyOnStart();
 
         // Initialize Firebase and then start the timer
-        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
-        {
-            if (task.IsCompleted)
-            {
-                Debug.Log("Successfully initialized Firebase dependencies");
-            }
-            else
-            {
-                Debug.LogError("Failed to initialize Firebase dependencies.");
-            }
-        });
+        //    FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
+        //    {
+        //        if (task.IsCompleted)
+        //        {
+        //            Debug.Log("Successfully initialized Firebase dependencies");
+        //        }
+        //        else
+        //        {
+        //            Debug.LogError("Failed to initialize Firebase dependencies.");
+        //        }
+        //    });
     }
 
     public async Task<float?> GetCurrency()
     {
-        DocumentReference docRef = db.Collection("Users").Document("RIICyeIxCvTWSUaxHvbSXOkbbXY2");
+        DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId);
         DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
 
         if (snapshot.Exists)
@@ -74,7 +75,7 @@ public class CurrencyManager : MonoBehaviour
         }
         else
         {
-            DocumentReference docRef = db.Collection("Users").Document("RIICyeIxCvTWSUaxHvbSXOkbbXY2");
+            DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId);
 
             Dictionary<string, object> update = new Dictionary<string, object>
         {
