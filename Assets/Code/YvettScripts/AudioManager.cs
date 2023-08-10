@@ -7,9 +7,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource SFXSource;
 
     [Header("Audio Clips")]
-    public AudioClip background;
+    public AudioClip startMenuBackground;
+    public AudioClip gameBackground;
     //public AudioClip nameOfSFX1;
     //public AudioClip nameOfSFX2;
+    private AudioClip currentSceneMusic;
 
     public static AudioManager instance;
 
@@ -23,12 +25,26 @@ public class AudioManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            Debug.Log("Audio Manager has been destroyed");
         }
     }
 
     private void Start()
     {
-        musicSource.clip= background;
+        currentSceneMusic = startMenuBackground;
+        PlayCurrentSceneMusic(currentSceneMusic);
+    }
+
+    public void SetCurrentSceneMusic(AudioClip musicClip)
+    {
+        currentSceneMusic = musicClip;
+        PlayCurrentSceneMusic(currentSceneMusic);
+    }
+
+    private void PlayCurrentSceneMusic(AudioClip currentSceneMusic)
+    {
+        musicSource.clip = currentSceneMusic;
+        AudioListener.volume = 1;
         musicSource.Play();
     }
 
@@ -36,15 +52,6 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
-    }
-
-    // toggle music
-    public void ToggleMusic()
-    {
-        // if (click once, stop), if click again, continue?
-        musicSource.clip = background;
-        musicSource.Stop();
-        Debug.Log("Audio has been toggled off");
     }
 }
 
