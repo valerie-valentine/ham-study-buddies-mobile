@@ -38,12 +38,12 @@ public class CurrencyManager : MonoBehaviour
 
     public async Task<float?> GetCurrency()
     {
-        DocumentReference docRef = db.Collection("Users").Document("dDmkJwTvo3H6ejthKf7i");
+        DocumentReference docRef = db.Collection("Users").Document("RIICyeIxCvTWSUaxHvbSXOkbbXY2");
         DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
 
         if (snapshot.Exists)
         {
-            float currentBank = snapshot.GetValue<float>("currency");
+            float currentBank = snapshot.GetValue<float>("money");
             Debug.Log("Current Bank: " + currentBank);
             return currentBank;
         }
@@ -62,11 +62,11 @@ public class CurrencyManager : MonoBehaviour
         }
         else
         {
-            DocumentReference docRef = db.Collection("Users").Document("dDmkJwTvo3H6ejthKf7i");
+            DocumentReference docRef = db.Collection("Users").Document("RIICyeIxCvTWSUaxHvbSXOkbbXY2");
 
             Dictionary<string, object> update = new Dictionary<string, object>
         {
-            { "currency", money }
+            { "money", money }
         };
             docRef.SetAsync(update, SetOptions.MergeAll);
         }
