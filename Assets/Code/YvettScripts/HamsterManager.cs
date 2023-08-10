@@ -3,26 +3,30 @@ using UnityEngine;
 using Firebase.Firestore;
 using Firebase.Auth;
 using UnityEngine.SceneManagement;
+using Firebase;
+using System.Threading.Tasks;
 
 
 public class HamsterManager : MonoBehaviour
 {
     FirebaseFirestore db;
     FirebaseUser currentUser;
+    public AuthManager authManager;
 
     void Awake()
     {
         db = FirebaseFirestore.DefaultInstance;
-        currentUser = FirebaseAuth.DefaultInstance.CurrentUser;
+        currentUser = AuthManager.instance.User;
+
+        Debug.Log($"Ready to update hamster for {currentUser.DisplayName}");
     }
 
 
-    public void UpdateHamsterToUser(string name)
+    public async Task UpdateHamsterToUser(string name)
     {
         if (currentUser == null)
         {
             Debug.LogError("User is not signed in!");
-            return;
         }
 
         DocumentReference usersDocRef = db.Collection("Users").Document(currentUser.UserId);
@@ -32,10 +36,15 @@ public class HamsterManager : MonoBehaviour
             {
                 { "hamster", name }
             };
-        usersDocRef.SetAsync(update, SetOptions.MergeAll);
-        SceneManager.LoadScene("MainPage");
+        await usersDocRef.SetAsync(update, SetOptions.MergeAll);
+        ScenesManager.Instance.LoadMainPage();
 
         Debug.Log($"Hamster {name} has been added to {currentUser.DisplayName}.");
+    }
+
+    public void UpdateHamsterToUserButton(string name)
+    {
+        _ = UpdateHamsterToUser(name);
     }
 
 }

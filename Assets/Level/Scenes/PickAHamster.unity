@@ -206,21 +206,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2022850183}
-        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
-        m_MethodName: LoadMainPage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
       - m_Target: {fileID: 1585485991}
-        m_TargetAssemblyTypeName: UpdateInventory, Assembly-CSharp
-        m_MethodName: UpdateHamsterToUser
+        m_TargetAssemblyTypeName: HamsterManager, Assembly-CSharp
+        m_MethodName: UpdateHamsterToUserButton
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -830,8 +818,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1585485991}
-        m_TargetAssemblyTypeName: UpdateInventory, Assembly-CSharp
-        m_MethodName: UpdateHamsterToUser
+        m_TargetAssemblyTypeName: HamsterManager, Assembly-CSharp
+        m_MethodName: UpdateHamsterToUserButton
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1330,6 +1318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c28cf6279d842e6b23f99baf61cb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  authManager: {fileID: 0}
 --- !u!1 &1668637212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,21 +1402,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2022850183}
-        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
-        m_MethodName: LoadMainPage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
       - m_Target: {fileID: 1585485991}
-        m_TargetAssemblyTypeName: UpdateInventory, Assembly-CSharp
-        m_MethodName: UpdateHamsterToUser
+        m_TargetAssemblyTypeName: HamsterManager, Assembly-CSharp
+        m_MethodName: UpdateHamsterToUserButton
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1721,6 +1698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161aaf10e10d54be596ecb8826ed00b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
 --- !u!224 &2022850184
 RectTransform:
   m_ObjectHideFlags: 0

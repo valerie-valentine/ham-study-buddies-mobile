@@ -34,13 +34,28 @@ public class AuthManager : MonoBehaviour
     public TMP_Text warningRegisterText;
 
     FirebaseFirestore db;
+    public static AuthManager instance;
 
 
     void Awake()
     {
         // Initialize the FirebaseFirestore instance in the Awake method
         db = FirebaseFirestore.DefaultInstance;
-        
+        Debug.Log($"Auth manager instance ID: {gameObject.GetInstanceID()}");
+
+        //Do not destroy object
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        //else
+        //{
+        //    Destroy(gameObject);
+        //    Debug.Log($"AuthManager {gameObject.GetInstanceID()} has been DESTROYED");
+        //    return;
+        //}
+
         //Check that all of the necessary dependencies for Firebase are present on the system
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
@@ -83,16 +98,12 @@ public class AuthManager : MonoBehaviour
         {
             auth.SignOut();
             Debug.Log("User signed out!");
-            SceneManager.LoadScene("StartPage");
-
-
+            ScenesManager.Instance.LoadStartPage();
         }
         else
         {
             Debug.LogError("Sign out failed!");
         }
-
-
     }
 
     private IEnumerator Login(string _email, string _password)
@@ -139,7 +150,7 @@ public class AuthManager : MonoBehaviour
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
             welcomeLoginText.text = $"Welcome {User.DisplayName}";
-            SceneManager.LoadScene("MainPage");
+            ScenesManager.Instance.LoadMainPage();
         }
     }
 
@@ -253,8 +264,7 @@ public class AuthManager : MonoBehaviour
                                         {
                                             Debug.Log("Inventory data added to subcollection.");
 
-                                            // Load the "PickAHamster" scene here
-                                            SceneManager.LoadScene("PickAHamster");
+                                            ScenesManager.Instance.LoadPickAHamsterPage();
                                         }
                                         else if (inventoryTask.IsFaulted)
                                         {
