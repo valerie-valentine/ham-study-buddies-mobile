@@ -6,11 +6,14 @@ using Firebase.Firestore;
 using Firebase.Auth;
 using Firebase.Extensions;
 using System.Threading.Tasks;
+using TMPro;
+
 
 
 public class CurrencyManager : MonoBehaviour
 {
     FirebaseFirestore db;
+    public TMP_Text currencyText;
     //FirebaseUser currentUser;
 
     public void Awake()
@@ -69,6 +72,9 @@ public class CurrencyManager : MonoBehaviour
             { "money", money }
         };
             docRef.SetAsync(update, SetOptions.MergeAll);
+
+            string moneyStr = money.Value.ToString();
+            currencyText.SetText(moneyStr);
         }
     }
 }

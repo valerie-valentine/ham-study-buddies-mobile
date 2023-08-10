@@ -19,8 +19,6 @@ public class InventoryManager : MonoBehaviour
     {
         db = FirebaseFirestore.DefaultInstance;
         currencyManager = FindObjectOfType<CurrencyManager>();
-
-        Debug.Log("Starting Scene");
         //authManager = FindObjectOfType<AuthManager>();
 
     }
@@ -113,16 +111,13 @@ public class InventoryManager : MonoBehaviour
                     DocumentReference docToUpdateRef = documentSnapshot.Reference;
                     Dictionary<string, object> documentData = documentSnapshot.ToDictionary();
 
-                    // Get the current value of the "equipped" field
                     bool equippedStatus = (bool)documentData["equipped"];
 
-                    // Create a dictionary with the updated value
                     Dictionary<string, object> updatedValue = new Dictionary<string, object>
             {
                 { "equipped", !equippedStatus } 
             };
 
-                    // Update the document with the new value
                     docToUpdateRef.UpdateAsync(updatedValue).ContinueWithOnMainThread(updateTask =>
                     {
                         if (updateTask.IsCompleted)
