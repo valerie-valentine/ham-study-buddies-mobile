@@ -12,15 +12,27 @@ using TMPro;
 
 public class CurrencyManager : MonoBehaviour
 {
-    FirebaseFirestore db;
+    public static CurrencyManager instance; 
     public TMP_Text currencyText;
-    public static AuthManager instance;
     FirebaseUser currentUser;
+    FirebaseFirestore db;
 
     public void Awake()
     {
-        //db = FirebaseFirestore.DefaultInstance;
+        db = FirebaseFirestore.DefaultInstance;
         currentUser = AuthManager.instance.User;
+
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            Debug.Log($"CurrencyManager {gameObject.GetInstanceID()} has been DESTROYED");
+            return;
+        }
     }
 
     void Start()

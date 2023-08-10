@@ -24,10 +24,11 @@ public class PomoTimer : MonoBehaviour
     public TMP_Text seedText;
 
 
+
     public void Awake()
     {
         //Must instantiate a new instance of CurrencyManager to be able to use in another script
-        currencyManager = FindObjectOfType<CurrencyManager>();
+        currencyManager = CurrencyManager.instance;
     }
 
     void Start()

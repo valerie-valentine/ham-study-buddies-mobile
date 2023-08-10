@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Firebase;
 using Firebase.Firestore;
+using Firebase.Auth;
 using Firebase.Extensions;
 using System.Threading.Tasks;
 
@@ -10,16 +11,18 @@ using System.Threading.Tasks;
 public class InventoryManager : MonoBehaviour
 {
     FirebaseFirestore db;
+    FirebaseUser currentUser;
     public CurrencyManager currencyManager;
     public float currency;
     public float? userBank;
-    //public AuthManager authManager;
+    
+
     // Start is called before the first frame update
     void Awake()
     {
         db = FirebaseFirestore.DefaultInstance;
-        currencyManager = FindObjectOfType<CurrencyManager>();
-        //authManager = FindObjectOfType<AuthManager>();
+        currencyManager = CurrencyManager.instance;
+        currentUser = AuthManager.instance.User;
 
     }
 
@@ -32,7 +35,7 @@ public class InventoryManager : MonoBehaviour
     public void GetInventory()
     {
 
-        Query allInventoryQuery = db.Collection("Users").Document("RIICyeIxCvTWSUaxHvbSXOkbbXY2").Collection("inventory");
+        Query allInventoryQuery = db.Collection("Users").Document(currentUser.UserId).Collection("inventory");
         allInventoryQuery.GetSnapshotAsync().ContinueWithOnMainThread(task =>
         {
             QuerySnapshot allInventoryQuerySnapshot = task.Result;
@@ -76,7 +79,7 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItemUserInventory(string name, string type)
     {
-        DocumentReference docRef = db.Collection("Users").Document("RIICyeIxCvTWSUaxHvbSXOkbbXY2").Collection("inventory").Document();
+        DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId).Collection("inventory").Document();
 
         Dictionary<string, object> item = new Dictionary<string, object>
         {
@@ -100,7 +103,7 @@ public class InventoryManager : MonoBehaviour
 
     public void EquipUserItem(string name)
     {
-        CollectionReference inventoryRef = db.Collection("Users").Document("RIICyeIxCvTWSUaxHvbSXOkbbXY2").Collection("inventory");
+        CollectionReference inventoryRef = db.Collection("Users").Document(currentUser.UserId).Collection("inventory");
         Query query = inventoryRef.WhereEqualTo("name", name);
         query.GetSnapshotAsync().ContinueWithOnMainThread(querySnapshotTask =>
         {
