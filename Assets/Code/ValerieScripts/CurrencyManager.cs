@@ -24,6 +24,7 @@ public class CurrencyManager : MonoBehaviour
 
     void Start()
     {
+        GetCurrrencyOnStart();
 
         // Initialize Firebase and then start the timer
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
@@ -48,13 +49,21 @@ public class CurrencyManager : MonoBehaviour
         {
             float currentBank = snapshot.GetValue<float>("money");
             Debug.Log("Current Bank: " + currentBank);
+            string moneyStr = currentBank.ToString();
+            currencyText.SetText(moneyStr);
             return currentBank;
+            
         }
         else
         {
             Debug.Log("Currency data not available or document does not exist.");
             return null;
         }
+    }
+
+    public void GetCurrrencyOnStart()
+    {
+        _ = GetCurrency();
     }
 
     public void UpdateCurrency(float? money)
