@@ -28,13 +28,37 @@ public class UIBuyItems : MonoBehaviour
     {
   
         inventoryManager = InventoryManager.instance;
-        inventoryManager.GetInventory();
         
         
     }
 
-    public void BuyFurniture(int FurnitureIndex)
+    //public void BuyFurniture(int FurnitureIndex)
+    //{
+    //    for (int i = 0; i < shoppingFurniture.Length; i++)
+    //    {
+    //        if (i == FurnitureIndex)
+    //            ownedFurniture[i].SetActive(true);
+    //        //owneFurniture is what is in users database
+    //        shoppingFurniture[FurnitureIndex].interactable = false;
+    //        shoppingFurniture[FurnitureIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
+
+
+
+    //    }
+    //}
+
+    public void BuyFurniture(string FurnitureData)
     {
+        string delimiter = "_";
+        List<string> stringList = new List<string>();
+        string[] parts = FurnitureData.Split(delimiter);
+        stringList.AddRange(parts);
+
+        string name = stringList[0];
+        string type = stringList[1];
+        int price = int.Parse(stringList[2]);
+        int FurnitureIndex = int.Parse(stringList[3]);
+
         for (int i = 0; i < shoppingFurniture.Length; i++)
         {
             if (i == FurnitureIndex)
@@ -42,10 +66,9 @@ public class UIBuyItems : MonoBehaviour
             //owneFurniture is what is in users database
             shoppingFurniture[FurnitureIndex].interactable = false;
             shoppingFurniture[FurnitureIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
-          
-
-
         }
+
+        inventoryManager.BuyItemDatabase(name, type, price);
     }
     // exactly the same as buy furniture but separation of concerns
 

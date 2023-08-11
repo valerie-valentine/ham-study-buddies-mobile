@@ -7,6 +7,7 @@ using Firebase.Auth;
 
 public class MoneyDisplay : MonoBehaviour
 {
+    public static MoneyDisplay instance;
     FirebaseUser currentUser;
     public CurrencyManager currencyManager;
     public TMP_Text currencyText;
@@ -14,7 +15,7 @@ public class MoneyDisplay : MonoBehaviour
 
     void Awake()
     {
-
+        instance = this;
         currentUser = AuthManager.instance.User;
         currencyManager = CurrencyManager.instance;
         DisplayCurrency();

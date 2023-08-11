@@ -71,17 +71,10 @@ public class InventoryManager : MonoBehaviour
         return namesList;
     }
 
-    public async void BuyItemDatabase(string inputString)
+    public async void BuyItemDatabase(string name, string type, int price)
     {
-        var currentUser = AuthManager.instance.User;
-        string delimiter = "_";
-        List<string> stringList = new List<string>();
-        string[] parts = inputString.Split(delimiter);
-        stringList.AddRange(parts);
-
-        string name = stringList[0];
-        string type = stringList[1];
-        int price = int.Parse(stringList[2]);
+        //var currentUser = AuthManager.instance.User;
+        var moneyDisplay = MoneyDisplay.instance;
 
         userBank = await currencyManager.GetCurrency();
         if (price > userBank)
@@ -93,6 +86,7 @@ public class InventoryManager : MonoBehaviour
             float? updatedBank = userBank - price;
             currencyManager.UpdateCurrency(updatedBank);
             AddItemUserInventory(name, type);
+            moneyDisplay.DisplayCurrency();
             //call display currency so it changes money amount after purchase
         }
     }

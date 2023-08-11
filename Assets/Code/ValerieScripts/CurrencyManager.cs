@@ -52,7 +52,6 @@ public class CurrencyManager : MonoBehaviour
         {
             float currentBank = snapshot.GetValue<float>("money");
             Debug.Log("Current Bank: " + currentBank);
-            //string moneyStr = currentBank.ToString();
             return currentBank;
             
         }
