@@ -12821,11 +12821,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: PomoClock
       objectReference: {fileID: 0}
+    - target: {fileID: 8736320205725734540, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: seedInfoDisplay
+      value: 
+      objectReference: {fileID: 868405426}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+--- !u!1 &868405426 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2901935916718068736, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+  m_PrefabInstance: {fileID: 868405425}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &870357501
 GameObject:
   m_ObjectHideFlags: 0
@@ -13421,7 +13430,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10.999992, y: -125.999886}
+  m_AnchoredPosition: {x: 10.999992, y: -125.99988}
   m_SizeDelta: {x: 141.99, y: -106.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &900373399

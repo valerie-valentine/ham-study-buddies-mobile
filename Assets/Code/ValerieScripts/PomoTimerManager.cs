@@ -28,7 +28,7 @@ public class PomoTimer : MonoBehaviour
     public void Awake()
     {
         //Must instantiate a new instance of CurrencyManager to be able to use in another script
-        currencyManager = CurrencyManager.instance;
+       
     }
 
     void Start()
@@ -95,22 +95,50 @@ public class PomoTimer : MonoBehaviour
         timeText.SetText(string.Format("{0:00}:{1:00}", minutes, seconds));
     }
 
-    public async void StartTimer()
+    //public async void StartTimer()
+    //{
+    //    var currencyManager = CurrencyManager.instance;
+    //    timerActive = true;
+    //    increaseButton.enabled = false;
+    //    decreaseButton.enabled = false;
+    //    currency = timeValue / 300;
+
+
+    //    float? currentBank = await currencyManager.GetCurrency();
+    //    currencyManager.UpdateCurrency(currentBank.Value + currency);
+
+    //    //StartCoroutine(ShowAndHideSeedInfo());
+
+    //}
+
+    public void StartTimer()
     {
+        var moneyDisplay = MoneyDisplay.instance;
+        var currencyManager = CurrencyManager.instance;
         timerActive = true;
         increaseButton.enabled = false;
         decreaseButton.enabled = false;
         currency = timeValue / 300;
+        ShowSeedInfo();
 
-        StartCoroutine(ShowAndHideSeedInfo());
-
-        float? currentBank = await currencyManager.GetCurrency();
-        currencyManager.UpdateCurrency(currentBank.Value + currency);
-
+        currencyManager.GetCurrency().ContinueWith(task =>
+        {
+            if (task.IsCompleted && task.Result.HasValue)
+            {
+                float? currentBank = task.Result;
+                currencyManager.UpdateCurrency(currentBank.Value + currency);
+            }
+            else
+            {
+                Debug.LogError("Currency retrieval failed.");
+            }
+        });
     }
+
 
     public void StopTimer()
     {
+ 
         stopConfirmation.SetActive(true);
         Continue.SetActive(true);
         Quit.SetActive(true);
@@ -125,6 +153,7 @@ public class PomoTimer : MonoBehaviour
 
     public async void QuitTimer()
     {
+        var currencyManager = CurrencyManager.instance;
         timerActive = false;
         timeValue = 0;
         increaseButton.enabled = true;
@@ -158,15 +187,30 @@ public class PomoTimer : MonoBehaviour
         }
     }
 
-    public IEnumerator ShowAndHideSeedInfo()
+    public void ShowSeedInfo()
     {
-        seedText.SetText($"Sweet! You'll earn {currency} seeds for this task!");
-        seedInfoDisplay.SetActive(true);
-
-        yield return new WaitForSeconds(10); // Wait for the specified duration
-
-        seedInfoDisplay.SetActive(false); // Hide the display after the duration
+        {
+            seedText.SetText($"Sweet! You'll earn {currency} seeds for this task!");
+            seedInfoDisplay.SetActive(true);
+            Invoke(nameof(HideSeedInfo), 2f);
+        }
     }
+
+    private void HideSeedInfo()
+    {
+        seedInfoDisplay.SetActive(false);
+    }
+
+    //public IEnumerator ShowAndHideSeedInfo()
+    //{
+    //    Debug.Log(currency);
+    //    seedText.SetText($"Sweet! You'll earn {currency} seeds for this task!");
+    //    seedInfoDisplay.SetActive(true);
+
+    //    yield return new WaitForSeconds(10); // Wait for the specified duration
+
+    //    seedInfoDisplay.SetActive(false); // Hide the display after the duration
+    //}
 
 }
 
