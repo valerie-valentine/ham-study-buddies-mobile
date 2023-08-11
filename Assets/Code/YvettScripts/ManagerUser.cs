@@ -47,6 +47,39 @@ public class ManagerUser : MonoBehaviour
         User = AuthManager.instance.User;
     }
 
+    //async function returning a task string , with async you need await 
+    public async Task<string> GetHamster()
+    {
+
+        DocumentReference docRef = db.Collection("Users").Document(User.UserId);
+        DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+        {
+
+            if (snapshot.Exists)
+            {
+                string hamsterName = snapshot.GetValue<string>("hamster");
+                Debug.Log("Hamster Name: " + hamsterName);
+                if (string.IsNullOrEmpty(hamsterName))
+                {
+                    Debug.Log("Hamster is empty or null");
+                    ScenesManager.Instance.LoadPickAHamsterPage();
+                }
+                else
+                {
+                    Debug.Log("Hamster is not empty or null");
+                    ScenesManager.Instance.LoadMainPage();
+                }
+                return null;
+
+            }
+            else
+            {
+                Debug.Log(System.String.Format("Document {0} does not exist!", snapshot.Id));
+                return null;
+            }
+        }
+    }
+
     //Function for the login button
     public void LoginButton()
     {
@@ -104,7 +137,7 @@ public class ManagerUser : MonoBehaviour
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
             welcomeLoginText.text = $"Welcome {User.DisplayName}";
-            ScenesManager.Instance.LoadMainPage();
+            _ = GetHamster();
         }
     }
 
