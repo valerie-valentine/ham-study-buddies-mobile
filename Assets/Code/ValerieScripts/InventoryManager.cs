@@ -11,10 +11,11 @@ using System.Threading.Tasks;
 public class InventoryManager : MonoBehaviour
 {
     FirebaseFirestore db;
-    FirebaseUser currentUser;
     public CurrencyManager currencyManager;
     public float currency;
     public float? userBank;
+
+    public static InventoryManager instance;
 
 
     // Start is called before the first frame update
@@ -22,38 +23,57 @@ public class InventoryManager : MonoBehaviour
     {
         db = FirebaseFirestore.DefaultInstance;
         currencyManager = CurrencyManager.instance;
-        currentUser = AuthManager.instance.User;
+
+
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            Debug.Log($"CurrencyManager {gameObject.GetInstanceID()} has been DESTROYED");
+            return;
+        }
+
 
     }
 
     // Update is called once per frame
     void Start()
     {
-        //GetInventory();
+        
     }
 
-    public void GetInventory()
+    public async Task<List<string>> GetInventory()
     {
+        List<string> namesList = new List<string>();
+        Query allInventoryQuery = db.Collection("Users").Document("RIICyeIxCvTWSUaxHvbSXOkbbXY2").Collection("inventory");
+        QuerySnapshot allInventoryQuerySnapshot = await allInventoryQuery.GetSnapshotAsync();
 
-        Query allInventoryQuery = db.Collection("Users").Document(currentUser.UserId).Collection("inventory");
-        allInventoryQuery.GetSnapshotAsync().ContinueWithOnMainThread(task =>
+        foreach (DocumentSnapshot documentSnapshot in allInventoryQuerySnapshot.Documents)
         {
-            QuerySnapshot allInventoryQuerySnapshot = task.Result;
-            foreach (DocumentSnapshot documentSnapshot in allInventoryQuerySnapshot.Documents)
-            {
-                Debug.Log($"Document data for {documentSnapshot.Id} document:");
-                Dictionary<string, object> items = documentSnapshot.ToDictionary();
-                foreach (KeyValuePair<string, object> pair in items)
-                {
-                    Debug.Log($"{pair.Key}: {pair.Value}");
-                }
+            Debug.Log($"Document data for {documentSnapshot.Id} document:");
+            Dictionary<string, object> documentData = documentSnapshot.ToDictionary();
 
+            if (documentData.ContainsKey("name"))
+            {
+                object nameValue = documentData["name"];
+                if (nameValue is string name)
+                {
+                    Debug.Log($"Name: {name}");
+                    namesList.Add(name);
+                }
             }
-        });
+        }
+
+        return namesList;
     }
 
     public async void BuyItemDatabase(string inputString)
     {
+        var currentUser = AuthManager.instance.User;
         string delimiter = "_";
         List<string> stringList = new List<string>();
         string[] parts = inputString.Split(delimiter);
@@ -73,11 +93,13 @@ public class InventoryManager : MonoBehaviour
             float? updatedBank = userBank - price;
             currencyManager.UpdateCurrency(updatedBank);
             AddItemUserInventory(name, type);
+            //call display currency so it changes money amount after purchase
         }
     }
 
     public void AddItemUserInventory(string name, string type)
     {
+        var currentUser = AuthManager.instance.User;
         DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId).Collection("inventory").Document();
 
         Dictionary<string, object> item = new Dictionary<string, object>
@@ -102,6 +124,7 @@ public class InventoryManager : MonoBehaviour
 
     public void EquipUserItem(string name)
     {
+        var currentUser = AuthManager.instance.User;
         CollectionReference inventoryRef = db.Collection("Users").Document(currentUser.UserId).Collection("inventory");
         Query query = inventoryRef.WhereEqualTo("name", name);
         query.GetSnapshotAsync().ContinueWithOnMainThread(querySnapshotTask =>

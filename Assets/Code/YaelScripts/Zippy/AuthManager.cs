@@ -16,6 +16,7 @@ public class AuthManager : MonoBehaviour
     public DependencyStatus dependencyStatus;
     public FirebaseAuth auth;
     public FirebaseUser User;
+ 
 
     //Login variables
     [Header("Login")]
@@ -232,26 +233,32 @@ public class AuthManager : MonoBehaviour
                                 {
                                     new Dictionary<string, object>
                                     {
-                                        {"name", "broom"},
+                                        {"name", "Broom"},
                                         {"type", "furniture"},
                                         {"equipped", false}
                                     },
                                     new Dictionary<string, object>
                                     {
-                                        {"name", "cardboard box"},
+                                        {"name", "CardboardBox"},
                                         {"type", "furniture"},
                                         {"equipped", false }
                                     },
                                     new Dictionary<string, object>
                                     {
-                                        {"name", "head leaf"},
+                                        {"name", "HeadLeaf"},
                                         {"type", "accessories"},
                                         {"equipped", false }
                                     },
                                     new Dictionary<string, object>
                                     {
-                                        {"name", "hair bows"},
+                                        {"name", "HairBows"},
                                         {"type", "accessories"},
+                                        {"equipped", false }
+                                    },
+                                     new Dictionary<string, object>
+                                    {
+                                        {"name", "GreenWallpaper"},
+                                        {"type", "furniture"},
                                         {"equipped", false }
                                     }
                                 };

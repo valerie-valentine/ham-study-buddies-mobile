@@ -9,7 +9,7 @@ using TMPro;
 public class UIBuyItems : MonoBehaviour
 {
     //create variables and instances
-    public static UIBuyItems instance;
+    public InventoryManager inventoryManager;
 
 
 
@@ -26,16 +26,11 @@ public class UIBuyItems : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //instances go here
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != null)
-        {
-            Debug.Log("Instance already exists, destroying object!");
-            Destroy(this);
-        }
+  
+        inventoryManager = InventoryManager.instance;
+        inventoryManager.GetInventory();
+        
+        
     }
 
     public void BuyFurniture(int FurnitureIndex)
@@ -44,9 +39,10 @@ public class UIBuyItems : MonoBehaviour
         {
             if (i == FurnitureIndex)
                 ownedFurniture[i].SetActive(true);
+            //owneFurniture is what is in users database
             shoppingFurniture[FurnitureIndex].interactable = false;
-            //change shopping furniture button tmp text to "owned"
             shoppingFurniture[FurnitureIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
+          
 
 
         }

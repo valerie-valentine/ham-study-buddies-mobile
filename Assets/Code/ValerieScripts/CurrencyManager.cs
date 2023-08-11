@@ -12,15 +12,14 @@ using TMPro;
 
 public class CurrencyManager : MonoBehaviour
 {
-    public static CurrencyManager instance; 
-    public TMP_Text currencyText;
-    FirebaseUser currentUser;
+    public static CurrencyManager instance;
     FirebaseFirestore db;
 
     public void Awake()
     {
+       
         db = FirebaseFirestore.DefaultInstance;
-        currentUser = AuthManager.instance.User;
+        //Debug.Log($"In Currency Manager: {currentUser.UserId}");
 
         if (instance == null)
         {
@@ -38,19 +37,22 @@ public class CurrencyManager : MonoBehaviour
     void Start()
     {
         _ = GetCurrency();
+     
     }
 
     public async Task<float?> GetCurrency()
     {
+        var currentUser = AuthManager.instance.User;
+        Debug.Log(currentUser.UserId);
         DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId);
         DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+        
 
         if (snapshot.Exists)
         {
             float currentBank = snapshot.GetValue<float>("money");
             Debug.Log("Current Bank: " + currentBank);
-            string moneyStr = currentBank.ToString();
-            currencyText.SetText(moneyStr);
+            //string moneyStr = currentBank.ToString();
             return currentBank;
             
         }
@@ -63,6 +65,7 @@ public class CurrencyManager : MonoBehaviour
 
     public void UpdateCurrency(float? money)
     {
+        var currentUser = AuthManager.instance.User;
         if (money == null)
         {
             Debug.Log("Currency data not available or document does not exist.");
@@ -78,7 +81,7 @@ public class CurrencyManager : MonoBehaviour
             docRef.SetAsync(update, SetOptions.MergeAll);
 
             string moneyStr = money.Value.ToString();
-            currencyText.SetText(moneyStr);
+          
         }
     }
 }
