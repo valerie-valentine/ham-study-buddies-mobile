@@ -35,6 +35,8 @@ public class ManagerUser : MonoBehaviour
 
     FirebaseFirestore db;
 
+    public static ManagerUser instance;
+
 
     void Awake()
     {
@@ -45,6 +47,19 @@ public class ManagerUser : MonoBehaviour
         // added variables
         auth = AuthManager.instance.auth;
         User = AuthManager.instance.User;
+
+        //Do not destroy object
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        //else
+        //{
+        //    Destroy(gameObject);
+        //    Debug.Log($"AuthManager {gameObject.GetInstanceID()} has been DESTROYED");
+        //    return;
+        //}
     }
 
     //async function returning a task string , with async you need await 
@@ -58,15 +73,12 @@ public class ManagerUser : MonoBehaviour
             if (snapshot.Exists)
             {
                 string hamsterName = snapshot.GetValue<string>("hamster");
-                Debug.Log("Hamster Name: " + hamsterName);
                 if (string.IsNullOrEmpty(hamsterName))
                 {
-                    Debug.Log("Hamster is empty or null");
                     ScenesManager.Instance.LoadPickAHamsterPage();
                 }
                 else
                 {
-                    Debug.Log("Hamster is not empty or null");
                     ScenesManager.Instance.LoadMainPage();
                 }
                 return null;
