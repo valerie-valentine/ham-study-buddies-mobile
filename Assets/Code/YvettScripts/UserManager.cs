@@ -42,7 +42,6 @@ public class UserManager : MonoBehaviour
     {
         // Initialize the FirebaseFirestore instance in the Awake method
         db = FirebaseFirestore.DefaultInstance;
-        Debug.Log($"Manager User Test Script is AWAKE");
 
         // added variables
         auth = AuthManager.instance.auth;
@@ -54,12 +53,6 @@ public class UserManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        //else
-        //{
-        //    Destroy(gameObject);
-        //    Debug.Log($"AuthManager {gameObject.GetInstanceID()} has been DESTROYED");
-        //    return;
-        //}
     }
 
     //async function returning a task string , with async you need await 
