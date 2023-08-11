@@ -6,15 +6,24 @@ using Firebase.Auth;
 public class LogOutUser : MonoBehaviour
 {
     public FirebaseAuth auth;
+    FirebaseUser currentUser;
+
+    private void Awake()
+    {
+        currentUser = UserManager.instance.User;
+
+        auth = AuthManager.instance.auth;
+    }
 
     public void Logout()
-    {
-        auth = AuthManager.instance.auth;
+    {            
 
         if (auth != null)
         {
+            string displayName = currentUser.DisplayName;
+
             auth.SignOut();
-            Debug.Log($"User signed out!");
+            Debug.Log($"User {displayName} signed out!");
             ScenesManager.Instance.LoadStartPage();
         }
         else
