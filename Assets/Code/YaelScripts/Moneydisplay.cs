@@ -11,6 +11,7 @@ public class MoneyDisplay : MonoBehaviour
     FirebaseUser currentUser;
     public CurrencyManager currencyManager;
     public TMP_Text currencyText;
+    float? money;
 
 
     void Awake()
@@ -23,8 +24,13 @@ public class MoneyDisplay : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        currencyText.text = money.ToString(); 
+    }
 
-     void Start()
+
+    void Start()
     {
      DisplayCurrency();
     }
@@ -32,11 +38,12 @@ public class MoneyDisplay : MonoBehaviour
     public async void DisplayCurrency()
     {
 
-        var moneyStr = await currencyManager.GetCurrency();
-        currencyText.SetText(moneyStr.ToString());
-
-
+        var moneyValue = await currencyManager.GetCurrency();
+        money = moneyValue;
+        Debug.Log(moneyValue);
     }
+
+ 
 }
 
 

@@ -126,7 +126,10 @@ public class PomoTimer : MonoBehaviour
             if (task.IsCompleted && task.Result.HasValue)
             {
                 float? currentBank = task.Result;
-                currencyManager.UpdateCurrency(currentBank.Value + currency);
+                currencyManager.UpdateCurrency(currentBank.Value + currency).ContinueWith(task =>
+                {
+                    moneyDisplay.DisplayCurrency();
+                }); 
             }
             else
             {
@@ -153,6 +156,7 @@ public class PomoTimer : MonoBehaviour
 
     public async void QuitTimer()
     {
+        var moneyDisplay = MoneyDisplay.instance;
         var currencyManager = CurrencyManager.instance;
         timerActive = false;
         timeValue = 0;
@@ -161,11 +165,12 @@ public class PomoTimer : MonoBehaviour
         Display(timeValue);
 
         float? currentBankAgain = await currencyManager.GetCurrency();
-        currencyManager.UpdateCurrency(currentBankAgain.Value - currency);
+        await currencyManager.UpdateCurrency(currentBankAgain.Value - currency);
         stopConfirmation.SetActive(false);
         seedInfoDisplay.SetActive(false);
         Continue.SetActive(false);
         Quit.SetActive(false);
+        moneyDisplay.DisplayCurrency();
     }
     
 

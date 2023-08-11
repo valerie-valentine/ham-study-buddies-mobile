@@ -62,7 +62,7 @@ public class CurrencyManager : MonoBehaviour
         }
     }
 
-    public void UpdateCurrency(float? money)
+    public async Task UpdateCurrency(float? money)
     {
         var currentUser = AuthManager.instance.User;
         if (money == null)
@@ -77,7 +77,7 @@ public class CurrencyManager : MonoBehaviour
         {
             { "money", money }
         };
-            docRef.SetAsync(update, SetOptions.MergeAll);
+            await docRef.SetAsync(update, SetOptions.MergeAll);
 
             string moneyStr = money.Value.ToString();
           

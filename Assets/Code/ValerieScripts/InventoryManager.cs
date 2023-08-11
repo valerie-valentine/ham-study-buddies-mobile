@@ -84,7 +84,7 @@ public class InventoryManager : MonoBehaviour
         else
         {
             float? updatedBank = userBank - price;
-            currencyManager.UpdateCurrency(updatedBank);
+            await currencyManager.UpdateCurrency(updatedBank);
             AddItemUserInventory(name, type);
             moneyDisplay.DisplayCurrency();
             //call display currency so it changes money amount after purchase
