@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Auth;
 
-public class LogOutManager : MonoBehaviour
+public class LogOutUser : MonoBehaviour
 {
     public FirebaseAuth auth;
 
