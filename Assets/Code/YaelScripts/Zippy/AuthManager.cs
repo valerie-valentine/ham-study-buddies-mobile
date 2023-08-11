@@ -216,7 +216,7 @@ public class AuthManager : MonoBehaviour
                 Dictionary<string, object> user = new Dictionary<string, object>
                         {
                              {"username", _username},
-                             { "money", 0 },
+                             { "money", 10 },
                              { "hamster", "" }
                         };
     
@@ -235,13 +235,13 @@ public class AuthManager : MonoBehaviour
                                     {
                                         {"name", "Broom"},
                                         {"type", "furniture"},
-                                        {"equipped", false}
+                                        {"equipped", true}
                                     },
                                     new Dictionary<string, object>
                                     {
                                         {"name", "CardboardBox"},
                                         {"type", "furniture"},
-                                        {"equipped", false }
+                                        {"equipped", true }
                                     },
                                     new Dictionary<string, object>
                                     {
@@ -259,7 +259,7 @@ public class AuthManager : MonoBehaviour
                                     {
                                         {"name", "GreenWallpaper"},
                                         {"type", "furniture"},
-                                        {"equipped", false }
+                                        {"equipped", true }
                                     }
                                 };
 

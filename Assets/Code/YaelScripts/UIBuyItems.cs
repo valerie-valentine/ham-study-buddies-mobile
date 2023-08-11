@@ -143,8 +143,6 @@ public class UIBuyItems : MonoBehaviour
         {
             if (i == FurnitureIndex)
                 ownedFurniture[i].SetActive(true);
-            //owneFurniture is what is in users database
-            Debug.Log($"what am i? {shoppingFurniture[FurnitureIndex]}");
             shoppingFurniture[FurnitureIndex].interactable = false;
             shoppingFurniture[FurnitureIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
         }
@@ -171,13 +169,10 @@ public class UIBuyItems : MonoBehaviour
                 if (i == AccessoriesIndex)
                     ownedAccessories[i].SetActive(true);
                 shoppingAccessories[AccessoriesIndex].interactable = false;
-                
                 shoppingAccessories[AccessoriesIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
-
-
             }
-
-        }
+        inventoryManager.BuyItemDatabase(name, type, price);
+    }
 
   }
 

@@ -57,6 +57,7 @@ public class UIEquipItems : MonoBehaviour
     {
 
         inventoryManager = InventoryManager.instance;
+        EquipItemDisplay(equippedDecor, decor);
 
         //instances go here
         if (instance == null)
@@ -71,11 +72,27 @@ public class UIEquipItems : MonoBehaviour
 
     }
 
-    public void EquipItemHelper(Button[] ownedItem, GameObject[] equippedItem, int index)
+    public async void EquipItemDisplay(GameObject[] equippedItems, Button[] ownedItems)
+    {
+        for (int index = 0; index < equippedItems.Length; index++)
+        {
+            string itemName = equippedItems[index].name.Replace("Display", "");
+            bool equippedStatus = await inventoryManager.EquipUserItem(itemName);
+            //does equip user item need to return the bool of the item? and be async?
+
+            equippedItems[index].SetActive(equippedStatus);
+            ownedItems[index].GetComponentInChildren<TextMeshProUGUI>().text = equippedStatus ? "Equipped" : "";
+        }
+    }
+
+    public async void EquipItemHelper(Button[] ownedItem, GameObject[] equippedItem, int index)
     {
         string itemName = ownedItem[index].name.Replace("Display", "");
-        inventoryManager.EquipUserItem(itemName);
+        await inventoryManager.EquipUserItem(itemName);
         if (equippedItem[index].activeSelf)
+            //the firestore database is updating properly to reflect the state of the lamp, but the front
+            //end doesnt persist. when the user logs out and logs back in, the item should still display active
+            //if its true in the database
         {
             ownedItem[index].GetComponentInChildren<TextMeshProUGUI>().text = "";
             equippedItem[index].SetActive(false);
