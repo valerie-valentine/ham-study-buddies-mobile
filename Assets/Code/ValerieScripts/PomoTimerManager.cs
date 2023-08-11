@@ -113,6 +113,7 @@ public class PomoTimer : MonoBehaviour
 
     public void StartTimer()
     {
+        var moneyDisplay = MoneyDisplay.instance;
         var currencyManager = CurrencyManager.instance;
         timerActive = true;
         increaseButton.enabled = false;
@@ -137,6 +138,7 @@ public class PomoTimer : MonoBehaviour
 
     public void StopTimer()
     {
+ 
         stopConfirmation.SetActive(true);
         Continue.SetActive(true);
         Quit.SetActive(true);
@@ -190,7 +192,7 @@ public class PomoTimer : MonoBehaviour
         {
             seedText.SetText($"Sweet! You'll earn {currency} seeds for this task!");
             seedInfoDisplay.SetActive(true);
-            Invoke(nameof(HideSeedInfo), 4f);
+            Invoke(nameof(HideSeedInfo), 2f);
         }
     }
 
