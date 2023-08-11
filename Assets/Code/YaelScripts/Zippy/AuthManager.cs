@@ -49,12 +49,12 @@ public class AuthManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        //else
-        //{
-        //    Destroy(gameObject);
-        //    Debug.Log($"AuthManager {gameObject.GetInstanceID()} has been DESTROYED");
-        //    return;
-        //}
+        else
+        {
+            Destroy(gameObject);
+            Debug.Log($"AuthManager {gameObject.GetInstanceID()} has been DESTROYED");
+            return;
+        }
 
         //Check that all of the necessary dependencies for Firebase are present on the system
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
