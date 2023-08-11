@@ -5,19 +5,14 @@ using UnityEngine.UI;
 using TMPro;
 
 
-// functions here that we attach to on click, toggle button on/off to equip and unequip
-// when couch is equipped, no otehr furniture can be equipped with that room area
-//same for clothes.
-//toggle should use TMP to say item is equipped
-
-
-//REFACTOR!!! establish a parameter that takes area of room/ body? (just using different functions for now)
 
 
 public class UIEquipItems : MonoBehaviour
 {
 
     public static UIEquipItems instance;
+    public InventoryManager inventoryManager;
+
 
     //game objects for head, eyes, neck, hands , body
     //individual lists for body sections
@@ -60,6 +55,9 @@ public class UIEquipItems : MonoBehaviour
 
     void Awake()
     {
+
+        inventoryManager = InventoryManager.instance;
+
         //instances go here
         if (instance == null)
         {
@@ -71,6 +69,34 @@ public class UIEquipItems : MonoBehaviour
             Destroy(this);
         }
 
+    }
+
+    public void EquipItemHelper(Button[] ownedItem, GameObject[] equippedItem, int index)
+    {
+        string itemName = ownedItem[index].name.Replace("Display", "");
+        inventoryManager.EquipUserItem(itemName);
+        if (equippedItem[index].activeSelf)
+        {
+            ownedItem[index].GetComponentInChildren<TextMeshProUGUI>().text = "";
+            equippedItem[index].SetActive(false);
+
+
+        }
+        else
+        {
+
+            for (int i = 0; i < ownedItem.Length; i++)
+            {
+                equippedItem[i].SetActive(false);
+                ownedItem[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
+            }
+
+
+            GameObject itemToToggle = equippedItem[index];
+            itemToToggle.SetActive(true);
+            ownedItem[index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+
+        }
     }
 
 
@@ -209,24 +235,25 @@ public class UIEquipItems : MonoBehaviour
 
     public void EquipDecor(int Index)
     {
-        if (equippedDecor[Index].activeSelf)
-        {
-            decor[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            equippedDecor[Index].SetActive(false);
+        EquipItemHelper(decor, equippedDecor, Index);
+        //if (equippedDecor[Index].activeSelf)
+        //{
+        //    decor[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
+        //    equippedDecor[Index].SetActive(false);
 
-        }
-        else
-        {
+        //}
+        //else
+        //{
 
-            for (int i = 0; i < decor.Length; i++)
-            {
-                equippedDecor[i].SetActive(false);
-                decor[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            }
-        GameObject itemToToggle = equippedDecor[Index];
-        itemToToggle.SetActive(true);
-        decor[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-        }
+        //    for (int i = 0; i < decor.Length; i++)
+        //    {
+        //        equippedDecor[i].SetActive(false);
+        //        decor[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
+        //    }
+        //GameObject itemToToggle = equippedDecor[Index];
+        //itemToToggle.SetActive(true);
+        //decor[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+        //}
 
     }
 

@@ -28,6 +28,8 @@ public class UIBuyItems : MonoBehaviour
     {
   
         inventoryManager = InventoryManager.instance;
+        ShopDisplay();
+        OwnedItemsDisplay();
         
         
     }
@@ -47,6 +49,84 @@ public class UIBuyItems : MonoBehaviour
     //    }
     //}
 
+    //public void ShopDisplay()
+
+    //call get inventory, it returns a list of strings of item names . WE NEED THAT LIST
+    //inventoryManager.GetInventory()
+    //compare inventory list to shoppingfurniture and shopping accessories
+
+    // example of name in get inventory list "LilLamp"
+    //example of  name in shoppingfurniture "LilLampBuy"
+    // if name in get inventory list == (shoppingfurniture[furniture index] + "Buy" )
+    //shoppingFurniture[FurnitureIndex].interactable = false;
+    //shoppingFurniture[FurnitureIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
+
+    // example of name in get inventory list "ValsHeadphones"
+    //example of  name in shoppingfurniture "ValsHeadphonesBuy"
+    // if name in get inventory list == (shoppingfurniture[furniture index] + "Buy" )
+    // if name in get inventory list  == shop accessories
+    //shoppingAccessories[AccessoriesIndex].interactable = false;
+    //shoppingAccessories[AccessoriesIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
+
+    public async void ShopDisplay()
+    {
+        List<string> inventoryItems = await inventoryManager.GetInventory(); 
+
+        // Update the furniture items in the shop
+        for (int furnitureIndex = 0; furnitureIndex < shoppingFurniture.Length; furnitureIndex++)
+        {
+            string furnitureName = shoppingFurniture[furnitureIndex].name.Replace("Buy", ""); // Extract the furniture name from the button name
+
+            if (inventoryItems.Contains(furnitureName))
+            {
+                shoppingFurniture[furnitureIndex].interactable = false;
+                shoppingFurniture[furnitureIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
+            }
+        }
+
+        // Update the accessories items in the shop
+        for (int accessoriesIndex = 0; accessoriesIndex < shoppingAccessories.Length; accessoriesIndex++)
+        {
+            string accessoriesName = shoppingAccessories[accessoriesIndex].name.Replace("Buy", ""); // Extract the accessories name from the button name
+
+            if (inventoryItems.Contains(accessoriesName))
+            {
+                shoppingAccessories[accessoriesIndex].interactable = false;
+                shoppingAccessories[accessoriesIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
+            }
+        }
+    }
+
+    public async void OwnedItemsDisplay()
+    {
+        List<string> inventoryItems = await inventoryManager.GetInventory();
+
+        for (int furnitureIndex = 0; furnitureIndex < shoppingFurniture.Length; furnitureIndex++)
+        {
+            string ownedFurnitureName = ownedFurniture[furnitureIndex].name;
+
+            if (inventoryItems.Contains(ownedFurnitureName))
+            {
+                ownedFurniture[furnitureIndex].SetActive(true);
+            }
+        }
+
+        for (int accessoriesIndex = 0; accessoriesIndex < shoppingFurniture.Length; accessoriesIndex++)
+        {
+            string ownedAccessoriesName = ownedAccessories[accessoriesIndex].name;
+
+            if (inventoryItems.Contains(ownedAccessoriesName))
+            {
+                ownedAccessories[accessoriesIndex].SetActive(true);
+            }
+        }
+
+
+    }
+
+
+
+
     public void BuyFurniture(string FurnitureData)
     {
         string delimiter = "_";
@@ -64,23 +144,35 @@ public class UIBuyItems : MonoBehaviour
             if (i == FurnitureIndex)
                 ownedFurniture[i].SetActive(true);
             //owneFurniture is what is in users database
+            Debug.Log($"what am i? {shoppingFurniture[FurnitureIndex]}");
             shoppingFurniture[FurnitureIndex].interactable = false;
             shoppingFurniture[FurnitureIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
         }
 
         inventoryManager.BuyItemDatabase(name, type, price);
+
     }
     // exactly the same as buy furniture but separation of concerns
 
-    public void BuyAccessories(int ItemIndex)
+    public void BuyAccessories(string AccessoriesData)
         {
-            for (int i = 0; i < shoppingAccessories.Length; i++)
+        string delimiter = "_";
+        List<string> stringList = new List<string>();
+        string[] parts = AccessoriesData.Split(delimiter);
+        stringList.AddRange(parts);
+
+        string name = stringList[0];
+        string type = stringList[1];
+        int price = int.Parse(stringList[2]);
+        int AccessoriesIndex = int.Parse(stringList[3]);
+
+        for (int i = 0; i < shoppingAccessories.Length; i++)
             {
-                if (i == ItemIndex)
+                if (i == AccessoriesIndex)
                     ownedAccessories[i].SetActive(true);
-                shoppingAccessories[ItemIndex].interactable = false;
+                shoppingAccessories[AccessoriesIndex].interactable = false;
                 
-                shoppingAccessories[ItemIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
+                shoppingAccessories[AccessoriesIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
 
 
             }

@@ -48,8 +48,9 @@ public class InventoryManager : MonoBehaviour
 
     public async Task<List<string>> GetInventory()
     {
+        var currentUser = AuthManager.instance.User;
         List<string> namesList = new List<string>();
-        Query allInventoryQuery = db.Collection("Users").Document("RIICyeIxCvTWSUaxHvbSXOkbbXY2").Collection("inventory");
+        Query allInventoryQuery = db.Collection("Users").Document(currentUser.UserId).Collection("inventory");
         QuerySnapshot allInventoryQuerySnapshot = await allInventoryQuery.GetSnapshotAsync();
 
         foreach (DocumentSnapshot documentSnapshot in allInventoryQuerySnapshot.Documents)
