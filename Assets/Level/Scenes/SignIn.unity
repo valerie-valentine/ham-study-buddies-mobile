@@ -1340,8 +1340,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1599911170}
-        m_TargetAssemblyTypeName: RegisterUser, Assembly-CSharp
+      - m_Target: {fileID: 1330291508}
+        m_TargetAssemblyTypeName: ManagerUser, Assembly-CSharp
         m_MethodName: RegisterButton
         m_Mode: 1
         m_Arguments:
@@ -2166,8 +2166,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1254288542}
-        m_TargetAssemblyTypeName: LoginUser, Assembly-CSharp
+      - m_Target: {fileID: 1330291508}
+        m_TargetAssemblyTypeName: ManagerUser, Assembly-CSharp
         m_MethodName: LoginButton
         m_Mode: 1
         m_Arguments:
@@ -4108,16 +4108,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dependencyStatus: 0
-  emailLoginField: {fileID: 0}
-  passwordLoginField: {fileID: 0}
-  warningLoginText: {fileID: 0}
-  confirmLoginText: {fileID: 0}
-  welcomeLoginText: {fileID: 0}
-  usernameRegisterField: {fileID: 0}
-  emailRegisterField: {fileID: 0}
-  passwordRegisterField: {fileID: 0}
-  passwordRegisterVerifyField: {fileID: 0}
-  warningRegisterText: {fileID: 0}
+  emailLoginField: {fileID: 1471854832}
+  passwordLoginField: {fileID: 38696935}
+  warningLoginText: {fileID: 2133051437}
+  confirmLoginText: {fileID: 1753702311}
+  welcomeLoginText: {fileID: 945974960}
+  usernameRegisterField: {fileID: 784542699}
+  emailRegisterField: {fileID: 241781759}
+  passwordRegisterField: {fileID: 918771610}
+  passwordRegisterVerifyField: {fileID: 1579864777}
+  warningRegisterText: {fileID: 808774746}
 --- !u!1 &1379393395
 GameObject:
   m_ObjectHideFlags: 0
