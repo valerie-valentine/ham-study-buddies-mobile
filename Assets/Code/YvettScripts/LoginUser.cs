@@ -29,7 +29,7 @@ public class LoginUser : MonoBehaviour
     void Awake()
     {
         db = FirebaseFirestore.DefaultInstance;
-        Debug.Log($"Auth manager instance ID: {gameObject.GetInstanceID()}");
+        Debug.Log($"Login User Functionality is Awake");
 
         // added variables
         auth = AuthManager.instance.auth;

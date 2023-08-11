@@ -31,7 +31,7 @@ public class RegisterUser : MonoBehaviour
     {
         // Initialize the FirebaseFirestore instance in the Awake method
         db = FirebaseFirestore.DefaultInstance;
-        Debug.Log($"Auth manager instance ID: {gameObject.GetInstanceID()}");
+        Debug.Log($"Register User Functionality is AWAKE");
 
         // added variables
         auth = AuthManager.instance.auth;
