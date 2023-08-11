@@ -9,7 +9,7 @@ using Firebase.Extensions;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
-public class ManagerUser : MonoBehaviour
+public class UserManager : MonoBehaviour
 {
     //Firebase variables
     [Header("Firebase")]
@@ -35,7 +35,7 @@ public class ManagerUser : MonoBehaviour
 
     FirebaseFirestore db;
 
-    public static ManagerUser instance;
+    public static UserManager instance;
 
 
     void Awake()
