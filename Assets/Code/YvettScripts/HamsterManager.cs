@@ -15,8 +15,8 @@ public class HamsterManager : MonoBehaviour
     void Awake()
     {
         db = FirebaseFirestore.DefaultInstance;
-        //currentUser = AuthManager.instance.User;
-        //Debug.Log($"Ready to update hamster for {currentUser.DisplayName}");
+        currentUser = ManagerUser.instance.User;
+        Debug.Log($"Ready to update hamster for {currentUser.DisplayName}");
     }
 
 
@@ -26,8 +26,6 @@ public class HamsterManager : MonoBehaviour
         {
             Debug.LogError("User is not signed in!");
         }
-
-        currentUser = AuthManager.instance.User;
 
         DocumentReference usersDocRef = db.Collection("Users").Document(currentUser.UserId);
 
