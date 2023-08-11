@@ -6,7 +6,6 @@ using TMPro;
 
 
 
-
 public class UIEquipItems : MonoBehaviour
 {
 
@@ -32,7 +31,7 @@ public class UIEquipItems : MonoBehaviour
     public Button[] body;
     public GameObject[] equippedBody;
 
-    //object for couch, table, rug, decor
+    //objects for couch, table, rug, decor
 
     public Button[] decor;
     public GameObject[] equippedDecor;
@@ -52,12 +51,10 @@ public class UIEquipItems : MonoBehaviour
 
 
 
-
     void Awake()
     {
-
         inventoryManager = InventoryManager.instance;
-        EquipItemDisplay(equippedDecor, decor);
+        //EquipItemDisplay(equippedDecor, decor);
 
         //instances go here
         if (instance == null)
@@ -67,41 +64,41 @@ public class UIEquipItems : MonoBehaviour
         else if (instance != null)
         {
             Debug.Log("Instance already exists, destroying object!");
-            Destroy(this);
-        }
-
+            Destroy(gameObject);
+       }
     }
 
-    public async void EquipItemDisplay(GameObject[] equippedItems, Button[] ownedItems)
-    {
-        for (int index = 0; index < equippedItems.Length; index++)
-        {
-            string itemName = equippedItems[index].name.Replace("Display", "");
-            bool equippedStatus = await inventoryManager.EquipUserItem(itemName);
-            //does equip user item need to return the bool of the item? and be async?
+    //this should help show the ui deepending on the database!
+    //public  void EquipItemDisplay(GameObject[] equippedItems, Button[] ownedItems)
+    //{
+    //    for (int index = 0; index < equippedItems.Length; index++)
+    //    {
+    //        //this gets the name from our UI
+    //        string itemName = equippedItems[index].name.Replace("Display", "");
+    //        //this gets if the item is true or false in our database
+    //        bool equippedStatus = inventoryManager.EquipUserItem(itemName);
+           
 
-            equippedItems[index].SetActive(equippedStatus);
-            ownedItems[index].GetComponentInChildren<TextMeshProUGUI>().text = equippedStatus ? "Equipped" : "";
-        }
-    }
+    //        //this sets the item in UI to be active depending on the status in the database
+    //        equippedItems[index].SetActive(equippedStatus);
+    //        ownedItems[index].GetComponentInChildren<TextMeshProUGUI>().text = equippedStatus ? "Equipped" : "";
+    //    }
+    //}
 
-    public async void EquipItemHelper(Button[] ownedItem, GameObject[] equippedItem, int index)
+
+    //this is a helper function we can apply to all these dang lists ! 
+    public void EquipItemHelper(Button[] ownedItem, GameObject[] equippedItem, int index)
     {
         string itemName = ownedItem[index].name.Replace("Display", "");
-        await inventoryManager.EquipUserItem(itemName);
+        inventoryManager.EquipUserItem(itemName);
         if (equippedItem[index].activeSelf)
-            //the firestore database is updating properly to reflect the state of the lamp, but the front
-            //end doesnt persist. when the user logs out and logs back in, the item should still display active
-            //if its true in the database
+       
         {
-            ownedItem[index].GetComponentInChildren<TextMeshProUGUI>().text = "";
+            ownedItem[index].GetComponentInChildren<TextMeshProUGUI>().text = itemName;
             equippedItem[index].SetActive(false);
-
-
         }
         else
         {
-
             for (int i = 0; i < ownedItem.Length; i++)
             {
                 equippedItem[i].SetActive(false);
@@ -112,9 +109,9 @@ public class UIEquipItems : MonoBehaviour
             GameObject itemToToggle = equippedItem[index];
             itemToToggle.SetActive(true);
             ownedItem[index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-
         }
     }
+
 
 
     public void EquipHeadgear(int Index)
@@ -127,7 +124,6 @@ public class UIEquipItems : MonoBehaviour
         }
         else
         {
-
             for (int i = 0; i < headgear.Length; i++)
             {
                 equippedHeadgear[i].SetActive(false);
@@ -138,13 +134,12 @@ public class UIEquipItems : MonoBehaviour
             GameObject itemToToggle = equippedHeadgear[Index];
             itemToToggle.SetActive(true);
             headgear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-
         }
     }
 
     
     public void EquipEyewear(int Index)
-        {
+    {
         if (equippedEyewear[Index].activeSelf)
         {
             eyewear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
@@ -153,19 +148,17 @@ public class UIEquipItems : MonoBehaviour
         else
         {
             for (int i = 0; i < eyewear.Length; i++)
-            {
+        {
                 equippedEyewear[i].SetActive(false);
                 eyewear[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            }
-
-
-
+        }
             GameObject itemToToggle = equippedEyewear[Index];
             itemToToggle.SetActive(true);
             eyewear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
         }
 
-        }
+    }
+
 
     public void EquipNeckwear(int Index)
     {
@@ -183,12 +176,9 @@ public class UIEquipItems : MonoBehaviour
                 equippedNeckwear[i].SetActive(false);
                 neckwear[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
-       
-
-
-        GameObject itemToToggle = equippedNeckwear[Index];
-        itemToToggle.SetActive(true);
-        neckwear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+            GameObject itemToToggle = equippedNeckwear[Index];
+            itemToToggle.SetActive(true);
+            neckwear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
         }
 
     }
@@ -210,8 +200,6 @@ public class UIEquipItems : MonoBehaviour
                 equippedHandheld[i].SetActive(false);
                 handheld[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
-
-
         GameObject itemToToggle = equippedHandheld[Index];
         itemToToggle.SetActive(true);
         handheld[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
@@ -230,14 +218,11 @@ public class UIEquipItems : MonoBehaviour
         }
         else
         {
-
             for (int i = 0; i < body.Length; i++)
             {
                 equippedBody[i].SetActive(false);
                 body[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
-
-
         GameObject itemToToggle = equippedBody[Index];
         itemToToggle.SetActive(true);
         body[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
@@ -253,26 +238,28 @@ public class UIEquipItems : MonoBehaviour
     public void EquipDecor(int Index)
     {
         EquipItemHelper(decor, equippedDecor, Index);
-        //if (equippedDecor[Index].activeSelf)
-        //{
-        //    decor[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
-        //    equippedDecor[Index].SetActive(false);
-
-        //}
-        //else
-        //{
-
-        //    for (int i = 0; i < decor.Length; i++)
-        //    {
-        //        equippedDecor[i].SetActive(false);
-        //        decor[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
-        //    }
-        //GameObject itemToToggle = equippedDecor[Index];
-        //itemToToggle.SetActive(true);
-        //decor[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-        //}
 
     }
+
+
+    //if (equippedDecor[Index].activeSelf)
+    //{
+    //    decor[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //    equippedDecor[Index].SetActive(false);
+
+    //}
+    //else
+    //{
+
+    //    for (int i = 0; i < decor.Length; i++)
+    //    {
+    //        equippedDecor[i].SetActive(false);
+    //        decor[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
+    //    }
+    //GameObject itemToToggle = equippedDecor[Index];
+    //itemToToggle.SetActive(true);
+    //decor[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
+    //}
 
 
 
@@ -292,8 +279,6 @@ public class UIEquipItems : MonoBehaviour
                 equippedCouch[i].SetActive(false);
                 couches[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
-
-
         GameObject itemToToggle = equippedCouch[Index];
         itemToToggle.SetActive(true);
         couches[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
@@ -342,9 +327,7 @@ public class UIEquipItems : MonoBehaviour
                 equippedRug[i].SetActive(false);
                 rugs[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
-      
-
-
+   
         GameObject itemToToggle = equippedRug[Index];
         itemToToggle.SetActive(true);
         rugs[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";

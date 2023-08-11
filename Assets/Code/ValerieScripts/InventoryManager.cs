@@ -175,7 +175,7 @@ public class InventoryManager : MonoBehaviour
 
             Dictionary<string, object> updatedValue = new Dictionary<string, object>
         {
-            { "equipped", equippedStatus }
+            { "equipped", !equippedStatus }
         };
 
             await docToUpdateRef.UpdateAsync(updatedValue);
