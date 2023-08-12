@@ -264,8 +264,6 @@ public class UserManager : MonoBehaviour
                                     if (inventoryTask.IsCompleted)
                                     {
                                         Debug.Log("Inventory data added to subcollection.");
-
-                                        //ScenesManager.Instance.LoadPickAHamsterPage();
                                     }
                                     else if (inventoryTask.IsFaulted)
                                     {
