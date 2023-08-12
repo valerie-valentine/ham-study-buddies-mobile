@@ -95,10 +95,11 @@ public class UIEquipItems : MonoBehaviour
     //Sets sets sprite to text to equipped, sets all other same type of room sprites to inactive in list, and set correct sprite to active & toggles 
 
     //this is a helper function we can apply to all these dang lists ! 
-    public void EquipItemHelper(Button[] ownedItem, GameObject[] equippedItem, int index)
+    public void EquipItemHelper(Button[] ownedItem, GameObject[] equippedItem, int index, string subtype)
     {
         string itemName = ownedItem[index].name.Replace("Display", "");
-        inventoryManager.EquipUserItem(itemName);
+        //subtype has to equal
+        inventoryManager.EquipUserItem(itemName, subtype);
         if (equippedItem[index].activeSelf)
 
         {
@@ -245,7 +246,7 @@ public class UIEquipItems : MonoBehaviour
 
     public void EquipDecor(int Index)
     {
-        EquipItemHelper(decor, equippedDecor, Index);
+        EquipItemHelper(decor, equippedDecor, Index, "decor");
 
     }
 

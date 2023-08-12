@@ -13470,7 +13470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10.999992, y: -125.9998}
+  m_AnchoredPosition: {x: 10.999992, y: -125.999794}
   m_SizeDelta: {x: 141.99, y: -106.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &900373399
@@ -18063,7 +18063,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: LilLamp_furniture_5_0
+          m_StringArgument: LilLamp_furniture_decor_5_0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1232014036
@@ -28714,7 +28714,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: LavaLamp_furniture_5_1
+          m_StringArgument: LavaLamp_furniture_decor_5_1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2001955624

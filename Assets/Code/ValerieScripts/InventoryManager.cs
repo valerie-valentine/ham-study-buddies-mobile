@@ -43,7 +43,7 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        //Debug.Log(GetEquippedStatus("LilLamp"));
+
     }
 
     public async Task<List<string>> GetInventory()
@@ -118,11 +118,12 @@ public class InventoryManager : MonoBehaviour
         });
     }
 
-    public void EquipUserItem(string name)
+    public void EquipUserItem(string name, string subtype)
     {
         var currentUser = AuthManager.instance.User;
         CollectionReference inventoryRef = db.Collection("Users").Document(currentUser.UserId).Collection("inventory");
-        Query query = inventoryRef.WhereEqualTo("name", name);
+        Query query = inventoryRef.WhereEqualTo("subtype", subtype);
+
         query.GetSnapshotAsync().ContinueWithOnMainThread(querySnapshotTask =>
         {
             if (querySnapshotTask.IsCompleted)
@@ -132,12 +133,22 @@ public class InventoryManager : MonoBehaviour
                     DocumentReference docToUpdateRef = documentSnapshot.Reference;
                     Dictionary<string, object> documentData = documentSnapshot.ToDictionary();
 
+                    string itemName = (string)documentData["name"];
                     bool equippedStatus = (bool)documentData["equipped"];
 
+                    if (itemName == name)
+                    {
+                        equippedStatus = !equippedStatus; // Toggle the equipped status for the specified item
+                    }
+                    else
+                    {
+                        equippedStatus = false; // Set equipped to false for all other items
+                    }
+
                     Dictionary<string, object> updatedValue = new Dictionary<string, object>
-            {
-                { "equipped", !equippedStatus }
-            };
+                {
+                    { "equipped", equippedStatus }
+                };
 
                     docToUpdateRef.UpdateAsync(updatedValue).ContinueWithOnMainThread(updateTask =>
                     {
@@ -179,37 +190,8 @@ public class InventoryManager : MonoBehaviour
         }
 
         return false;
+
     }
-
-
-    //public async Task<bool> EquipUserItem(string name)
-    //{
-    //    var currentUser = AuthManager.instance.User;
-    //    CollectionReference inventoryRef = db.Collection("Users").Document(currentUser.UserId).Collection("inventory");
-    //    Query query = inventoryRef.WhereEqualTo("name", name);
-
-    //    var querySnapshot = await query.GetSnapshotAsync();
-
-    //    foreach (DocumentSnapshot documentSnapshot in querySnapshot.Documents)
-    //    {
-    //        DocumentReference docToUpdateRef = documentSnapshot.Reference;
-    //        Dictionary<string, object> documentData = documentSnapshot.ToDictionary();
-
-    //        bool equippedStatus = (bool)documentData["equipped"];
-
-    //        Dictionary<string, object> updatedValue = new Dictionary<string, object>
-    //    {
-    //        { "equipped", !equippedStatus }
-    //    };
-
-    //        await docToUpdateRef.UpdateAsync(updatedValue);
-
-    //        return equippedStatus; // Return the updated equipped status
-    //    }
-
-    //    return false; // Return false if the item was not found
-    //}
-
 
 }
 

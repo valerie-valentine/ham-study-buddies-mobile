@@ -162,8 +162,9 @@ public class UIBuyItems : MonoBehaviour
 
         string name = stringList[0];
         string type = stringList[1];
-        int price = int.Parse(stringList[2]);
-        int AccessoriesIndex = int.Parse(stringList[3]);
+        string subtype = stringList[2];
+        int price = int.Parse(stringList[3]);
+        int AccessoriesIndex = int.Parse(stringList[4]);
 
         for (int i = 0; i < shoppingAccessories.Length; i++)
             {
@@ -172,7 +173,7 @@ public class UIBuyItems : MonoBehaviour
                 shoppingAccessories[AccessoriesIndex].interactable = false;
                 shoppingAccessories[AccessoriesIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
             }
-        inventoryManager.BuyItemDatabase(name, type, price);
+        inventoryManager.BuyItemDatabase(name, type, subtype, price);
     }
 
   }
