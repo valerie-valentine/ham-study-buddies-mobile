@@ -297,8 +297,8 @@ public class UserManager : MonoBehaviour
                     else
                     {
                         //Username is now set
-                        //Now return to login screen
-                        UIManager.instance.LoginScreen();
+                        //Login user
+                        yield return StartCoroutine(Login(_email, _password));
                         warningRegisterText.text = "";
                     }
                 }
