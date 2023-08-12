@@ -11,8 +11,6 @@ public class LogOutUser : MonoBehaviour
     private void Awake()
     {
         currentUser = UserManager.instance.User;
-
-        //auth = AuthManager.instance.auth;
         auth = FirebaseManager.instance.auth;
     }
 

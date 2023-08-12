@@ -40,12 +40,8 @@ public class UserManager : MonoBehaviour
 
     void Awake()
     {
-        // Initialize the FirebaseFirestore instance in the Awake method
-        //db = FirebaseFirestore.DefaultInstance;
-        db = FirebaseManager.instance.db;
-        //FirebaseFirestore database = FirebaseManager.instance.db;
-
         // added variables
+        db = FirebaseManager.instance.db;
         auth = FirebaseManager.instance.auth;
         User = FirebaseManager.instance.User;
 
@@ -226,27 +222,38 @@ public class UserManager : MonoBehaviour
                                 {
                                     new Dictionary<string, object>
                                     {
-                                        {"name", "broom"},
+                                        {"name", "Broom"},
                                         {"type", "furniture"},
-                                        {"equipped", false}
+                                        {"subtype", "decor"},
+                                        {"equipped", true}
                                     },
                                     new Dictionary<string, object>
                                     {
-                                        {"name", "cardboard box"},
+                                        {"name", "CardboardBox"},
                                         {"type", "furniture"},
+                                        {"subtype",  "couch"},
+                                        {"equipped", true }
+                                    },
+                                    new Dictionary<string, object>
+                                    {
+                                        {"name", "HeadLeaf"},
+                                        {"type", "accessories"},
+                                        {"subtype", "headgear"},
                                         {"equipped", false }
                                     },
                                     new Dictionary<string, object>
                                     {
-                                        {"name", "head leaf"},
+                                        {"name", "HairBows"},
                                         {"type", "accessories"},
+                                        {"subtype", "headgear"},
                                         {"equipped", false }
                                     },
-                                    new Dictionary<string, object>
+                                     new Dictionary<string, object>
                                     {
-                                        {"name", "hair bows"},
-                                        {"type", "accessories"},
-                                        {"equipped", false }
+                                        {"name", "GreenWallpaper"},
+                                        {"type", "furniture"},
+                                        {"subtype", "wallpaper"},
+                                        {"equipped", true }
                                     }
                                 };
 
