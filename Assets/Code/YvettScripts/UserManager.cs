@@ -41,11 +41,13 @@ public class UserManager : MonoBehaviour
     void Awake()
     {
         // Initialize the FirebaseFirestore instance in the Awake method
-        db = FirebaseFirestore.DefaultInstance;
+        //db = FirebaseFirestore.DefaultInstance;
+        db = FirebaseManager.instance.db;
+        //FirebaseFirestore database = FirebaseManager.instance.db;
 
         // added variables
-        auth = AuthManager.instance.auth;
-        User = AuthManager.instance.User;
+        auth = FirebaseManager.instance.auth;
+        User = FirebaseManager.instance.User;
 
         //Do not destroy object
         if (instance == null)

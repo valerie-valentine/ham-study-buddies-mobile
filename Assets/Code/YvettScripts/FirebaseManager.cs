@@ -12,7 +12,7 @@ public class FirebaseManager : MonoBehaviour
     public FirebaseAuth auth;
     public FirebaseUser User;
 
-    FirebaseFirestore db;
+    public FirebaseFirestore db;
     public static FirebaseManager instance;
 
 
@@ -20,7 +20,7 @@ public class FirebaseManager : MonoBehaviour
     {
         // Initialize the FirebaseFirestore instance in the Awake method
         db = FirebaseFirestore.DefaultInstance;
-        Debug.Log($"Auth manager instance ID: {gameObject.GetInstanceID()}");
+        Debug.Log($"Firebasemanager instance ID: {gameObject.GetInstanceID()}");
 
         //Do not destroy object
         if (instance == null)
@@ -31,7 +31,7 @@ public class FirebaseManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            Debug.Log($"AuthManager {gameObject.GetInstanceID()} has been DESTROYED");
+            Debug.Log($"Firebasemanager {gameObject.GetInstanceID()} has been DESTROYED");
             return;
         }
 

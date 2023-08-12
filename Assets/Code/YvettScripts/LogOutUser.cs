@@ -12,7 +12,8 @@ public class LogOutUser : MonoBehaviour
     {
         currentUser = UserManager.instance.User;
 
-        auth = AuthManager.instance.auth;
+        //auth = AuthManager.instance.auth;
+        auth = FirebaseManager.instance.auth;
     }
 
     public void Logout()
