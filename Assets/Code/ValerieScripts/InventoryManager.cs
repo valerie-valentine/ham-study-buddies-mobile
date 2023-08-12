@@ -43,7 +43,7 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        
+        //Debug.Log(GetEquippedStatus("LilLamp"));
     }
 
     public async Task<List<string>> GetInventory()
@@ -117,74 +117,97 @@ public class InventoryManager : MonoBehaviour
         });
     }
 
-    //public void EquipUserItem(string name)
-    //{
-    //    var currentUser = AuthManager.instance.User;
-    //    CollectionReference inventoryRef = db.Collection("Users").Document(currentUser.UserId).Collection("inventory");
-    //    Query query = inventoryRef.WhereEqualTo("name", name);
-    //    query.GetSnapshotAsync().ContinueWithOnMainThread(querySnapshotTask =>
-    //    {
-    //        if (querySnapshotTask.IsCompleted)
-    //        {
-    //            foreach (DocumentSnapshot documentSnapshot in querySnapshotTask.Result.Documents)
-    //            {
-    //                DocumentReference docToUpdateRef = documentSnapshot.Reference;
-    //                Dictionary<string, object> documentData = documentSnapshot.ToDictionary();
-
-    //                bool equippedStatus = (bool)documentData["equipped"];
-
-    //                Dictionary<string, object> updatedValue = new Dictionary<string, object>
-    //        {
-    //            { "equipped", !equippedStatus }
-    //        };
-
-    //                docToUpdateRef.UpdateAsync(updatedValue).ContinueWithOnMainThread(updateTask =>
-    //                {
-    //                    if (updateTask.IsCompleted)
-    //                    {
-    //                        Debug.Log($"Document {docToUpdateRef.Id} updated successfully.");
-    //                    }
-    //                    else if (updateTask.IsFaulted)
-    //                    {
-    //                        Debug.LogError($"Error updating document {docToUpdateRef.Id}: {updateTask.Exception}");
-    //                    }
-    //                });
-    //            }
-    //        }
-    //        else if (querySnapshotTask.IsFaulted)
-    //        {
-    //            Debug.LogError($"Error querying documents: {querySnapshotTask.Exception}");
-    //        }
-    //    });
-    //}
-
-    public async Task<bool> EquipUserItem(string name)
+    public void EquipUserItem(string name)
     {
         var currentUser = AuthManager.instance.User;
         CollectionReference inventoryRef = db.Collection("Users").Document(currentUser.UserId).Collection("inventory");
         Query query = inventoryRef.WhereEqualTo("name", name);
-
-        var querySnapshot = await query.GetSnapshotAsync();
-
-        foreach (DocumentSnapshot documentSnapshot in querySnapshot.Documents)
+        query.GetSnapshotAsync().ContinueWithOnMainThread(querySnapshotTask =>
         {
-            DocumentReference docToUpdateRef = documentSnapshot.Reference;
+            if (querySnapshotTask.IsCompleted)
+            {
+                foreach (DocumentSnapshot documentSnapshot in querySnapshotTask.Result.Documents)
+                {
+                    DocumentReference docToUpdateRef = documentSnapshot.Reference;
+                    Dictionary<string, object> documentData = documentSnapshot.ToDictionary();
+
+                    bool equippedStatus = (bool)documentData["equipped"];
+
+                    Dictionary<string, object> updatedValue = new Dictionary<string, object>
+            {
+                { "equipped", !equippedStatus }
+            };
+
+                    docToUpdateRef.UpdateAsync(updatedValue).ContinueWithOnMainThread(updateTask =>
+                    {
+                        if (updateTask.IsCompleted)
+                        {
+                            Debug.Log($"Document {docToUpdateRef.Id} updated successfully.");
+                        }
+                        else if (updateTask.IsFaulted)
+                        {
+                            Debug.LogError($"Error updating document {docToUpdateRef.Id}: {updateTask.Exception}");
+                        }
+                    });
+                }
+            }
+            else if (querySnapshotTask.IsFaulted)
+            {
+                Debug.LogError($"Error querying documents: {querySnapshotTask.Exception}");
+            }
+        });
+    }
+
+    public async Task<bool> GetEquippedStatus(string name)
+    {
+        var currentUser = AuthManager.instance.User;
+        CollectionReference inventoryRef = db.Collection("Users").Document(currentUser.UserId).Collection("inventory");
+        Query query = inventoryRef.WhereEqualTo("name", name);
+        QuerySnapshot inventoryQuerySnapshot = await query.GetSnapshotAsync();
+
+        foreach (DocumentSnapshot documentSnapshot in inventoryQuerySnapshot.Documents)
+        {
             Dictionary<string, object> documentData = documentSnapshot.ToDictionary();
 
-            bool equippedStatus = (bool)documentData["equipped"];
-
-            Dictionary<string, object> updatedValue = new Dictionary<string, object>
-        {
-            { "equipped", !equippedStatus }
-        };
-
-            await docToUpdateRef.UpdateAsync(updatedValue);
-
-            return equippedStatus; // Return the updated equipped status
+            //bool equippedStatus = (bool)documentData["equipped"];
+            //return equippedStatus;
+            if (documentData.TryGetValue("equipped", out object equippedObj) && equippedObj is bool equippedStatus)
+            {
+                return equippedStatus;
+            }
         }
 
-        return false; // Return false if the item was not found
+        return false;
     }
+
+
+    //public async Task<bool> EquipUserItem(string name)
+    //{
+    //    var currentUser = AuthManager.instance.User;
+    //    CollectionReference inventoryRef = db.Collection("Users").Document(currentUser.UserId).Collection("inventory");
+    //    Query query = inventoryRef.WhereEqualTo("name", name);
+
+    //    var querySnapshot = await query.GetSnapshotAsync();
+
+    //    foreach (DocumentSnapshot documentSnapshot in querySnapshot.Documents)
+    //    {
+    //        DocumentReference docToUpdateRef = documentSnapshot.Reference;
+    //        Dictionary<string, object> documentData = documentSnapshot.ToDictionary();
+
+    //        bool equippedStatus = (bool)documentData["equipped"];
+
+    //        Dictionary<string, object> updatedValue = new Dictionary<string, object>
+    //    {
+    //        { "equipped", !equippedStatus }
+    //    };
+
+    //        await docToUpdateRef.UpdateAsync(updatedValue);
+
+    //        return equippedStatus; // Return the updated equipped status
+    //    }
+
+    //    return false; // Return false if the item was not found
+    //}
 
 
 }

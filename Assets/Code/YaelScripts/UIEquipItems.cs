@@ -49,11 +49,14 @@ public class UIEquipItems : MonoBehaviour
     public GameObject[] equippedWallpaper;
 
 
+    // item == name
+    // item == dictionay[name]{
+    
 
-
-    void Awake()
+    async void Awake()
     {
         inventoryManager = InventoryManager.instance;
+        //await inventoryManager.GetEquippedStatus();
         //EquipItemDisplay(equippedDecor, decor);
 
         //instances go here
@@ -69,22 +72,27 @@ public class UIEquipItems : MonoBehaviour
     }
 
     //this should help show the ui deepending on the database!
-    //public  void EquipItemDisplay(GameObject[] equippedItems, Button[] ownedItems)
-    //{
-    //    for (int index = 0; index < equippedItems.Length; index++)
-    //    {
-    //        //this gets the name from our UI
-    //        string itemName = equippedItems[index].name.Replace("Display", "");
-    //        //this gets if the item is true or false in our database
-    //        bool equippedStatus = inventoryManager.EquipUserItem(itemName);
-           
+    public async void EquipItemDisplay(GameObject[] equippedItems, Button[] ownedItems)
+    {
+        for (int index = 0; index < equippedItems.Length; index++)
+        {
+            //this gets the name from our UI
+            string itemName = equippedItems[index].name.Replace("Display", "");
+            //this gets if the item is true or false in our database
+            bool equippedStatus = await inventoryManager.GetEquippedStatus(itemName);
 
-    //        //this sets the item in UI to be active depending on the status in the database
-    //        equippedItems[index].SetActive(equippedStatus);
-    //        ownedItems[index].GetComponentInChildren<TextMeshProUGUI>().text = equippedStatus ? "Equipped" : "";
-    //    }
-    //}
 
+            //this sets the item in UI to be active depending on the status in the database
+            equippedItems[index].SetActive(equippedStatus);
+            ownedItems[index].GetComponentInChildren<TextMeshProUGUI>().text = equippedStatus ? "Equipped" : "";
+        }
+
+        //contains for equipped itemslist
+
+    }
+
+
+    //Sets sets sprite to text to equipped, sets all other same type of room sprites to inactive in list, and set correct sprite to active & toggles 
 
     //this is a helper function we can apply to all these dang lists ! 
     public void EquipItemHelper(Button[] ownedItem, GameObject[] equippedItem, int index)
@@ -92,7 +100,7 @@ public class UIEquipItems : MonoBehaviour
         string itemName = ownedItem[index].name.Replace("Display", "");
         inventoryManager.EquipUserItem(itemName);
         if (equippedItem[index].activeSelf)
-       
+
         {
             ownedItem[index].GetComponentInChildren<TextMeshProUGUI>().text = itemName;
             equippedItem[index].SetActive(false);
