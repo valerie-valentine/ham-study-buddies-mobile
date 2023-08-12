@@ -2349,6 +2349,12 @@ MonoBehaviour:
   - {fileID: 1014021840}
   - {fileID: 1410605049}
   - {fileID: 623966073}
+  tables:
+  - {fileID: 931058968}
+  - {fileID: 1639369976}
+  equippedTable:
+  - {fileID: 1377159363}
+  - {fileID: 1942684967}
   couches:
   - {fileID: 1858748589}
   - {fileID: 973742652}
@@ -2357,12 +2363,6 @@ MonoBehaviour:
   - {fileID: 381467078}
   - {fileID: 585637637}
   - {fileID: 57363615}
-  tables:
-  - {fileID: 931058968}
-  - {fileID: 1639369976}
-  equippedTable:
-  - {fileID: 1377159363}
-  - {fileID: 1942684967}
   rugs:
   - {fileID: 2292772}
   - {fileID: 1537226335}

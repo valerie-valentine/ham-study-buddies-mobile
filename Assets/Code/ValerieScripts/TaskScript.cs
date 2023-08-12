@@ -34,17 +34,22 @@ public class TaskScript : MonoBehaviour
     public void StoreName()
     {
         taskName = InputField.GetComponent<TMP_InputField>().text;
+
+        if (string.IsNullOrEmpty(taskName))
+        {
+            Debug.Log("Task name is empty. Cannot add an empty task.");
+            return;
+        }
+
         TextDisplay.SetText(taskName);
         TextDisplay.enabled = true;
 
-        if (taskName != null)
-        {
-            //InputField.enabled = false;
-            InputField.SetActive(false);
-        }
+        // Hide the input field when a valid task name is entered
+        InputField.SetActive(false);
 
         AddTaskToFirestore();
     }
+
 
     public void AddTaskToFirestore()
     {

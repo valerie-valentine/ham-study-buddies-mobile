@@ -217,6 +217,16 @@ public class PomoTimer : MonoBehaviour
     //    seedInfoDisplay.SetActive(false); // Hide the display after the duration
     //}
 
+    //public async void loseSeedOnLogout()
+    //{
+    //    if (timerActive == true)
+    //    {
+    //        var currencyManager = CurrencyManager.instance;
+    //        float? currentBankOnceAgain = await currencyManager.GetCurrency();
+    //        await currencyManager.UpdateCurrency(currentBankOnceAgain.Value - currency);
+    //    }
+    //}
+
 }
 
 
