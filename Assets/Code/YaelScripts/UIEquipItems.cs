@@ -35,11 +35,11 @@ public class UIEquipItems : MonoBehaviour
     public Button[] decor;
     public GameObject[] equippedDecor;
 
-    public Button[] couches;
-    public GameObject[] equippedCouch;
-
     public Button[] tables;
     public GameObject[] equippedTable;
+
+    public Button[] couches;
+    public GameObject[] equippedCouch;
 
     public Button[] rugs;
     public GameObject[] equippedRug;
@@ -56,7 +56,18 @@ public class UIEquipItems : MonoBehaviour
     {
         inventoryManager = InventoryManager.instance;
         //await inventoryManager.GetEquippedStatus();
+
+        EquipItemDisplay(equippedHeadgear, headgear);
+        EquipItemDisplay(equippedEyewear, eyewear);
+        EquipItemDisplay(equippedNeckwear, neckwear);
+        EquipItemDisplay(equippedHandheld, handheld);
+        EquipItemDisplay(equippedBody, body);
+
         EquipItemDisplay(equippedDecor, decor);
+        EquipItemDisplay(equippedTable, tables);
+        EquipItemDisplay(equippedCouch, couches);
+        EquipItemDisplay(equippedRug, rugs);
+        EquipItemDisplay(equippedWallpaper, wallpapers);
 
         //instances go here
         if (instance == null)
@@ -124,226 +135,62 @@ public class UIEquipItems : MonoBehaviour
 
     public void EquipHeadgear(int Index)
     {
-        if (equippedHeadgear[Index].activeSelf)
-        {
-            headgear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            equippedHeadgear[Index].SetActive(false);
-
-        }
-        else
-        {
-            for (int i = 0; i < headgear.Length; i++)
-            {
-                equippedHeadgear[i].SetActive(false);
-                headgear[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            }
-
-
-            GameObject itemToToggle = equippedHeadgear[Index];
-            itemToToggle.SetActive(true);
-            headgear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-        }
+       EquipItemHelper(headgear, equippedHeadgear, Index, "headgear");
     }
 
     
     public void EquipEyewear(int Index)
     {
-        if (equippedEyewear[Index].activeSelf)
-        {
-            eyewear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            equippedEyewear[Index].SetActive(false);
-        }
-        else
-        {
-            for (int i = 0; i < eyewear.Length; i++)
-        {
-                equippedEyewear[i].SetActive(false);
-                eyewear[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
-        }
-            GameObject itemToToggle = equippedEyewear[Index];
-            itemToToggle.SetActive(true);
-            eyewear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-        }
-
+        EquipItemHelper(eyewear, equippedEyewear, Index, "eyewear");
     }
 
 
     public void EquipNeckwear(int Index)
     {
-        if (equippedNeckwear[Index].activeSelf)
-        {
-            neckwear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            equippedNeckwear[Index].SetActive(false);
-
-        }
-        else
-        {
-
-            for (int i = 0; i < neckwear.Length; i++)
-            {
-                equippedNeckwear[i].SetActive(false);
-                neckwear[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            }
-            GameObject itemToToggle = equippedNeckwear[Index];
-            itemToToggle.SetActive(true);
-            neckwear[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-        }
-
+        EquipItemHelper(neckwear, equippedNeckwear, Index, "neckwear");
     }
 
 
     public void EquipHandheld(int Index)
     {
-        if (equippedHandheld[Index].activeSelf)
-        {
-            handheld[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            equippedHandheld[Index].SetActive(false);
-
-        }
-        else
-        {
-
-            for (int i = 0; i < handheld.Length; i++)
-            {
-                equippedHandheld[i].SetActive(false);
-                handheld[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            }
-        GameObject itemToToggle = equippedHandheld[Index];
-        itemToToggle.SetActive(true);
-        handheld[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-        }
-
+      EquipItemHelper(handheld, equippedHandheld, Index, "handheld");
     }
 
 
     public void EquipBody(int Index)
     {
-        if (equippedBody[Index].activeSelf)
-        {
-            body[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            equippedBody[Index].SetActive(false);
-
-        }
-        else
-        {
-            for (int i = 0; i < body.Length; i++)
-            {
-                equippedBody[i].SetActive(false);
-                body[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            }
-        GameObject itemToToggle = equippedBody[Index];
-        itemToToggle.SetActive(true);
-        body[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-        }
-
+       EquipItemHelper(body, equippedBody, Index, "body");
     }
 
     ////furniture equip by section
 
     public void EquipDecor(int Index)
     {
-        EquipItemHelper(decor, equippedDecor, Index, "decor");
+      EquipItemHelper(decor, equippedDecor, Index, "decor");
+    }
 
+    public void EquipTables(int Index)
+    {
+        EquipItemHelper(tables, equippedTable, Index, "table");
     }
 
 
     public void EquipCouches(int Index)
     {
-        if (equippedCouch[Index].activeSelf)
-        {
-            couches[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            equippedCouch[Index].SetActive(false);
-
-        }
-        else
-        {
-
-            for (int i = 0; i < couches.Length; i++)
-            {
-                equippedCouch[i].SetActive(false);
-                couches[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            }
-        GameObject itemToToggle = equippedCouch[Index];
-        itemToToggle.SetActive(true);
-        couches[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-        }
+      EquipItemHelper(couches, equippedCouch, Index, "couch");
 
     }
 
-    public void EquipTables(int Index)
-    {
-        if (equippedTable[Index].activeSelf)
-        {
-            tables[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            equippedTable[Index].SetActive(false);
-
-        }
-        else
-        {
-
-            for (int i = 0; i < tables.Length; i++)
-            {
-                equippedTable[i].SetActive(false);
-                tables[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            }
-
-
-        GameObject itemToToggle = equippedTable[Index];
-        itemToToggle.SetActive(true);
-        tables[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-        }
-
-    }
 
     public void EquipRugs(int Index)
     {
-        if (equippedRug[Index].activeSelf)
-        {
-            rugs[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            equippedRug[Index].SetActive(false);
-
-        }
-        else
-        {
-
-            for (int i = 0; i < rugs.Length; i++)
-            {
-                equippedRug[i].SetActive(false);
-                rugs[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            }
-   
-        GameObject itemToToggle = equippedRug[Index];
-        itemToToggle.SetActive(true);
-        rugs[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-        }
-
+        EquipItemHelper(rugs, equippedRug, Index, "rug");
     }
 
 
     public void EquipWallpapers(int Index)
     {
-        if (equippedWallpaper[Index].activeSelf)
-        {
-            wallpapers[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            equippedWallpaper[Index].SetActive(false);
-
-        }
-        else
-        {
-
-            for (int i = 0; i < wallpapers.Length; i++)
-            {
-                equippedWallpaper[i].SetActive(false);
-                wallpapers[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
-            }
-
-
-
-            GameObject itemToToggle = equippedWallpaper[Index];
-            itemToToggle.SetActive(true);
-            wallpapers[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-        }
-
+        EquipItemHelper(wallpapers, equippedWallpaper, Index, "wallpaper");
     }
 
 

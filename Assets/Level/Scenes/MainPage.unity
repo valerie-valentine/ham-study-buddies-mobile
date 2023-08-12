@@ -393,10 +393,10 @@ RectTransform:
   - {fileID: 1018594285}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -820}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8254921
 MonoBehaviour:
@@ -451,7 +451,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 6
           m_FloatArgument: 0
-          m_StringArgument: CoffeeTable_furniture_table_4_0
+          m_StringArgument: CoffeeTable_furniture_table_4_4
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &8254922
@@ -996,10 +996,10 @@ MonoBehaviour:
   - {fileID: 2001955623}
   - {fileID: 1153761240}
   - {fileID: 857766299}
-  - {fileID: 1241262454}
-  - {fileID: 962161558}
   - {fileID: 8254921}
   - {fileID: 2144921636}
+  - {fileID: 1241262454}
+  - {fileID: 962161558}
   - {fileID: 443731744}
   - {fileID: 880816559}
   - {fileID: 518479048}
@@ -1009,10 +1009,10 @@ MonoBehaviour:
   - {fileID: 586363814}
   - {fileID: 774846365}
   - {fileID: 1794293860}
-  - {fileID: 1858748587}
-  - {fileID: 973742651}
   - {fileID: 931058966}
   - {fileID: 1639369974}
+  - {fileID: 1858748587}
+  - {fileID: 973742651}
   - {fileID: 2292770}
   - {fileID: 1537226333}
   - {fileID: 737786447}
@@ -1545,7 +1545,7 @@ GameObject:
   - component: {fileID: 57363616}
   - component: {fileID: 57363617}
   m_Layer: 0
-  m_Name: MovingBoxDisplay
+  m_Name: CardboardboxDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1918,8 +1918,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1994337983}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.79703784}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5447,10 +5447,10 @@ RectTransform:
   - {fileID: 5288729}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -2570}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286051075
 MonoBehaviour:
@@ -5505,7 +5505,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: AnselGlasses_accessories_eyewear_5_0
+          m_StringArgument: AnselGlasses_accessories_eyewear_5_2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &286051076
@@ -6342,7 +6342,7 @@ GameObject:
   - component: {fileID: 368576686}
   - component: {fileID: 368576687}
   m_Layer: 0
-  m_Name: SunglassesDisplay
+  m_Name: SunGlassesDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6921,10 +6921,10 @@ RectTransform:
   - {fileID: 1657421547}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -4320}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &398185737
 MonoBehaviour:
@@ -6979,7 +6979,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 13
           m_FloatArgument: 0
-          m_StringArgument: Apron_accessories_body_4_1
+          m_StringArgument: Apron_accessories_body_4_13
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &398185738
@@ -7660,10 +7660,10 @@ RectTransform:
   - {fileID: 1502693057}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -1520}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &443731744
 MonoBehaviour:
@@ -7718,7 +7718,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 8
           m_FloatArgument: 0
-          m_StringArgument: FuzzyRug_furniture_rug_4_0
+          m_StringArgument: FuzzyRug_furniture_rug_4_8
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &443731745
@@ -8424,7 +8424,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 10
           m_FloatArgument: 0
-          m_StringArgument: BlueWallpaper_furniture_wallpaper_3_0
+          m_StringArgument: BlueWallpaper_furniture_wallpaper_3_10
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &518479049
@@ -8481,10 +8481,10 @@ RectTransform:
   - {fileID: 753021352}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -1870}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &520392288
 GameObject:
@@ -10051,7 +10051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &623966074
 Transform:
   m_ObjectHideFlags: 0
@@ -10132,7 +10132,7 @@ GameObject:
   - component: {fileID: 643766870}
   - component: {fileID: 643766869}
   m_Layer: 5
-  m_Name: SunglassesBuy
+  m_Name: SunGlassesBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10154,10 +10154,10 @@ RectTransform:
   - {fileID: 961843127}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -2570}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &643766869
 MonoBehaviour:
@@ -10212,7 +10212,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
           m_FloatArgument: 0
-          m_StringArgument: SunGlasses_accessories_eyewear_6_1
+          m_StringArgument: SunGlasses_accessories_eyewear_6_3
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &643766870
@@ -11001,10 +11001,10 @@ RectTransform:
   - {fileID: 653645691}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -4320}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &695044489
 MonoBehaviour:
@@ -11059,7 +11059,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 12
           m_FloatArgument: 0
-          m_StringArgument: Uniform_accessories_body_5_2
+          m_StringArgument: Uniform_accessories_body_5_12
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &695044490
@@ -11129,20 +11129,20 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 623966074}
   - {fileID: 539106518}
   - {fileID: 1705382518}
   - {fileID: 1014021841}
   - {fileID: 1410605050}
-  - {fileID: 381467080}
-  - {fileID: 585637638}
   - {fileID: 1377159364}
   - {fileID: 1942684968}
+  - {fileID: 381467080}
+  - {fileID: 585637638}
   - {fileID: 1774869756}
   - {fileID: 131348980}
-  - {fileID: 57363616}
   - {fileID: 1307189971}
   - {fileID: 655211096}
+  - {fileID: 623966074}
+  - {fileID: 57363616}
   - {fileID: 1107102398}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12447,10 +12447,10 @@ RectTransform:
   - {fileID: 1483667666}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -3270}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &788096947
 MonoBehaviour:
@@ -12505,7 +12505,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 7
           m_FloatArgument: 0
-          m_StringArgument: PinkCow_accessories_handheld_7_1
+          m_StringArgument: PinkCow_accessories_handheld_7_7
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &788096948
@@ -12826,10 +12826,10 @@ RectTransform:
   - {fileID: 1271886742}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -2920}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &818701714
 MonoBehaviour:
@@ -12884,7 +12884,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 5
           m_FloatArgument: 0
-          m_StringArgument: Bowtie_accessories_neckwear_3_1
+          m_StringArgument: Bowtie_accessories_neckwear_3_5
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &818701715
@@ -13361,10 +13361,10 @@ RectTransform:
   - {fileID: 980280626}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -470}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &857766299
 MonoBehaviour:
@@ -13987,10 +13987,10 @@ RectTransform:
   - {fileID: 900050073}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -1520}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &880816559
 MonoBehaviour:
@@ -14045,7 +14045,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 9
           m_FloatArgument: 0
-          m_StringArgument: WovenRug_furniture_rug_8_1
+          m_StringArgument: WovenRug_furniture_rug_8_9
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &880816560
@@ -15499,10 +15499,10 @@ RectTransform:
   - {fileID: 450753662}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -1170}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &962161558
 MonoBehaviour:
@@ -15557,7 +15557,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 5
           m_FloatArgument: 0
-          m_StringArgument: Papasan_furniture_couch_8_1
+          m_StringArgument: Papasan_furniture_couch_8_7
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &962161559
@@ -16359,21 +16359,21 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1516963738}
-  - {fileID: 1833166449}
   - {fileID: 1423037891}
   - {fileID: 586363815}
   - {fileID: 774846366}
   - {fileID: 1794293861}
-  - {fileID: 1858748588}
-  - {fileID: 973742655}
   - {fileID: 931058967}
   - {fileID: 1639369975}
+  - {fileID: 1858748588}
+  - {fileID: 973742655}
   - {fileID: 2292771}
   - {fileID: 1537226334}
   - {fileID: 737786451}
   - {fileID: 775063738}
   - {fileID: 1481475349}
+  - {fileID: 1516963738}
+  - {fileID: 1833166449}
   m_Father: {fileID: 2052480855}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -16795,7 +16795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1063063984
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17905,10 +17905,10 @@ RectTransform:
   - {fileID: 1422678211}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -2920}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1136440831
 MonoBehaviour:
@@ -17963,7 +17963,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
           m_FloatArgument: 0
-          m_StringArgument: YaelScarf_accessories_neckwear_3_0
+          m_StringArgument: YaelScarf_accessories_neckwear_3_4
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1136440832
@@ -18257,10 +18257,10 @@ RectTransform:
   - {fileID: 2033132250}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -470}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153761240
 MonoBehaviour:
@@ -19598,10 +19598,10 @@ RectTransform:
   - {fileID: 1227418625529386091}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -120}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1232014035
 MonoBehaviour:
@@ -19732,10 +19732,10 @@ RectTransform:
   - {fileID: 1075736920}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -1170}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1241262454
 MonoBehaviour:
@@ -19790,7 +19790,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
           m_FloatArgument: 0
-          m_StringArgument: PinkCouch_furniture_couch_6_0
+          m_StringArgument: PinkCouch_furniture_couch_6_6
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1241262455
@@ -20902,10 +20902,10 @@ RectTransform:
   - {fileID: 815065585}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -3620}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1329962162
 MonoBehaviour:
@@ -20960,7 +20960,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 8
           m_FloatArgument: 0
-          m_StringArgument: Boba_accessories_handheld_4_2
+          m_StringArgument: Boba_accessories_handheld_4_8
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1329962163
@@ -21558,10 +21558,10 @@ RectTransform:
   - {fileID: 175334508}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -3270}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.4999999}
 --- !u!114 &1377885449
 MonoBehaviour:
@@ -21616,7 +21616,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 6
           m_FloatArgument: 0
-          m_StringArgument: YvettFrog_accessories_handheld_7_0
+          m_StringArgument: YvettFrog_accessories_handheld_7_6
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1377885450
@@ -22499,10 +22499,10 @@ RectTransform:
   - {fileID: 740993765}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -3970}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1412907614
 MonoBehaviour:
@@ -22557,7 +22557,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 11
           m_FloatArgument: 0
-          m_StringArgument: Overalls_accessories_body_8_1
+          m_StringArgument: Overalls_accessories_body_8_11
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1412907615
@@ -23813,10 +23813,10 @@ RectTransform:
   - {fileID: 1129342481}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -2220}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1481946361
 MonoBehaviour:
@@ -28022,10 +28022,10 @@ RectTransform:
   - {fileID: 312859273}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -2220}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1716133081
 MonoBehaviour:
@@ -28610,7 +28610,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 11
           m_FloatArgument: 0
-          m_StringArgument: PinkWallpaper_furniture_wallpaper_3_1
+          m_StringArgument: PinkWallpaper_furniture_wallpaper_3_11
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1754216037
@@ -28667,10 +28667,10 @@ RectTransform:
   - {fileID: 219739377}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -1870}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1774869755
 GameObject:
@@ -28870,9 +28870,9 @@ RectTransform:
   m_Father: {fileID: 1705332249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1778394938
 MonoBehaviour:
@@ -31183,7 +31183,7 @@ GameObject:
   - component: {fileID: 2001955624}
   - component: {fileID: 2001955623}
   m_Layer: 5
-  m_Name: LavaLampbuy
+  m_Name: LavaLampBuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31205,10 +31205,10 @@ RectTransform:
   - {fileID: 1983224907}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -120}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2001955623
 MonoBehaviour:
@@ -31557,10 +31557,10 @@ RectTransform:
   - {fileID: 1510114032}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -3970}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2016720784
 MonoBehaviour:
@@ -31615,7 +31615,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 10
           m_FloatArgument: 0
-          m_StringArgument: GwenShirt_accessories_body_7_0
+          m_StringArgument: GwenShirt_accessories_body_7_10
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2016720785
@@ -32247,7 +32247,7 @@ GameObject:
   - component: {fileID: 2041143983}
   - component: {fileID: 2041143982}
   m_Layer: 5
-  m_Name: Sunglasses
+  m_Name: SunGlasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33356,10 +33356,10 @@ RectTransform:
   - {fileID: 1869956433}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -3620}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2105148934
 MonoBehaviour:
@@ -33414,7 +33414,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 9
           m_FloatArgument: 0
-          m_StringArgument: Ramen_accessories_handheld_6_3
+          m_StringArgument: Ramen_accessories_handheld_6_9
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2105148935
@@ -33565,10 +33565,10 @@ RectTransform:
   - {fileID: 1748680772}
   m_Father: {fileID: 1374884354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -820}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2144921636
 MonoBehaviour:
@@ -33623,7 +33623,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 7
           m_FloatArgument: 0
-          m_StringArgument: ModernTable_furniture_table_5_1
+          m_StringArgument: ModernTable_furniture_table_5_5
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2144921637
