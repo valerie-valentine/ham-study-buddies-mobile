@@ -235,30 +235,35 @@ public class AuthManager : MonoBehaviour
                                     {
                                         {"name", "Broom"},
                                         {"type", "furniture"},
+                                        {"subtype", "decor"},
                                         {"equipped", true}
                                     },
                                     new Dictionary<string, object>
                                     {
                                         {"name", "CardboardBox"},
                                         {"type", "furniture"},
+                                        {"subtype",  "couch"},
                                         {"equipped", true }
                                     },
                                     new Dictionary<string, object>
                                     {
                                         {"name", "HeadLeaf"},
                                         {"type", "accessories"},
+                                        {"subtype", "headgear"},
                                         {"equipped", false }
                                     },
                                     new Dictionary<string, object>
                                     {
                                         {"name", "HairBows"},
                                         {"type", "accessories"},
+                                        {"subtype", "headgear"},
                                         {"equipped", false }
                                     },
                                      new Dictionary<string, object>
                                     {
                                         {"name", "GreenWallpaper"},
                                         {"type", "furniture"},
+                                        {"subtype", "wallpaper"},
                                         {"equipped", true }
                                     }
                                 };

@@ -136,8 +136,9 @@ public class UIBuyItems : MonoBehaviour
 
         string name = stringList[0];
         string type = stringList[1];
-        int price = int.Parse(stringList[2]);
-        int FurnitureIndex = int.Parse(stringList[3]);
+        string subtype = stringList[2];   //headgear, add the rest here 
+        int price = int.Parse(stringList[3]);
+        int FurnitureIndex = int.Parse(stringList[4]);
 
         for (int i = 0; i < shoppingFurniture.Length; i++)
         {
@@ -147,7 +148,7 @@ public class UIBuyItems : MonoBehaviour
             shoppingFurniture[FurnitureIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
         }
 
-        inventoryManager.BuyItemDatabase(name, type, price);
+        inventoryManager.BuyItemDatabase(name, type, subtype, price);
 
     }
     // exactly the same as buy furniture but separation of concerns
