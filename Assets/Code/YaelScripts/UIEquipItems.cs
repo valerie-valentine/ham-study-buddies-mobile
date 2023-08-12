@@ -53,11 +53,11 @@ public class UIEquipItems : MonoBehaviour
     // item == dictionay[name]{
     
 
-    async void Awake()
+    void Awake()
     {
         inventoryManager = InventoryManager.instance;
         //await inventoryManager.GetEquippedStatus();
-        //EquipItemDisplay(equippedDecor, decor);
+        EquipItemDisplay(equippedDecor, decor);
 
         //instances go here
         if (instance == null)

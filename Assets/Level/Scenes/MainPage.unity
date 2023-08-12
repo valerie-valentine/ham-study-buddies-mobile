@@ -9520,7 +9520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &623966074
 Transform:
   m_ObjectHideFlags: 0
@@ -13470,7 +13470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10.999992, y: -125.99981}
+  m_AnchoredPosition: {x: 10.999992, y: -125.9998}
   m_SizeDelta: {x: 141.99, y: -106.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &900373399
@@ -28708,13 +28708,13 @@ MonoBehaviour:
       - m_Target: {fileID: 34763354}
         m_TargetAssemblyTypeName: UIBuyItems, Assembly-CSharp
         m_MethodName: BuyFurniture
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: LavaLamp_furniture_5_1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2001955624
