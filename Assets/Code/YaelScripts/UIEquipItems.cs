@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using TMPro;
 
 
-
 public class UIEquipItems : MonoBehaviour
 {
 
@@ -239,9 +238,6 @@ public class UIEquipItems : MonoBehaviour
 
     }
 
-
-
-
     ////furniture equip by section
 
     public void EquipDecor(int Index)
@@ -249,27 +245,6 @@ public class UIEquipItems : MonoBehaviour
         EquipItemHelper(decor, equippedDecor, Index, "decor");
 
     }
-
-
-    //if (equippedDecor[Index].activeSelf)
-    //{
-    //    decor[Index].GetComponentInChildren<TextMeshProUGUI>().text = "";
-    //    equippedDecor[Index].SetActive(false);
-
-    //}
-    //else
-    //{
-
-    //    for (int i = 0; i < decor.Length; i++)
-    //    {
-    //        equippedDecor[i].SetActive(false);
-    //        decor[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
-    //    }
-    //GameObject itemToToggle = equippedDecor[Index];
-    //itemToToggle.SetActive(true);
-    //decor[Index].GetComponentInChildren<TextMeshProUGUI>().text = "Equipped";
-    //}
-
 
 
     public void EquipCouches(int Index)
@@ -373,31 +348,4 @@ public class UIEquipItems : MonoBehaviour
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

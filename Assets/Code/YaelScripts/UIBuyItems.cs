@@ -34,39 +34,6 @@ public class UIBuyItems : MonoBehaviour
         
     }
 
-    //public void BuyFurniture(int FurnitureIndex)
-    //{
-    //    for (int i = 0; i < shoppingFurniture.Length; i++)
-    //    {
-    //        if (i == FurnitureIndex)
-    //            ownedFurniture[i].SetActive(true);
-    //        //owneFurniture is what is in users database
-    //        shoppingFurniture[FurnitureIndex].interactable = false;
-    //        shoppingFurniture[FurnitureIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
-
-
-
-    //    }
-    //}
-
-    //public void ShopDisplay()
-
-    //call get inventory, it returns a list of strings of item names . WE NEED THAT LIST
-    //inventoryManager.GetInventory()
-    //compare inventory list to shoppingfurniture and shopping accessories
-
-    // example of name in get inventory list "LilLamp"
-    //example of  name in shoppingfurniture "LilLampBuy"
-    // if name in get inventory list == (shoppingfurniture[furniture index] + "Buy" )
-    //shoppingFurniture[FurnitureIndex].interactable = false;
-    //shoppingFurniture[FurnitureIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
-
-    // example of name in get inventory list "ValsHeadphones"
-    //example of  name in shoppingfurniture "ValsHeadphonesBuy"
-    // if name in get inventory list == (shoppingfurniture[furniture index] + "Buy" )
-    // if name in get inventory list  == shop accessories
-    //shoppingAccessories[AccessoriesIndex].interactable = false;
-    //shoppingAccessories[AccessoriesIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
 
     public async void ShopDisplay()
     {
@@ -120,8 +87,6 @@ public class UIBuyItems : MonoBehaviour
                 ownedAccessories[accessoriesIndex].SetActive(true);
             }
         }
-
-
     }
 
 
@@ -177,4 +142,17 @@ public class UIBuyItems : MonoBehaviour
     }
 
   }
+
+
+//public void BuyFurniture(int FurnitureIndex)
+//{
+//    for (int i = 0; i < shoppingFurniture.Length; i++)
+//    {
+//        if (i == FurnitureIndex)
+//            ownedFurniture[i].SetActive(true);
+//        //owneFurniture is what is in users database
+//        shoppingFurniture[FurnitureIndex].interactable = false;
+//        shoppingFurniture[FurnitureIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
+//    }
+//}
 
