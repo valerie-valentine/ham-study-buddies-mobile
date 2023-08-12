@@ -71,8 +71,8 @@ public class InventoryManager : MonoBehaviour
 
         return namesList;
     }
-
-    public async void BuyItemDatabase(string name, string type, int price)
+     
+    public async void BuyItemDatabase(string name, string type, string subtype, int price)
     {
         //var currentUser = AuthManager.instance.User;
         var moneyDisplay = MoneyDisplay.instance;
@@ -86,13 +86,13 @@ public class InventoryManager : MonoBehaviour
         {
             float? updatedBank = userBank - price;
             await currencyManager.UpdateCurrency(updatedBank);
-            AddItemUserInventory(name, type);
+            AddItemUserInventory(name, type, subtype);
             moneyDisplay.DisplayCurrency();
             //call display currency so it changes money amount after purchase
         }
     }
 
-    public void AddItemUserInventory(string name, string type)
+    public void AddItemUserInventory(string name, string type, string subtype)
     {
         var currentUser = AuthManager.instance.User;
         DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId).Collection("inventory").Document();
@@ -101,6 +101,7 @@ public class InventoryManager : MonoBehaviour
         {
             { "name", name },
             { "type", type },
+            {"subtype", subtype},
             {"equipped", false }
         };
 
