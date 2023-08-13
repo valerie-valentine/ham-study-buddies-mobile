@@ -10,8 +10,6 @@ public class ScenesManager : MonoBehaviour
 
     public AudioManager audioManager;
 
-    public FirebaseAuth auth;
-
     private void Awake()
     {
         Instance = this;
