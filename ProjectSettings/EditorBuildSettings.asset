@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Level/Scenes/PickAHamster.unity
     guid: 856d158c8dc434212aed446497a9efa4
   - enabled: 1
+    path: Assets/Level/Scenes/HamLoadScene.unity
+    guid: 2ecfe916d45c64df28e6e6dc51c9fb1b
+  - enabled: 1
     path: Assets/Level/Scenes/MainPage.unity
     guid: 8b52ad40cab0b4ee0a117e81f50c7ec7
   m_configObjects:

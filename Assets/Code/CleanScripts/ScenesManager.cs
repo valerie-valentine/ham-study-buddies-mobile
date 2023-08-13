@@ -21,6 +21,7 @@ public class ScenesManager : MonoBehaviour
         StartPage,
         SignIn,
         PickAHamster,
+        HamLoadScene,
         MainPage
     }
 
@@ -28,13 +29,6 @@ public class ScenesManager : MonoBehaviour
     {
         SceneManager.LoadScene(scene.ToString());
     }
-
-    public void LoadMainPage()
-    {
-        SceneManager.LoadScene(Scene.MainPage.ToString());
-        audioManager.SetCurrentSceneMusic(audioManager.gameBackground);
-    }
-
 
     public void LoadStartPage()
     {
@@ -51,5 +45,16 @@ public class ScenesManager : MonoBehaviour
     public void LoadPickAHamsterPage()
     {
         SceneManager.LoadScene(Scene.PickAHamster.ToString());
+    }
+
+    public void LoadHamLoadScene()
+    {
+        SceneManager.LoadScene(Scene.HamLoadScene.ToString());
+    }
+
+    public void LoadMainPage()
+    {
+        SceneManager.LoadScene(Scene.MainPage.ToString());
+        audioManager.SetCurrentSceneMusic(audioManager.gameBackground);
     }
 }
