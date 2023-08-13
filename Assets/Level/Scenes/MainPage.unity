@@ -35707,7 +35707,7 @@ GameObject:
   - component: {fileID: 1751299731}
   - component: {fileID: 1751299730}
   m_Layer: 0
-  m_Name: Hamsternametest
+  m_Name: Hamstername
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35729,6 +35729,7 @@ MonoBehaviour:
   - {fileID: 2008001832}
   - {fileID: 963517328}
   - {fileID: 382893181}
+  - {fileID: 1244406885}
 --- !u!4 &1751299731
 Transform:
   m_ObjectHideFlags: 0
