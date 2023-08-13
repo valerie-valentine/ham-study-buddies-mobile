@@ -14,7 +14,7 @@ public class HamsterManager : MonoBehaviour
 
     void Awake()
     {
-        db = FirebaseFirestore.DefaultInstance;
+        db = FirebaseManager.instance.db;
         currentUser = UserManager.instance.User;
         Debug.Log($"Ready to update hamster for {currentUser.DisplayName}");
     }
