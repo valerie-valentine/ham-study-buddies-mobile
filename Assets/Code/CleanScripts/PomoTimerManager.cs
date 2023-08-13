@@ -18,18 +18,9 @@ public class PomoTimer : MonoBehaviour
     public GameObject Quit;
     public GameObject blushies;
     public float currency;
-    public CurrencyManager currencyManager;
     public GameObject seedInfoDisplay;
     public GameObject stopConfirmation;
     public TMP_Text seedText;
-
-
-
-    public void Awake()
-    {
-        //Must instantiate a new instance of CurrencyManager to be able to use in another script
-       
-    }
 
     void Start()
     {
@@ -94,22 +85,6 @@ public class PomoTimer : MonoBehaviour
 
         timeText.SetText(string.Format("{0:00}:{1:00}", minutes, seconds));
     }
-
-    //public async void StartTimer()
-    //{
-    //    var currencyManager = CurrencyManager.instance;
-    //    timerActive = true;
-    //    increaseButton.enabled = false;
-    //    decreaseButton.enabled = false;
-    //    currency = timeValue / 300;
-
-
-    //    float? currentBank = await currencyManager.GetCurrency();
-    //    currencyManager.UpdateCurrency(currentBank.Value + currency);
-
-    //    //StartCoroutine(ShowAndHideSeedInfo());
-
-    //}
 
     public void StartTimer()
     {
@@ -206,17 +181,6 @@ public class PomoTimer : MonoBehaviour
         seedInfoDisplay.SetActive(false);
     }
 
-    //public IEnumerator ShowAndHideSeedInfo()
-    //{
-    //    Debug.Log(currency);
-    //    seedText.SetText($"Sweet! You'll earn {currency} seeds for this task!");
-    //    seedInfoDisplay.SetActive(true);
-
-    //    yield return new WaitForSeconds(10); // Wait for the specified duration
-
-    //    seedInfoDisplay.SetActive(false); // Hide the display after the duration
-    //}
-
     //public async void loseSeedOnLogout()
     //{
     //    if (timerActive == true)
@@ -226,7 +190,6 @@ public class PomoTimer : MonoBehaviour
     //        await currencyManager.UpdateCurrency(currentBankOnceAgain.Value - currency);
     //    }
     //}
-
 }
 
 
