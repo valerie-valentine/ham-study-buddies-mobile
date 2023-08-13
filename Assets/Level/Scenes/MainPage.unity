@@ -13211,7 +13211,7 @@ GameObject:
   - component: {fileID: 863634373}
   - component: {fileID: 863634372}
   m_Layer: 5
-  m_Name: backArrow
+  m_Name: logOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
