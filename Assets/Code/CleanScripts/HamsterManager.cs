@@ -34,7 +34,8 @@ public class HamsterManager : MonoBehaviour
                 { "hamster", name }
             };
         await usersDocRef.SetAsync(update, SetOptions.MergeAll);
-        ScenesManager.Instance.LoadMainPage();
+        //ScenesManager.Instance.LoadMainPage();
+        ScenesManager.Instance.LoadHamLoadScene();
 
         Debug.Log($"Hamster {name} has been added to {currentUser.DisplayName}.");
     }

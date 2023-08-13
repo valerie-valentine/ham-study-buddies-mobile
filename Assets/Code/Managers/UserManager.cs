@@ -70,7 +70,8 @@ public class UserManager : MonoBehaviour
                 }
                 else
                 {
-                    ScenesManager.Instance.LoadMainPage();
+                    //ScenesManager.Instance.LoadMainPage();
+                    ScenesManager.Instance.LoadHamLoadScene();
                 }
                 return null;
 
