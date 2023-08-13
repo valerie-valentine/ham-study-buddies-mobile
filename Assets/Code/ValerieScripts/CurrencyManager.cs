@@ -14,15 +14,11 @@ public class CurrencyManager : MonoBehaviour
 {
     public static CurrencyManager instance;
     FirebaseFirestore db;
-    FirebaseUser currentUser;
 
     public void Awake()
     {
        
-        //db = FirebaseFirestore.DefaultInstance;
         db = FirebaseManager.instance.db;
-        currentUser = UserManager.instance.User;
-        Debug.Log($"In Currency Manager: {currentUser.UserId}");
 
         if (instance == null)
         {
@@ -45,7 +41,6 @@ public class CurrencyManager : MonoBehaviour
 
     public async Task<float?> GetCurrency()
     {
-        //var currentUser = AuthManager.instance.User;
         var currentUser = UserManager.instance.User;
         Debug.Log(currentUser.UserId);
         DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId);
@@ -68,7 +63,6 @@ public class CurrencyManager : MonoBehaviour
 
     public async Task UpdateCurrency(float? money)
     {
-        //var currentUser = AuthManager.instance.User;
         var currentUser = UserManager.instance.User;
         if (money == null)
         {
