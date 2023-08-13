@@ -17,10 +17,7 @@ public class AddTask : MonoBehaviour
 
     void Awake()
     {
-        // Initialize the FirebaseFirestore instance in the Awake method
-        db = FirebaseFirestore.DefaultInstance;
-
-
+        db = FirebaseManager.instance.db;
     }
 
     void Start()
@@ -34,7 +31,7 @@ public class AddTask : MonoBehaviour
     public void AddTaskToFirestore()
     {
         taskName = taskInputField.GetComponent<TMP_InputField>().text;
-        // Your Firestore data insertion code here...
+
         DocumentReference docRef = db.Collection("tasks").Document($"{taskName}");
 
         taskText.SetText(taskName);
@@ -62,8 +59,6 @@ public class AddTask : MonoBehaviour
             }
         });
 
-        //okTaskButton.interactable = false;
-
         if (taskName != null)
         {
             taskInputField.SetActive(false);
@@ -80,10 +75,7 @@ public class AddTask : MonoBehaviour
             {
                 taskText.SetText($"<s>{taskName}</s>");
             }
-
         }
-
-
 }
 
 
