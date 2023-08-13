@@ -42,7 +42,6 @@ public class CurrencyManager : MonoBehaviour
     public async Task<float?> GetCurrency()
     {
         var currentUser = UserManager.instance.User;
-        Debug.Log(currentUser.UserId);
         DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId);
         DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
         

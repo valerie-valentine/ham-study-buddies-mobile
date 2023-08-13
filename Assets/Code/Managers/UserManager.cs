@@ -230,7 +230,7 @@ public class UserManager : MonoBehaviour
                                     },
                                     new Dictionary<string, object>
                                     {
-                                        {"name", "CardboardBox"},
+                                        {"name", "Cardboardbox"},
                                         {"type", "furniture"},
                                         {"subtype",  "couch"},
                                         {"equipped", true }

@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Firebase;
 using Firebase.Firestore;
-using Firebase.Auth;
 using Firebase.Extensions;
 using System.Threading.Tasks;
 
@@ -11,7 +8,6 @@ using System.Threading.Tasks;
 public class InventoryManager : MonoBehaviour
 {
     FirebaseFirestore db;
-    public CurrencyManager currencyManager;
     public float currency;
     public float? userBank;
 
@@ -21,9 +17,7 @@ public class InventoryManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        db = FirebaseFirestore.DefaultInstance;
-        currencyManager = CurrencyManager.instance;
-
+        db = FirebaseManager.instance.db;
 
         if (instance == null)
         {
@@ -36,19 +30,13 @@ public class InventoryManager : MonoBehaviour
             Debug.Log($"CurrencyManager {gameObject.GetInstanceID()} has been DESTROYED");
             return;
         }
-
-
     }
 
-    // Update is called once per frame
-    void Start()
-    {
-
-    }
 
     public async Task<List<string>> GetInventory()
     {
-        var currentUser = AuthManager.instance.User;
+        var currentUser = UserManager.instance.User;
+
         List<string> namesList = new List<string>();
         Query allInventoryQuery = db.Collection("Users").Document(currentUser.UserId).Collection("inventory");
         QuerySnapshot allInventoryQuerySnapshot = await allInventoryQuery.GetSnapshotAsync();
@@ -74,10 +62,11 @@ public class InventoryManager : MonoBehaviour
      
     public async void BuyItemDatabase(string name, string type, string subtype, int price)
     {
-        //var currentUser = AuthManager.instance.User;
+        var currencyManager = CurrencyManager.instance;
         var moneyDisplay = MoneyDisplay.instance;
 
         userBank = await currencyManager.GetCurrency();
+
         if (price > userBank)
         {
             Debug.Log("You don't got monaaayyyy");
@@ -94,7 +83,7 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItemUserInventory(string name, string type, string subtype)
     {
-        var currentUser = AuthManager.instance.User;
+        var currentUser = UserManager.instance.User;
         DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId).Collection("inventory").Document();
 
         Dictionary<string, object> item = new Dictionary<string, object>
@@ -120,7 +109,7 @@ public class InventoryManager : MonoBehaviour
 
     public void EquipUserItem(string name, string subtype)
     {
-        var currentUser = AuthManager.instance.User;
+        var currentUser = UserManager.instance.User;
         CollectionReference inventoryRef = db.Collection("Users").Document(currentUser.UserId).Collection("inventory");
         Query query = inventoryRef.WhereEqualTo("subtype", subtype);
 
@@ -172,7 +161,7 @@ public class InventoryManager : MonoBehaviour
 
     public async Task<bool> GetEquippedStatus(string name)
     {
-        var currentUser = AuthManager.instance.User;
+        var currentUser = UserManager.instance.User;
         CollectionReference inventoryRef = db.Collection("Users").Document(currentUser.UserId).Collection("inventory");
         Query query = inventoryRef.WhereEqualTo("name", name);
         QuerySnapshot inventoryQuerySnapshot = await query.GetSnapshotAsync();
@@ -181,8 +170,6 @@ public class InventoryManager : MonoBehaviour
         {
             Dictionary<string, object> documentData = documentSnapshot.ToDictionary();
 
-            //bool equippedStatus = (bool)documentData["equipped"];
-            //return equippedStatus;
             if (documentData.TryGetValue("equipped", out object equippedObj) && equippedObj is bool equippedStatus)
             {
                 return equippedStatus;
