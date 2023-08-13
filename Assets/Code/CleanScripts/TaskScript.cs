@@ -17,9 +17,7 @@ public class TaskScript : MonoBehaviour
 
     void Awake()
     {
-        // Initialize the FirebaseFirestore instance in the Awake method
-        db = FirebaseFirestore.DefaultInstance;
-
+        db = FirebaseManager.instance.db;
     }
 
     private void Start()
@@ -51,7 +49,7 @@ public class TaskScript : MonoBehaviour
 
     public void AddTaskToFirestore()
     {
-        var currentUser = AuthManager.instance.User;
+        var currentUser = UserManager.instance.User;
         //DocumentReference docRef = db.Collection("tasks").Document($"{taskName}");
         DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId).Collection("tasks").Document($"{taskName}");
 
@@ -96,7 +94,7 @@ public class TaskScript : MonoBehaviour
 
     public void DeleteTask()
     {
-        var currentUser = AuthManager.instance.User;
+        var currentUser = UserManager.instance.User;
         if (taskName != "" && taskName != null)
         {
             DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId).Collection("tasks").Document($"{taskName}");
@@ -110,7 +108,7 @@ public class TaskScript : MonoBehaviour
 
     async void UpdateTaskCompleteStatus()
     {
-        var currentUser = AuthManager.instance.User;
+        var currentUser = UserManager.instance.User;
         DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId).Collection("tasks").Document($"{taskName}");
 
         DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
