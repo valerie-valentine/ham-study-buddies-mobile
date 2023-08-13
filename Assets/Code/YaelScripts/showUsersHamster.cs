@@ -16,10 +16,6 @@ public class showUsersHamster : MonoBehaviour
 
     public static showUsersHamster instance;
 
-    //whenever we LOAD the main page,
-    //we only want the hamster with a matching name to the users hamster to appear
-
-
     void Awake()
     {
 
@@ -33,8 +29,8 @@ public class showUsersHamster : MonoBehaviour
             Destroy(this);
         }
 
-        db = FirebaseFirestore.DefaultInstance;
-        currentUser = FirebaseAuth.DefaultInstance.CurrentUser;
+        db = FirebaseManager.instance.db;
+        currentUser = UserManager.instance.User;
 
     }
 
@@ -42,11 +38,6 @@ public class showUsersHamster : MonoBehaviour
     {
         ShowUsersHamster();
     }
-
-   
-
-
-    //conditionals, if name, get by index 
 
     public async void ShowUsersHamster()
     {
@@ -61,10 +52,6 @@ public class showUsersHamster : MonoBehaviour
                 hamsters[i].SetActive(false);
         }
     }
-
-
-
-
 
    //async function returning a task string , with async you need await 
     public async Task<string> GetHamster()
