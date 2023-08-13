@@ -206,7 +206,7 @@ public class UIEquipItems : MonoBehaviour
 
     public void EquipCurtains(int Index)
     {
-        EquipItemHelper(curtains, equippedWallpaper, Index, "curtain");
+        EquipItemHelper(curtains, equippedCurtain, Index, "curtain");
     }
 
 
