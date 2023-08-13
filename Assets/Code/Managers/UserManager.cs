@@ -206,7 +206,7 @@ public class UserManager : MonoBehaviour
                     Dictionary<string, object> user = new Dictionary<string, object>
                         {
                              {"username", _username},
-                             { "money", 0 },
+                             { "money", 10 },
                              { "hamster", "" }
                         };
 
