@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Firebase.Firestore;
-using Firebase.Auth;
 
 public class MoneyDisplay : MonoBehaviour
 {
     public static MoneyDisplay instance;
-    FirebaseUser currentUser;
     public CurrencyManager currencyManager;
     public TMP_Text currencyText;
     float? money;
@@ -17,7 +14,6 @@ public class MoneyDisplay : MonoBehaviour
     void Awake()
     {
         instance = this;
-        currentUser = AuthManager.instance.User;
         currencyManager = CurrencyManager.instance;
         DisplayCurrency();
 
