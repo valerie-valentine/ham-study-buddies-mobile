@@ -92,8 +92,9 @@ public class UIBuyItems : MonoBehaviour
 
 
 
-    public void BuyFurniture(string FurnitureData)
+    public async void BuyFurniture(string FurnitureData)
     {
+        var currencyManager = CurrencyManager.instance;
         string delimiter = "_";
         List<string> stringList = new List<string>();
         string[] parts = FurnitureData.Split(delimiter);
@@ -104,22 +105,27 @@ public class UIBuyItems : MonoBehaviour
         string subtype = stringList[2];   //headgear, add the rest here 
         int price = int.Parse(stringList[3]);
         int FurnitureIndex = int.Parse(stringList[4]);
+        float? userCurrency = await currencyManager.GetCurrency();
 
-        for (int i = 0; i < shoppingFurniture.Length; i++)
-        {
-            if (i == FurnitureIndex)
-                ownedFurniture[i].SetActive(true);
-            shoppingFurniture[FurnitureIndex].interactable = false;
-            shoppingFurniture[FurnitureIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
+
+        if (price < userCurrency) {
+            for (int i = 0; i < shoppingFurniture.Length; i++)
+            {
+                if (i == FurnitureIndex)
+                    ownedFurniture[i].SetActive(true);
+                shoppingFurniture[FurnitureIndex].interactable = false;
+                shoppingFurniture[FurnitureIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
+            }
+
+            inventoryManager.BuyItemDatabase(name, type, subtype, price);
         }
-
-        inventoryManager.BuyItemDatabase(name, type, subtype, price);
-
+        
     }
     // exactly the same as buy furniture but separation of concerns
 
-    public void BuyAccessories(string AccessoriesData)
+    public async void BuyAccessories(string AccessoriesData)
         {
+        var currencyManager = CurrencyManager.instance;
         string delimiter = "_";
         List<string> stringList = new List<string>();
         string[] parts = AccessoriesData.Split(delimiter);
@@ -130,15 +136,19 @@ public class UIBuyItems : MonoBehaviour
         string subtype = stringList[2];
         int price = int.Parse(stringList[3]);
         int AccessoriesIndex = int.Parse(stringList[4]);
+        float? userCurrencyAgain = await currencyManager.GetCurrency();
 
-        for (int i = 0; i < shoppingAccessories.Length; i++)
+        if (price < userCurrencyAgain)
+        {
+            for (int i = 0; i < shoppingAccessories.Length; i++)
             {
                 if (i == AccessoriesIndex)
                     ownedAccessories[i].SetActive(true);
                 shoppingAccessories[AccessoriesIndex].interactable = false;
                 shoppingAccessories[AccessoriesIndex].GetComponentInChildren<TextMeshProUGUI>().text = "Owned";
             }
-        inventoryManager.BuyItemDatabase(name, type, subtype, price);
+            inventoryManager.BuyItemDatabase(name, type, subtype, price);
+        }
     }
 
   }

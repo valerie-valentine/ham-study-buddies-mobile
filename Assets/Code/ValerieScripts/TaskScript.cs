@@ -27,8 +27,6 @@ public class TaskScript : MonoBehaviour
         TextDisplay.enabled = false;
         clearTaskButton.onClick.AddListener(DeleteTask);
         CheckCompleteButton.onClick.AddListener(MarkTaskComplete);
-        DeleteTask();
-        MarkTaskComplete();
     }
 
     public void StoreName()
@@ -53,7 +51,10 @@ public class TaskScript : MonoBehaviour
 
     public void AddTaskToFirestore()
     {
-        DocumentReference docRef = db.Collection("tasks").Document($"{taskName}");
+        var currentUser = AuthManager.instance.User;
+        //DocumentReference docRef = db.Collection("tasks").Document($"{taskName}");
+        DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId).Collection("tasks").Document($"{taskName}");
+
 
 
         Dictionary<string, object> task = new Dictionary<string, object>
@@ -88,20 +89,56 @@ public class TaskScript : MonoBehaviour
         {
             TextDisplay.SetText($"<s>{taskName}</s>");
         }
-        
+
+        UpdateTaskCompleteStatus();
+
     }
 
     public void DeleteTask()
     {
+        var currentUser = AuthManager.instance.User;
         if (taskName != "" && taskName != null)
         {
-            DocumentReference docRef = db.Collection("tasks").Document(taskName);
+            DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId).Collection("tasks").Document($"{taskName}");
             docRef.DeleteAsync();
         }
 
         TextDisplay.enabled = false;
         InputField.SetActive(true);
         InputField.GetComponent<TMP_InputField>().text = "";
+    }
+
+    async void UpdateTaskCompleteStatus()
+    {
+        var currentUser = AuthManager.instance.User;
+        DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId).Collection("tasks").Document($"{taskName}");
+
+        DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+
+        if (snapshot.Exists)
+        {
+            Dictionary<string, object> data = snapshot.ToDictionary();
+
+            if (data.TryGetValue("isComplete", out object isCompleteObj) && isCompleteObj is bool currentIsComplete)
+            {
+                bool newIsComplete = !currentIsComplete;
+
+                Dictionary<string, object> update = new Dictionary<string, object>
+            {
+                {"isComplete", newIsComplete}
+            };
+
+                await docRef.SetAsync(update, SetOptions.MergeAll);
+            }
+            else
+            {
+                Debug.LogWarning("isComplete field not found or not of boolean type.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Document doesn't exist.");
+        }
     }
 
 }
