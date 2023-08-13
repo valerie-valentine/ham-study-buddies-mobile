@@ -11,13 +11,11 @@ public class HamsterManager : MonoBehaviour
 {
     FirebaseFirestore db;
     FirebaseUser currentUser;
-    public AuthManager authManager;
 
     void Awake()
     {
         db = FirebaseFirestore.DefaultInstance;
-        currentUser = AuthManager.instance.User;
-
+        currentUser = UserManager.instance.User;
         Debug.Log($"Ready to update hamster for {currentUser.DisplayName}");
     }
 
@@ -30,7 +28,6 @@ public class HamsterManager : MonoBehaviour
         }
 
         DocumentReference usersDocRef = db.Collection("Users").Document(currentUser.UserId);
-        Debug.Log($"Current User: {currentUser}");
 
         Dictionary<string, object> update = new Dictionary<string, object>
             {
