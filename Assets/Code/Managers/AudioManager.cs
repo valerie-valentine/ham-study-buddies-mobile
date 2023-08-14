@@ -9,8 +9,12 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Clips")]
     public AudioClip startMenuBackground;
     public AudioClip gameBackground;
-    //public AudioClip nameOfSFX1;
-    //public AudioClip nameOfSFX2;
+    public AudioClip startButtonClickSFX;
+    public AudioClip hamsterClickSFX;
+    public AudioClip buttonClickSFX;
+    public AudioClip timerCompletedClickSFX;
+    public AudioClip animeSparklesSFX;
+    public AudioClip animePowerUpSFX;
     private AudioClip currentSceneMusic;
 
     public static AudioManager instance;
@@ -52,6 +56,37 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
+    }
+
+    // to be called by OnClick
+    public void PlayStartButtonClickSFX()
+    {
+        SFXSource.PlayOneShot(startButtonClickSFX);
+    }
+
+    public void PlayHamsterClickSFX()
+    {
+        SFXSource.PlayOneShot(hamsterClickSFX);
+    }
+
+    public void PlayButtonClickSFX()
+    {
+        SFXSource.PlayOneShot(buttonClickSFX);
+    }
+
+    public void PlayTimerCompletedClickSFX()
+    {
+        SFXSource.PlayOneShot(timerCompletedClickSFX);
+    }
+
+    public void PlayAnimeSparklesSFX()
+    {
+        SFXSource.PlayOneShot(animeSparklesSFX);
+    }
+
+    public void PlayAnimePowerUpSFX()
+    {
+        SFXSource.PlayOneShot(animePowerUpSFX);
     }
 }
 
