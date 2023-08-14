@@ -121,13 +121,13 @@ public class UserManager : MonoBehaviour
                     message = "Missing Password";
                     break;
                 case AuthError.WrongPassword:
-                    message = "Wrong Password";
+                    message = "Invalid Email or Password";
                     break;
                 case AuthError.InvalidEmail:
-                    message = "Invalid Email";
+                    message = "Invalid Email or Password";
                     break;
                 case AuthError.UserNotFound:
-                    message = "Account does not exist";
+                    message = "Invalid Email or Password";
                     break;
             }
             warningLoginText.text = message;
