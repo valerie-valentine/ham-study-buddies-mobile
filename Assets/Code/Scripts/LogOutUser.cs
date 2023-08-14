@@ -14,8 +14,14 @@ public class LogOutUser : MonoBehaviour
         auth = FirebaseManager.instance.auth;
     }
 
-    public void Logout()
+    public async void Logout()
     {
+        var pomoTimer = PomoTimer.instance;
+
+        if (pomoTimer != null)
+        {
+            await pomoTimer.loseSeedOnLogout();
+        }
 
         if (auth != null)
         {

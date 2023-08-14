@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using System.Threading.Tasks;
 
 public class PomoTimer : MonoBehaviour
 {
+    public static PomoTimer instance;
     public float timeValue;
     public TMP_Text timeText;
     public bool timerActive = false;
@@ -24,6 +25,7 @@ public class PomoTimer : MonoBehaviour
 
     void Start()
     {
+        instance = this;
         timeValue = 0;
         blushies.SetActive(false);
         seedInfoDisplay.SetActive(false);
@@ -181,15 +183,15 @@ public class PomoTimer : MonoBehaviour
         seedInfoDisplay.SetActive(false);
     }
 
-    //public async void loseSeedOnLogout()
-    //{
-    //    if (timerActive == true)
-    //    {
-    //        var currencyManager = CurrencyManager.instance;
-    //        float? currentBankOnceAgain = await currencyManager.GetCurrency();
-    //        await currencyManager.UpdateCurrency(currentBankOnceAgain.Value - currency);
-    //    }
-    //}
+    public async Task loseSeedOnLogout()
+    {
+        if (timerActive == true)
+        {
+            var currencyManager = CurrencyManager.instance;
+            float? currentBankOnceAgain = await currencyManager.GetCurrency();
+            await currencyManager.UpdateCurrency(currentBankOnceAgain.Value - currency);
+        }
+    }
 }
 
 
