@@ -325,7 +325,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 175382792}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 403641264}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayStartButtonClickSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &175382792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,8 +573,7 @@ MonoBehaviour:
   timerCompletedClickSFX: {fileID: 8300000, guid: d5135b283cf0a429f918da96fea908b2, type: 3}
   animeSparklesSFX: {fileID: 8300000, guid: afdcf72ed400540ac9310a483ffa41df, type: 3}
   animePowerUpSFX: {fileID: 8300000, guid: 17eb4de2523d042d8b58e7a2e2fe6521, type: 3}
-  nameOfSFX1: {fileID: 0}
-  nameOfSFX2: {fileID: 0}
+  animeYellSFX: {fileID: 8300000, guid: 9c5a941396f61401a90b12bb308936cc, type: 3}
 --- !u!1 &600883980
 GameObject:
   m_ObjectHideFlags: 0

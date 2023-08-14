@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip timerCompletedClickSFX;
     public AudioClip animeSparklesSFX;
     public AudioClip animePowerUpSFX;
+    public AudioClip animeYellSFX;
     private AudioClip currentSceneMusic;
 
     public static AudioManager instance;
@@ -86,6 +87,17 @@ public class AudioManager : MonoBehaviour
 
     public void PlayAnimePowerUpSFX()
     {
+        SFXSource.PlayOneShot(animePowerUpSFX);
+    }
+
+    public void PlayAnimeYellSFX()
+    {
+        SFXSource.PlayOneShot(animeYellSFX);
+    }
+
+    public void PlaySaiyanSFX()
+    {
+        SFXSource.PlayOneShot(animeYellSFX);
         SFXSource.PlayOneShot(animePowerUpSFX);
     }
 }
