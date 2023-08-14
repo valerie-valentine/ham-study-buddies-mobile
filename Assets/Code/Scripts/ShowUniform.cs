@@ -15,7 +15,7 @@ public class ShowUniform : MonoBehaviour
     {
         objectToShow.SetActive(true);
 
-        yield return new WaitForSeconds(1.2f); // Show the object for 1 second
+        yield return new WaitForSeconds(1.3f); // Show the object for 1 second
 
         objectToShow.SetActive(false);
     }
