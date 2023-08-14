@@ -24,7 +24,7 @@ public class AsyncLoader : MonoBehaviour
     IEnumerator StartLoadingWithDelay(int sceneId)
     {
         // loadingScreen.SetActive(true);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(LoadSceneAsync(sceneId));
     }
     // public void hideLoadScreen()
