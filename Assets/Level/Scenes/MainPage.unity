@@ -840,10 +840,10 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 216729766}
-        m_TargetAssemblyTypeName: TaskScript, Assembly-CSharp
-        m_MethodName: StoreName
-        m_Mode: 1
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: AddTaskToFirestore
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3719,7 +3719,7 @@ MonoBehaviour:
   m_text: Enter text...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa39791b947de4eaaa65c2766be24728, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -8498197465688492438, guid: aa39791b947de4eaaa65c2766be24728, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4161,14 +4161,14 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 216729764}
-        m_TargetAssemblyTypeName: TaskScript, Assembly-CSharp
-        m_MethodName: StoreName
-        m_Mode: 1
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: AddTaskToFirestore
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4390,12 +4390,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 216729762}
-  - component: {fileID: 216729766}
-  - component: {fileID: 216729769}
-  - component: {fileID: 216729768}
-  - component: {fileID: 216729767}
-  - component: {fileID: 216729765}
-  - component: {fileID: 216729764}
   - component: {fileID: 216729763}
   m_Layer: 0
   m_Name: notepadWindow
@@ -4403,7 +4397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &216729762
 Transform:
   m_ObjectHideFlags: 0
@@ -4457,116 +4451,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 216729761}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bd778b5f026248cc90a3958fa294210, type: 3}
+  m_Script: {fileID: 11500000, guid: 809f43b1ad3444771aea716135b996c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskName: 
-  InputField: {fileID: 2051308136}
-  TextDisplay: {fileID: 670604881}
-  clearTaskButton: {fileID: 459931720}
-  CheckCompleteButton: {fileID: 1430470177}
---- !u!114 &216729764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216729761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bd778b5f026248cc90a3958fa294210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskName: 
-  InputField: {fileID: 206347081}
-  TextDisplay: {fileID: 2097158189}
-  clearTaskButton: {fileID: 546707353}
-  CheckCompleteButton: {fileID: 561185144}
---- !u!114 &216729765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216729761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bd778b5f026248cc90a3958fa294210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskName: 
-  InputField: {fileID: 1482392786}
-  TextDisplay: {fileID: 493438250}
-  clearTaskButton: {fileID: 1196960585}
-  CheckCompleteButton: {fileID: 1831230206}
---- !u!114 &216729766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216729761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bd778b5f026248cc90a3958fa294210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskName: 
-  InputField: {fileID: 28084682}
-  TextDisplay: {fileID: 1000938179}
-  clearTaskButton: {fileID: 1116347507}
-  CheckCompleteButton: {fileID: 908404395}
---- !u!114 &216729767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216729761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bd778b5f026248cc90a3958fa294210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskName: 
-  InputField: {fileID: 1399919598}
-  TextDisplay: {fileID: 1919624150}
-  clearTaskButton: {fileID: 2017766690}
-  CheckCompleteButton: {fileID: 727706296}
---- !u!114 &216729768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216729761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bd778b5f026248cc90a3958fa294210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskName: 
-  InputField: {fileID: 1415015196}
-  TextDisplay: {fileID: 285397298}
-  clearTaskButton: {fileID: 595563933}
-  CheckCompleteButton: {fileID: 865694873}
---- !u!114 &216729769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216729761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bd778b5f026248cc90a3958fa294210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskName: 
-  InputField: {fileID: 1565693752}
-  TextDisplay: {fileID: 1824408189}
-  clearTaskButton: {fileID: 912824658}
-  CheckCompleteButton: {fileID: 292233239}
+  inputFields:
+  - {fileID: 28084682}
+  - {fileID: 1565693752}
+  - {fileID: 1415015196}
+  - {fileID: 1399919598}
+  - {fileID: 1482392786}
+  - {fileID: 206347081}
+  - {fileID: 2051308136}
+  textDisplays:
+  - {fileID: 1000938179}
+  - {fileID: 1824408189}
+  - {fileID: 285397298}
+  - {fileID: 1919624150}
+  - {fileID: 493438250}
+  - {fileID: 2097158189}
+  - {fileID: 670604881}
+  clearTaskButtons:
+  - {fileID: 1116347507}
+  - {fileID: 912824658}
+  - {fileID: 595563933}
+  - {fileID: 2017766690}
+  - {fileID: 1196960585}
+  - {fileID: 546707353}
+  - {fileID: 459931720}
+  checkCompleteButtons:
+  - {fileID: 908404395}
+  - {fileID: 292233239}
+  - {fileID: 865694873}
+  - {fileID: 727706296}
+  - {fileID: 1831230206}
+  - {fileID: 561185144}
+  - {fileID: 1430470177}
 --- !u!1 &219577689
 GameObject:
   m_ObjectHideFlags: 0
@@ -4942,7 +4861,7 @@ MonoBehaviour:
   m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa39791b947de4eaaa65c2766be24728, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -8498197465688492438, guid: aa39791b947de4eaaa65c2766be24728, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5480,7 +5399,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 292233240}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: MarkTaskComplete
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &292233240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6684,7 +6615,7 @@ MonoBehaviour:
   m_text: Enter text...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa39791b947de4eaaa65c2766be24728, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -8498197465688492438, guid: aa39791b947de4eaaa65c2766be24728, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7671,7 +7602,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 459931721}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: DeleteTask
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &459931721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8680,7 +8623,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 546707354}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: DeleteTask
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &546707354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8892,7 +8847,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 561185145}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: MarkTaskComplete
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &561185145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9229,7 +9196,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 595563934}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: DeleteTask
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &595563934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11214,7 +11193,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 727706297}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: MarkTaskComplete
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &727706297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13392,7 +13383,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 865694874}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: MarkTaskComplete
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &865694874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14433,7 +14436,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 908404396}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: MarkTaskComplete
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &908404396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14553,7 +14568,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 912824659}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: DeleteTask
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &912824659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17314,7 +17341,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1116347508}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: DeleteTask
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1116347508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18776,14 +18815,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 216729766}
-        m_TargetAssemblyTypeName: TaskScript, Assembly-CSharp
-        m_MethodName: ClearTask
-        m_Mode: 1
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: DeleteTask
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -21454,7 +21493,7 @@ MonoBehaviour:
   m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa39791b947de4eaaa65c2766be24728, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -8498197465688492438, guid: aa39791b947de4eaaa65c2766be24728, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22031,14 +22070,14 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 216729767}
-        m_TargetAssemblyTypeName: TaskScript, Assembly-CSharp
-        m_MethodName: StoreName
-        m_Mode: 1
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: AddTaskToFirestore
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22562,14 +22601,14 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 216729768}
-        m_TargetAssemblyTypeName: TaskScript, Assembly-CSharp
-        m_MethodName: StoreName
-        m_Mode: 1
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: AddTaskToFirestore
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -23083,7 +23122,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1430470178}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: MarkTaskComplete
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1430470178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23695,14 +23746,14 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 216729765}
-        m_TargetAssemblyTypeName: TaskScript, Assembly-CSharp
-        m_MethodName: StoreName
-        m_Mode: 1
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: AddTaskToFirestore
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -25271,14 +25322,14 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 216729769}
-        m_TargetAssemblyTypeName: TaskScript, Assembly-CSharp
-        m_MethodName: StoreName
-        m_Mode: 1
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: AddTaskToFirestore
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -29345,14 +29396,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 216729766}
-        m_TargetAssemblyTypeName: TaskScript, Assembly-CSharp
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
         m_MethodName: MarkTaskComplete
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -31400,7 +31451,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2017766691}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 216729763}
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: DeleteTask
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2017766691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32524,13 +32587,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 216729763}
-        m_TargetAssemblyTypeName: TaskScript, Assembly-CSharp
-        m_MethodName: StoreName
-        m_Mode: 1
+        m_TargetAssemblyTypeName: TaskScriptv2, Assembly-CSharp
+        m_MethodName: AddTaskToFirestore
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
