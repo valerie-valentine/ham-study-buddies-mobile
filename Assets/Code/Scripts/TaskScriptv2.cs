@@ -48,7 +48,6 @@ public class TaskScriptv2 : MonoBehaviour
         }
     }
 
-
     public async Task<List<Dictionary<string, object>>> GetTasks()
     {
         var currentUser = UserManager.instance.User;
@@ -77,28 +76,6 @@ public class TaskScriptv2 : MonoBehaviour
 
         return tasksList;
     }
-
-
-    //public async Task<List<string>> GetTasks()
-    //{
-    //    var currentUser = UserManager.instance.User;
-
-    //    List<string> namesList = new List<string>();
-    //    Query alltasksQuery = db.Collection("Users").Document(currentUser.UserId).Collection("tasks");
-    //    QuerySnapshot alltaskQuerySnapshot = await alltasksQuery.GetSnapshotAsync();
-
-    //    foreach (DocumentSnapshot documentSnapshot in alltaskQuerySnapshot.Documents)
-    //    {
-    //        Dictionary<string, object> documentData = documentSnapshot.ToDictionary();
-
-    //        if (documentData.TryGetValue("task", out object nameValue) && nameValue is string name)
-    //        {
-    //            namesList.Add(name);
-    //        }
-    //    }
-
-    //    return namesList;
-    //}
 
     public void AddTaskToFirestore(int taskIndex)
     {
