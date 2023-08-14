@@ -7,9 +7,15 @@ using UnityEngine.SceneManagement;
 public class AsyncLoader : MonoBehaviour
 {
     // public GameObject loadingScreen;
+    public AudioManager audioManager;
 
     public float minLoadingDuration = 60f;
     public int sceneId;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Start()
     {
@@ -36,7 +42,7 @@ public class AsyncLoader : MonoBehaviour
     {
         
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
-
+        audioManager.SetCurrentSceneMusic(audioManager.gameBackground);
 
         while (!operation.isDone)
         {
