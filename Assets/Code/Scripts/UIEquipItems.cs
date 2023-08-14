@@ -47,10 +47,18 @@ public class UIEquipItems : MonoBehaviour
     public Button[] wallpapers;
     public GameObject[] equippedWallpaper;
 
+    public Button[] curtains;
+    public GameObject[] equippedCurtain;
+
+    public Button[] ceiling;
+    public GameObject[] equippedCeiling;
+
+
+
 
     // item == name
     // item == dictionay[name]{
-    
+
 
     void Awake()
     {
@@ -68,6 +76,9 @@ public class UIEquipItems : MonoBehaviour
         EquipItemDisplay(equippedCouch, couches);
         EquipItemDisplay(equippedRug, rugs);
         EquipItemDisplay(equippedWallpaper, wallpapers);
+
+        EquipItemDisplay(equippedCurtain, curtains);
+        EquipItemDisplay(equippedCeiling, ceiling);
 
         //instances go here
         if (instance == null)
@@ -191,6 +202,17 @@ public class UIEquipItems : MonoBehaviour
     public void EquipWallpapers(int Index)
     {
         EquipItemHelper(wallpapers, equippedWallpaper, Index, "wallpaper");
+    }
+
+    public void EquipCurtains(int Index)
+    {
+        EquipItemHelper(curtains, equippedCurtain, Index, "curtain");
+    }
+
+
+    public void EquipCeiling(int Index)
+    {
+        EquipItemHelper(ceiling, equippedCeiling, Index, "ceiling");
     }
 
 

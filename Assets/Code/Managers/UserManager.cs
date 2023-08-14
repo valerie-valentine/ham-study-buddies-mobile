@@ -255,6 +255,13 @@ public class UserManager : MonoBehaviour
                                         {"type", "furniture"},
                                         {"subtype", "wallpaper"},
                                         {"equipped", true }
+                                    },
+                                     new Dictionary<string, object>
+                                    {
+                                        {"name", "RedCurtain"},
+                                        {"type", "furniture"},
+                                        {"subtype", "curtain"},
+                                        {"equipped", true }
                                     }
                                 };
 
