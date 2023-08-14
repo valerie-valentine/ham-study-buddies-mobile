@@ -108,7 +108,7 @@ public class UIBuyItems : MonoBehaviour
         float? userCurrency = await currencyManager.GetCurrency();
 
 
-        if (price < userCurrency) {
+        if (price <= userCurrency) {
             for (int i = 0; i < shoppingFurniture.Length; i++)
             {
                 if (i == FurnitureIndex)
