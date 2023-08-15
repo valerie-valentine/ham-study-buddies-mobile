@@ -117,34 +117,61 @@ public class TaskScriptv2 : MonoBehaviour
 
     public void MarkTaskComplete(int taskIndex)
     {
-        TMP_Text textDisplay = textDisplays[taskIndex];
-        string taskName = textDisplay.text;
-
-        if (taskName.Contains("<s>") && taskName.Contains("</s>"))
+        if (taskIndex < 0 || taskIndex >= textDisplays.Count)
         {
-            taskName = taskName.Replace("<s>", "").Replace("</s>", "");
-            textDisplay.SetText(taskName);
+
+            Debug.LogError("Invalid task index.");
+            return;
         }
         else
         {
-            textDisplay.SetText($"<s>{taskName}</s>");
+            TMP_Text textDisplay = textDisplays[taskIndex];
+            string taskName = textDisplay.text;
+
+            if (taskName.Contains("<s>") && taskName.Contains("</s>"))
+            {
+                taskName = taskName.Replace("<s>", "").Replace("</s>", "");
+                textDisplay.SetText(taskName);
+            }
+            else
+            {
+                textDisplay.SetText($"<s>{taskName}</s>");
+            }
+
+            UpdateTaskCompleteStatus(taskName);
         }
 
-        UpdateTaskCompleteStatus(taskName);
     }
 
 
     public void DeleteTask(int taskIndex)
     {
+        if(taskIndex < 0 || taskIndex >= textDisplays.Count)
+        {
+
+            Debug.LogError("Invalid task index.");
+            return;
+        }
+
         TMP_Text textDisplay = textDisplays[taskIndex];
         GameObject inputField = inputFields[taskIndex];
         string taskName = textDisplay.text;
 
-        var currentUser = UserManager.instance.User;
+        if (taskName.Contains("<s>") && taskName.Contains("</s>"))
+        {
+            taskName = taskName.Replace("<s>", "").Replace("</s>", "");
+        }
+
         if (!string.IsNullOrEmpty(taskName))
         {
+            var currentUser = UserManager.instance.User;
             DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId).Collection("tasks").Document(taskName);
             docRef.DeleteAsync();
+        }
+        else
+        {
+            Debug.LogWarning("Task name is empty. Cannot delete an empty task.");
+            return;
         }
 
         textDisplay.enabled = false;
@@ -153,6 +180,7 @@ public class TaskScriptv2 : MonoBehaviour
         inputField.GetComponent<TMP_InputField>().text = "";
     }
 
+
     async void UpdateTaskCompleteStatus(string taskName)
     {
         if (taskName.Contains("<s>") && taskName.Contains("</s>"))
@@ -160,36 +188,39 @@ public class TaskScriptv2 : MonoBehaviour
            taskName = taskName.Replace("<s>", "").Replace("</s>", "");
         }
 
-
-        var currentUser = UserManager.instance.User;
-        DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId).Collection("tasks").Document(taskName);
-
-        DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
-
-        if (snapshot.Exists)
+        if (!string.IsNullOrEmpty(taskName))
         {
-            Dictionary<string, object> data = snapshot.ToDictionary();
+            var currentUser = UserManager.instance.User;
+            DocumentReference docRef = db.Collection("Users").Document(currentUser.UserId).Collection("tasks").Document(taskName);
 
-            if (data.TryGetValue("isComplete", out object isCompleteObj) && isCompleteObj is bool currentIsComplete)
+            DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+
+            if (snapshot.Exists)
             {
-                bool newIsComplete = !currentIsComplete;
+                Dictionary<string, object> data = snapshot.ToDictionary();
 
-                Dictionary<string, object> update = new Dictionary<string, object>
+                if (data.TryGetValue("isComplete", out object isCompleteObj) && isCompleteObj is bool currentIsComplete)
+                {
+                    bool newIsComplete = !currentIsComplete;
+
+                    Dictionary<string, object> update = new Dictionary<string, object>
                 {
                     {"isComplete", newIsComplete}
                 };
 
-                await docRef.SetAsync(update, SetOptions.MergeAll);
+                    await docRef.SetAsync(update, SetOptions.MergeAll);
+                }
+                else
+                {
+                    Debug.LogWarning("isComplete field not found or not of boolean type.");
+                }
             }
             else
             {
-                Debug.LogWarning("isComplete field not found or not of boolean type.");
+                Debug.LogWarning("Document doesn't exist.");
             }
         }
-        else
-        {
-            Debug.LogWarning("Document doesn't exist.");
-        }
+       
     }
 
 }
