@@ -65,6 +65,7 @@ public class PomoTimer : MonoBehaviour
                 timerActive = false;
                 increaseButton.enabled = true;
                 decreaseButton.enabled = true;
+                Debug.Log("YOU'VE FINISHED YOUR TASK!!!");
             }
         }
         else

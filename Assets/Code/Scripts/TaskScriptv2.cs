@@ -157,6 +157,11 @@ public class TaskScriptv2 : MonoBehaviour
         GameObject inputField = inputFields[taskIndex];
         string taskName = textDisplay.text;
 
+        if (taskName.Contains("<s>") && taskName.Contains("</s>"))
+        {
+            taskName = taskName.Replace("<s>", "").Replace("</s>", "");
+        }
+
         if (!string.IsNullOrEmpty(taskName))
         {
             var currentUser = UserManager.instance.User;
