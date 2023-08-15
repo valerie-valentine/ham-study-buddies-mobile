@@ -18453,6 +18453,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8736320205725734540, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: timeValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736320205725734540, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
       propertyPath: seedInfoDisplay
       value: 
       objectReference: {fileID: 868405426}
