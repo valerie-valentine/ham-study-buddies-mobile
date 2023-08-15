@@ -25,7 +25,6 @@ public class showUsersHamster : MonoBehaviour
         }
         else if (instance != null)
         {
-            Debug.Log("Instance already exists, destroying object!");
             Destroy(this);
         }
 
