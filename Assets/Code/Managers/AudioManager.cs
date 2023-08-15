@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip quitTimerSFX;
     public AudioClip deleteSFX;
     public AudioClip kaChingSFX;
+    public AudioClip gojoSparklesSFX;
     private AudioClip currentSceneMusic;
 
     public static AudioManager instance;
