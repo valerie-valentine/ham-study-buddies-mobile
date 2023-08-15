@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DialogueScript : MonoBehaviour
+public class ArbyDialogueScript : MonoBehaviour
 {
     public TextMeshProUGUI textcomponent;
     public string[] lines;
@@ -18,7 +18,7 @@ public class DialogueScript : MonoBehaviour
 
     void Start()
     {
-        dialogueBox = GameObject.Find("DialogueBox");
+        dialogueBox = GameObject.Find("ArbyDialogueBox");
         HideDialogue();
         dialogueBox.SetActive(false);
     }
