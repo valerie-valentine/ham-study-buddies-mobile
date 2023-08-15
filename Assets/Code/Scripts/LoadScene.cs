@@ -42,6 +42,7 @@ public class AsyncLoader : MonoBehaviour
     {
         
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
+        audioManager.StopSFX();
         audioManager.SetCurrentSceneMusic(audioManager.gameBackground);
 
         while (!operation.isDone)

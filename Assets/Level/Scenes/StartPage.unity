@@ -581,6 +581,7 @@ MonoBehaviour:
   deleteSFX: {fileID: 8300000, guid: 615bb7e6237c84e8caf96e27ce2496fe, type: 3}
   kaChingSFX: {fileID: 8300000, guid: 254e85f0ccd6043ee83436dbd1d579eb, type: 3}
   gojoSparklesSFX: {fileID: 8300000, guid: b04e15d5ca5dc4ef4b070e2f0102504d, type: 3}
+  hamsterWheelSFX: {fileID: 8300000, guid: e150dc5ae061a434d87809519b872db4, type: 3}
 --- !u!1 &424158241
 GameObject:
   m_ObjectHideFlags: 0

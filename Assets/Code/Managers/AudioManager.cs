@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip deleteSFX;
     public AudioClip kaChingSFX;
     public AudioClip gojoSparklesSFX;
+    public AudioClip hamsterWheelSFX;
     private AudioClip currentSceneMusic;
 
     public static AudioManager instance;
@@ -62,5 +63,17 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
+    }
+
+    public void PlaySFXLoop(AudioClip clip)
+    {
+        SFXSource.clip = clip;
+        SFXSource.loop = true;
+        SFXSource.Play();
+    }
+
+    public void StopSFX()
+    {
+        SFXSource.Stop();
     }
 }
