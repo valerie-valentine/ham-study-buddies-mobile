@@ -571,6 +571,7 @@ MonoBehaviour:
   startButtonClickSFX: {fileID: 8300000, guid: cd16bfe45e4404652b5f84c214c0fabc, type: 3}
   hamsterClickSFX: {fileID: 8300000, guid: 94d517bac4046444aadabf37e78a913f, type: 3}
   buttonClickSFX: {fileID: 8300000, guid: c8cb4bb9dd9c043bfa977dcd8f04def4, type: 3}
+  buttonClick2SFX: {fileID: 8300000, guid: 56608e9263ebf4828b3602a9a01633a2, type: 3}
   timerCompletedClickSFX: {fileID: 8300000, guid: d5135b283cf0a429f918da96fea908b2, type: 3}
   animeSparklesSFX: {fileID: 8300000, guid: afdcf72ed400540ac9310a483ffa41df, type: 3}
   animePowerUpSFX: {fileID: 8300000, guid: 17eb4de2523d042d8b58e7a2e2fe6521, type: 3}

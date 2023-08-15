@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip startButtonClickSFX;
     public AudioClip hamsterClickSFX;
     public AudioClip buttonClickSFX;
+    public AudioClip buttonClick2SFX;
     public AudioClip timerCompletedClickSFX;
     public AudioClip animeSparklesSFX;
     public AudioClip animePowerUpSFX;
@@ -58,47 +59,4 @@ public class AudioManager : MonoBehaviour
     {
         SFXSource.PlayOneShot(clip);
     }
-
-    public void PlayButtonClickSFX()
-    {
-        SFXSource.PlayOneShot(buttonClickSFX);
-    }
-
-    public void PlayTimerCompletedClickSFX()
-    {
-        SFXSource.PlayOneShot(timerCompletedClickSFX);
-    }
-
-    public void PlayAnimeSparklesSFX()
-    {
-        SFXSource.PlayOneShot(animeSparklesSFX);
-    }
-
-    public void PlayAnimePowerUpSFX()
-    {
-        SFXSource.PlayOneShot(animePowerUpSFX);
-    }
-
-    public void PlayAnimeYellSFX()
-    {
-        SFXSource.PlayOneShot(animeYellSFX);
-    }
-
-    public void PlaySaiyanSFX()
-    {
-        SFXSource.PlayOneShot(animeYellSFX);
-        SFXSource.PlayOneShot(animePowerUpSFX);
-    }
 }
-
-
-// FIRST --- in other scripts, add this:
-// AudioManager audioManager;
-
-// SECOND --- inside private void Awake()
-// {
-//      audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-// }
-
-// THIRD --- go to where you want to call the function
-// audioManager.PlaySFX(audioManager.nameOfSFX1);
