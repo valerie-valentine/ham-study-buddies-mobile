@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip animeSparklesSFX;
     public AudioClip animePowerUpSFX;
     public AudioClip animeYellSFX;
+    public AudioClip eggCrackSFX;
     private AudioClip currentSceneMusic;
 
     public static AudioManager instance;
@@ -56,11 +57,6 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
-    }
-
-    public void PlayHamsterClickSFX()
-    {
-        SFXSource.PlayOneShot(hamsterClickSFX);
     }
 
     public void PlayButtonClickSFX()

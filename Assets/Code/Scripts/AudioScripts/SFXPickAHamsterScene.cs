@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SFXSignInScene : MonoBehaviour
+public class SFXPickAHamsterScene : MonoBehaviour
 {
     AudioManager audioManager;
 
@@ -14,5 +14,15 @@ public class SFXSignInScene : MonoBehaviour
     public void PlayButtonClickSFX()
     {
         audioManager.PlaySFX(audioManager.buttonClickSFX);
+    }
+
+    public void PlayHamsterClickSFX()
+    {
+        audioManager.PlaySFX(audioManager.hamsterClickSFX);
+    }
+
+    public void PlayEggCrackSFX()
+    {
+        audioManager.PlaySFX(audioManager.eggCrackSFX);
     }
 }

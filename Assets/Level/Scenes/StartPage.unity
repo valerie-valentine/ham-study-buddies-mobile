@@ -575,6 +575,7 @@ MonoBehaviour:
   animeSparklesSFX: {fileID: 8300000, guid: afdcf72ed400540ac9310a483ffa41df, type: 3}
   animePowerUpSFX: {fileID: 8300000, guid: 17eb4de2523d042d8b58e7a2e2fe6521, type: 3}
   animeYellSFX: {fileID: 8300000, guid: 9c5a941396f61401a90b12bb308936cc, type: 3}
+  eggCrackSFX: {fileID: 8300000, guid: 56b66b542d5764e288083b73a4d92043, type: 3}
 --- !u!1 &424158241
 GameObject:
   m_ObjectHideFlags: 0
