@@ -31,6 +31,11 @@ public class SFXMainPageScene : MonoBehaviour
         audioManager.PlaySFX(audioManager.quitTimerSFX);
     }
 
+    public void PlayDeleteSFX()
+    {
+        audioManager.PlaySFX(audioManager.deleteSFX);
+    }
+
     public void PlayAnimeSparklesSFX()
     {
         audioManager.PlaySFX(audioManager.animeSparklesSFX);

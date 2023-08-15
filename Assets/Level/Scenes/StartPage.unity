@@ -568,7 +568,7 @@ MonoBehaviour:
   SFXSource: {fileID: 1493935728}
   startMenuBackground: {fileID: 8300000, guid: d7621c64136d14c3292c5ef5cd210721, type: 3}
   gameBackground: {fileID: 8300000, guid: 3f4204ecc73ea475aacc7ae6547e2d34, type: 3}
-  startButtonClickSFX: {fileID: 8300000, guid: cd16bfe45e4404652b5f84c214c0fabc, type: 3}
+  startButtonClickSFX: {fileID: 8300000, guid: 9aab7022c57df42338de0a0d9b4900f6, type: 3}
   hamsterClickSFX: {fileID: 8300000, guid: 94d517bac4046444aadabf37e78a913f, type: 3}
   buttonClickSFX: {fileID: 8300000, guid: c8cb4bb9dd9c043bfa977dcd8f04def4, type: 3}
   buttonClick2SFX: {fileID: 8300000, guid: 56608e9263ebf4828b3602a9a01633a2, type: 3}
@@ -578,6 +578,7 @@ MonoBehaviour:
   animeYellSFX: {fileID: 8300000, guid: 9c5a941396f61401a90b12bb308936cc, type: 3}
   eggCrackSFX: {fileID: 8300000, guid: 56b66b542d5764e288083b73a4d92043, type: 3}
   quitTimerSFX: {fileID: 8300000, guid: 422641e11b786497481e2f41372c2e32, type: 3}
+  deleteSFX: {fileID: 8300000, guid: 615bb7e6237c84e8caf96e27ce2496fe, type: 3}
 --- !u!1 &424158241
 GameObject:
   m_ObjectHideFlags: 0
