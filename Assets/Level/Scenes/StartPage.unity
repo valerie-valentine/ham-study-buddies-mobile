@@ -274,7 +274,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.2154677, y: 2.9815345, z: 2.2154677}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 424158243}
   m_Father: {fileID: 1594211352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -326,8 +327,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 403641264}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 424158242}
+        m_TargetAssemblyTypeName: StartButtonAudio, Assembly-CSharp
         m_MethodName: PlayStartButtonClickSFX
         m_Mode: 1
         m_Arguments:
@@ -574,6 +575,50 @@ MonoBehaviour:
   animeSparklesSFX: {fileID: 8300000, guid: afdcf72ed400540ac9310a483ffa41df, type: 3}
   animePowerUpSFX: {fileID: 8300000, guid: 17eb4de2523d042d8b58e7a2e2fe6521, type: 3}
   animeYellSFX: {fileID: 8300000, guid: 9c5a941396f61401a90b12bb308936cc, type: 3}
+--- !u!1 &424158241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 424158243}
+  - component: {fileID: 424158242}
+  m_Layer: 0
+  m_Name: StartButtonAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &424158242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424158241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03c83d76b4464288af17c0c10d272ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &424158243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424158241}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -357.18106, y: 21.968716, z: -3084.7817}
+  m_LocalScale: {x: 34.09186, y: 25.332394, z: 34.09186}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 175382790}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &600883980
 GameObject:
   m_ObjectHideFlags: 0

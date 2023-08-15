@@ -58,12 +58,6 @@ public class AudioManager : MonoBehaviour
         SFXSource.PlayOneShot(clip);
     }
 
-    // to be called by OnClick
-    public void PlayStartButtonClickSFX()
-    {
-        SFXSource.PlayOneShot(startButtonClickSFX);
-    }
-
     public void PlayHamsterClickSFX()
     {
         SFXSource.PlayOneShot(hamsterClickSFX);
