@@ -30,7 +30,6 @@ public class AudioManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            Debug.Log("Audio Manager has been destroyed");
         }
     }
 
