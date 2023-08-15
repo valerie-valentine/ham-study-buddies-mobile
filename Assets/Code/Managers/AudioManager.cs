@@ -18,6 +18,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip animePowerUpSFX;
     public AudioClip animeYellSFX;
     public AudioClip eggCrackSFX;
+    public AudioClip quitTimerSFX;
     private AudioClip currentSceneMusic;
 
     public static AudioManager instance;

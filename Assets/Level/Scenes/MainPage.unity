@@ -18020,14 +18020,182 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1158767358030059482, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158767358030059482, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158767358030059482, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2015216444}
+    - target: {fileID: 1158767358030059482, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158767358030059482, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayQuitTimerSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158767358030059482, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SFXMainPageScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158767358030059482, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142229182387964936, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142229182387964936, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142229182387964936, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2015216444}
+    - target: {fileID: 4142229182387964936, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142229182387964936, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayButtonClick2SFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142229182387964936, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SFXMainPageScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142229182387964936, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656267857430697989, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656267857430697989, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656267857430697989, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2015216444}
+    - target: {fileID: 4656267857430697989, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656267857430697989, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayButtonClick2SFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656267857430697989, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SFXMainPageScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656267857430697989, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300056399772374713, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300056399772374713, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300056399772374713, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2015216444}
+    - target: {fileID: 5300056399772374713, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300056399772374713, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayButtonClick2SFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300056399772374713, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SFXMainPageScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300056399772374713, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6343179342041045698, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
       propertyPath: m_Name
       value: PomoClock
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497155287588038635, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497155287588038635, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497155287588038635, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2015216444}
+    - target: {fileID: 8497155287588038635, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497155287588038635, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayButtonClick2SFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497155287588038635, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SFXMainPageScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497155287588038635, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8736320205725734540, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
       propertyPath: seedInfoDisplay
       value: 
       objectReference: {fileID: 868405426}
+    - target: {fileID: 8980702143250392466, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980702143250392466, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980702143250392466, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2015216444}
+    - target: {fileID: 8980702143250392466, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980702143250392466, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayButtonClick2SFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980702143250392466, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SFXMainPageScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980702143250392466, guid: f57f95c2692324f6f92f71a83c4216a8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

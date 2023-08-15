@@ -16,9 +16,19 @@ public class SFXMainPageScene : MonoBehaviour
         audioManager.PlaySFX(audioManager.buttonClickSFX);
     }
 
+    public void PlayButtonClick2SFX()
+    {
+        audioManager.PlaySFX(audioManager.buttonClick2SFX);
+    }
+
     public void PlayTimerCompletedClickSFX()
     {
         audioManager.PlaySFX(audioManager.timerCompletedClickSFX);
+    }
+
+    public void PlayQuitTimerSFX()
+    {
+        audioManager.PlaySFX(audioManager.quitTimerSFX);
     }
 
     public void PlayAnimeSparklesSFX()
