@@ -20,6 +20,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip eggCrackSFX;
     public AudioClip quitTimerSFX;
     public AudioClip deleteSFX;
+    public AudioClip kaChingSFX;
     private AudioClip currentSceneMusic;
 
     public static AudioManager instance;
