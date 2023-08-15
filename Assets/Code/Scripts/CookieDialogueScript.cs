@@ -18,7 +18,7 @@ public class CookieDialogueScript : MonoBehaviour
 
     void Start()
     {
-        dialogueBox = GameObject.Find("DialogueBox");
+        dialogueBox = GameObject.Find("CookieDialogueBox");
         HideDialogue();
         dialogueBox.SetActive(false);
     }
