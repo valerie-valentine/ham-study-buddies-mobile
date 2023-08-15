@@ -582,6 +582,11 @@ MonoBehaviour:
   kaChingSFX: {fileID: 8300000, guid: 254e85f0ccd6043ee83436dbd1d579eb, type: 3}
   gojoSparklesSFX: {fileID: 8300000, guid: b04e15d5ca5dc4ef4b070e2f0102504d, type: 3}
   hamsterWheelSFX: {fileID: 8300000, guid: e150dc5ae061a434d87809519b872db4, type: 3}
+  discoBallSFX: {fileID: 8300000, guid: c79f1bca5d2c64cae8377ec30997a08f, type: 3}
+  yahDialogueSFX: {fileID: 8300000, guid: 7c3919a20c30b439cbc6f34d6021d5d2, type: 3}
+  happySqueelDialogueSFX: {fileID: 8300000, guid: 839060e5cfaed475d8bfd2930c2b80b9, type: 3}
+  funnySnarlDialogueSFX: {fileID: 8300000, guid: b9d253247f4a546ba9add643c10cc376, type: 3}
+  curiousBabyDialogueSFX: {fileID: 8300000, guid: 9872b214bb2254d01bbe2d54f68f0e9d, type: 3}
 --- !u!1 &424158241
 GameObject:
   m_ObjectHideFlags: 0

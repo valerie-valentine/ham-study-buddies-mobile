@@ -23,6 +23,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip kaChingSFX;
     public AudioClip gojoSparklesSFX;
     public AudioClip hamsterWheelSFX;
+    public AudioClip discoBallSFX;
+    public AudioClip yahDialogueSFX;
+    public AudioClip happySqueelDialogueSFX;
+    public AudioClip funnySnarlDialogueSFX;
+    public AudioClip curiousBabyDialogueSFX;
     private AudioClip currentSceneMusic;
 
     public static AudioManager instance;
