@@ -1516,7 +1516,7 @@ MonoBehaviour:
   - {fileID: 2034726647}
   - {fileID: 1192711964}
   - {fileID: 109400714}
-  - {fileID: 0}
+  - {fileID: 1527028516}
   - {fileID: 1365179693}
   - {fileID: 2041143980}
   - {fileID: 649180278}
@@ -1530,7 +1530,7 @@ MonoBehaviour:
   - {fileID: 1588499357}
   - {fileID: 1598766044}
   - {fileID: 1177930051}
-  - {fileID: 0}
+  - {fileID: 801429957}
 --- !u!1 &39807985
 GameObject:
   m_ObjectHideFlags: 0
@@ -43315,7 +43315,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 414079430}
   m_Direction: 2
   m_Value: 0.9999999
-  m_Size: 0.22141974
+  m_Size: 0.22141972
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -47792,7 +47792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -120.1}
+  m_AnchoredPosition: {x: 0, y: -120.1001}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2050394841
