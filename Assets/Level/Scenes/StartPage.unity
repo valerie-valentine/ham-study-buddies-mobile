@@ -274,7 +274,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.2154677, y: 2.9815345, z: 2.2154677}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 424158243}
   m_Father: {fileID: 1594211352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -325,7 +326,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 175382792}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 424158242}
+        m_TargetAssemblyTypeName: StartButtonAudio, Assembly-CSharp
+        m_MethodName: PlayStartButtonClickSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &175382792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,7 +434,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d8f26fa3aa7c142eb9322de92fc021ad, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -555,6 +568,69 @@ MonoBehaviour:
   SFXSource: {fileID: 1493935728}
   startMenuBackground: {fileID: 8300000, guid: d7621c64136d14c3292c5ef5cd210721, type: 3}
   gameBackground: {fileID: 8300000, guid: 3f4204ecc73ea475aacc7ae6547e2d34, type: 3}
+  startButtonClickSFX: {fileID: 8300000, guid: 9aab7022c57df42338de0a0d9b4900f6, type: 3}
+  hamsterClickSFX: {fileID: 8300000, guid: 94d517bac4046444aadabf37e78a913f, type: 3}
+  buttonClickSFX: {fileID: 8300000, guid: c8cb4bb9dd9c043bfa977dcd8f04def4, type: 3}
+  buttonClick2SFX: {fileID: 8300000, guid: 56608e9263ebf4828b3602a9a01633a2, type: 3}
+  timerCompletedClickSFX: {fileID: 8300000, guid: d5135b283cf0a429f918da96fea908b2, type: 3}
+  animeSparklesSFX: {fileID: 8300000, guid: afdcf72ed400540ac9310a483ffa41df, type: 3}
+  animePowerUpSFX: {fileID: 8300000, guid: 17eb4de2523d042d8b58e7a2e2fe6521, type: 3}
+  animeYellSFX: {fileID: 8300000, guid: 9c5a941396f61401a90b12bb308936cc, type: 3}
+  eggCrackSFX: {fileID: 8300000, guid: 56b66b542d5764e288083b73a4d92043, type: 3}
+  quitTimerSFX: {fileID: 8300000, guid: 422641e11b786497481e2f41372c2e32, type: 3}
+  deleteSFX: {fileID: 8300000, guid: 615bb7e6237c84e8caf96e27ce2496fe, type: 3}
+  kaChingSFX: {fileID: 8300000, guid: 254e85f0ccd6043ee83436dbd1d579eb, type: 3}
+  gojoSparklesSFX: {fileID: 8300000, guid: b04e15d5ca5dc4ef4b070e2f0102504d, type: 3}
+  hamsterWheelSFX: {fileID: 8300000, guid: e150dc5ae061a434d87809519b872db4, type: 3}
+  discoBallSFX: {fileID: 8300000, guid: c79f1bca5d2c64cae8377ec30997a08f, type: 3}
+  yahDialogueSFX: {fileID: 8300000, guid: 7c3919a20c30b439cbc6f34d6021d5d2, type: 3}
+  happySqueelDialogueSFX: {fileID: 8300000, guid: 839060e5cfaed475d8bfd2930c2b80b9, type: 3}
+  funnySnarlDialogueSFX: {fileID: 8300000, guid: b9d253247f4a546ba9add643c10cc376, type: 3}
+  curiousBabyDialogueSFX: {fileID: 8300000, guid: 9872b214bb2254d01bbe2d54f68f0e9d, type: 3}
+--- !u!1 &424158241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 424158243}
+  - component: {fileID: 424158242}
+  m_Layer: 0
+  m_Name: StartButtonAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &424158242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424158241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03c83d76b4464288af17c0c10d272ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &424158243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424158241}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -357.18106, y: 21.968716, z: -3084.7817}
+  m_LocalScale: {x: 34.09186, y: 25.332394, z: 34.09186}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 175382790}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &600883980
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,7 +1009,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

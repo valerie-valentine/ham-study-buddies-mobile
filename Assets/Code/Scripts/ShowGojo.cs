@@ -6,6 +6,12 @@ public class ShowGojo : MonoBehaviour
 {
     
     public GameObject objectToShow;
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     public void ShowAndHideObject()
     {
@@ -15,7 +21,7 @@ public class ShowGojo : MonoBehaviour
     private IEnumerator ShowObjectCoroutine()
     {
         objectToShow.SetActive(true);
-
+        audioManager.PlaySFX(audioManager.gojoSparklesSFX);
         yield return new WaitForSeconds(1.0f); // Show the object for 1 second
 
         objectToShow.SetActive(false);

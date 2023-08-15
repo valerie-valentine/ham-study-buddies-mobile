@@ -10,6 +10,7 @@ public class UIEquipItems : MonoBehaviour
 
     public static UIEquipItems instance;
     public InventoryManager inventoryManager;
+    AudioManager audioManager;
 
 
     //game objects for head, eyes, neck, hands , body
@@ -80,6 +81,8 @@ public class UIEquipItems : MonoBehaviour
         EquipItemDisplay(equippedCurtain, curtains);
         EquipItemDisplay(equippedCeiling, ceiling);
 
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         //instances go here
         if (instance == null)
         {
@@ -147,30 +150,35 @@ public class UIEquipItems : MonoBehaviour
     public void EquipHeadgear(int Index)
     {
        EquipItemHelper(headgear, equippedHeadgear, Index, "headgear");
+       audioManager.PlaySFX(audioManager.deleteSFX);
     }
 
     
     public void EquipEyewear(int Index)
     {
         EquipItemHelper(eyewear, equippedEyewear, Index, "eyewear");
+        audioManager.PlaySFX(audioManager.deleteSFX);
     }
 
 
     public void EquipNeckwear(int Index)
     {
         EquipItemHelper(neckwear, equippedNeckwear, Index, "neckwear");
+        audioManager.PlaySFX(audioManager.deleteSFX);
     }
 
 
     public void EquipHandheld(int Index)
     {
       EquipItemHelper(handheld, equippedHandheld, Index, "handheld");
+      audioManager.PlaySFX(audioManager.deleteSFX);
     }
 
 
     public void EquipBody(int Index)
     {
        EquipItemHelper(body, equippedBody, Index, "body");
+       audioManager.PlaySFX(audioManager.deleteSFX);
     }
 
     ////furniture equip by section
@@ -178,17 +186,20 @@ public class UIEquipItems : MonoBehaviour
     public void EquipDecor(int Index)
     {
       EquipItemHelper(decor, equippedDecor, Index, "decor");
+      audioManager.PlaySFX(audioManager.deleteSFX);
     }
 
     public void EquipTables(int Index)
     {
         EquipItemHelper(tables, equippedTable, Index, "table");
+        audioManager.PlaySFX(audioManager.deleteSFX);
     }
 
 
     public void EquipCouches(int Index)
     {
       EquipItemHelper(couches, equippedCouch, Index, "couch");
+      audioManager.PlaySFX(audioManager.deleteSFX);
 
     }
 
@@ -196,23 +207,27 @@ public class UIEquipItems : MonoBehaviour
     public void EquipRugs(int Index)
     {
         EquipItemHelper(rugs, equippedRug, Index, "rug");
+        audioManager.PlaySFX(audioManager.deleteSFX);
     }
 
 
     public void EquipWallpapers(int Index)
     {
         EquipItemHelper(wallpapers, equippedWallpaper, Index, "wallpaper");
+        audioManager.PlaySFX(audioManager.deleteSFX);
     }
 
     public void EquipCurtains(int Index)
     {
         EquipItemHelper(curtains, equippedCurtain, Index, "curtain");
+        audioManager.PlaySFX(audioManager.deleteSFX);
     }
 
 
     public void EquipCeiling(int Index)
     {
         EquipItemHelper(ceiling, equippedCeiling, Index, "ceiling");
+        audioManager.PlaySFX(audioManager.deleteSFX);
     }
 
 

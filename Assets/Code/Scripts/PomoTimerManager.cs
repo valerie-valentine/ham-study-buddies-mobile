@@ -22,6 +22,12 @@ public class PomoTimer : MonoBehaviour
     public GameObject seedInfoDisplay;
     public GameObject stopConfirmation;
     public TMP_Text seedText;
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Start()
     {
@@ -66,6 +72,7 @@ public class PomoTimer : MonoBehaviour
                 increaseButton.enabled = true;
                 decreaseButton.enabled = true;
                 Debug.Log("YOU'VE FINISHED YOUR TASK!!!");
+                audioManager.PlaySFX(audioManager.timerCompletedClickSFX);
             }
         }
         else

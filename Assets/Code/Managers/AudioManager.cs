@@ -9,8 +9,25 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Clips")]
     public AudioClip startMenuBackground;
     public AudioClip gameBackground;
-    //public AudioClip nameOfSFX1;
-    //public AudioClip nameOfSFX2;
+    public AudioClip startButtonClickSFX;
+    public AudioClip hamsterClickSFX;
+    public AudioClip buttonClickSFX;
+    public AudioClip buttonClick2SFX;
+    public AudioClip timerCompletedClickSFX;
+    public AudioClip animeSparklesSFX;
+    public AudioClip animePowerUpSFX;
+    public AudioClip animeYellSFX;
+    public AudioClip eggCrackSFX;
+    public AudioClip quitTimerSFX;
+    public AudioClip deleteSFX;
+    public AudioClip kaChingSFX;
+    public AudioClip gojoSparklesSFX;
+    public AudioClip hamsterWheelSFX;
+    public AudioClip discoBallSFX;
+    public AudioClip yahDialogueSFX;
+    public AudioClip happySqueelDialogueSFX;
+    public AudioClip funnySnarlDialogueSFX;
+    public AudioClip curiousBabyDialogueSFX;
     private AudioClip currentSceneMusic;
 
     public static AudioManager instance;
@@ -25,7 +42,6 @@ public class AudioManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            Debug.Log("Audio Manager has been destroyed");
         }
     }
 
@@ -53,16 +69,16 @@ public class AudioManager : MonoBehaviour
     {
         SFXSource.PlayOneShot(clip);
     }
+
+    public void PlaySFXLoop(AudioClip clip)
+    {
+        SFXSource.clip = clip;
+        SFXSource.loop = true;
+        SFXSource.Play();
+    }
+
+    public void StopSFX()
+    {
+        SFXSource.Stop();
+    }
 }
-
-
-// FIRST --- in other scripts, add this:
-// AudioManager audioManager;
-
-// SECOND --- inside private void Awake()
-// {
-//      audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-// }
-
-// THIRD --- go to where you want to call the function
-// audioManager.PlaySFX(audioManager.nameOfSFX1);

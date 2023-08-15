@@ -5,6 +5,12 @@ using UnityEngine;
 public class ShowUniform : MonoBehaviour
 {
     public GameObject objectToShow;
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     public void ShowAndHideObject()
     {
@@ -14,7 +20,7 @@ public class ShowUniform : MonoBehaviour
     private IEnumerator ShowObjectCoroutine()
     {
         objectToShow.SetActive(true);
-
+        audioManager.PlaySFX(audioManager.animeSparklesSFX);
         yield return new WaitForSeconds(1.3f); // Show the object for 1 second
 
         objectToShow.SetActive(false);
