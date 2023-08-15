@@ -61,4 +61,29 @@ public class SFXMainPageScene : MonoBehaviour
         audioManager.PlaySFX(audioManager.animeYellSFX);
         audioManager.PlaySFX(audioManager.animePowerUpSFX);
     }
+
+    public void PlayCookieVoice()
+    {
+        audioManager.PlaySFX(audioManager.curiousBabyDialogueSFX);
+    }
+
+    public void PlayDiscoBoogie()
+    {
+        audioManager.PlaySFX(audioManager.discoBallSFX);
+    }
+
+    public void PlayBaileyVoice()
+    {
+        audioManager.PlaySFX(audioManager.yahDialogueSFX);
+    }
+
+    public void PlayArbyVoice()
+    {
+        audioManager.PlaySFX(audioManager.happySqueelDialogueSFX);
+    }
+
+    public void PlayBingusVoice()
+    {
+        audioManager.PlaySFX(audioManager.funnySnarlDialogueSFX);
+    }
 }
