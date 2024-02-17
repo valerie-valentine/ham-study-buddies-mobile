@@ -1,0 +1,1 @@
+Ham Study Buddies is an iOS game created by Valerie Valentin, Yvett Jimenez, Yael Peet, and Gwen Johnson as their capstone project for Ada Developer's Academy. Developed with C#, Unity Engine, & Google Firestore, Ham Study Buddies seamlessly integrates the Pomodoro technique, empowering users to heighten focus and productivity while nurturing a virtual hamster companion.
