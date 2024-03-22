@@ -10,7 +10,7 @@ HamStudy Buddies is an iOS game created by Valerie Valentin, Yvett Jimenez, Yael
 
 # Prerequisites
 
-Before you begin, ensure you have met the following requirements:
+Before you begin, ensure you have the following requirements:
 
 - **Unity Hub**: Unity Hub is a management tool that allows you to manage your Unity projects and installations. If you don't have Unity Hub installed, you can download and install it from the [Unity website](https://unity.com/download).
   
@@ -22,9 +22,6 @@ Before you begin, ensure you have met the following requirements:
   
 - **CocoaPods**: If you're deploying the iOS app, CocoaPods is required for managing dependencies. Install CocoaPods by following the instructions on the [CocoaPods website](https://cocoapods.org/).
 
-- **Git**: Git is used for version control and managing the project repository. If you don't have Git installed, you can download and install it from the [Git website](https://git-scm.com/).
-
-Ensure you have all the prerequisites installed and set up before proceeding with the project setup and installation.
 
 ## Installation
 
