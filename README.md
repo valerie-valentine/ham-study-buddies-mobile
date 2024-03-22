@@ -1,6 +1,6 @@
 # HamStudy Buddies
 
-HamStudy Buddies is an iOS game developed in C# using the Unity Engine. It seamlessly integrates the Pomodoro technique, empowering users to heighten focus and productivity while nurturing a virtual hamster companion.
+HamStudy Buddies is an iOS game created by Valerie Valentin, Yvett Jimenez, Yael Peet, and Gwen Johnson as their capstone project for Ada Developer's Academy. Developed with C#, Unity Engine, & Google Firestore, HamStudy Buddies seamlessly integrates the Pomodoro technique, empowering users to heighten focus and productivity while nurturing a virtual hamster companion.
 
 ## Features
 
@@ -32,6 +32,7 @@ To run the project locally, you'll need to follow these steps:
 
 **Clone the Repository:** 
 1. Execute the following command to clone the repository:
+   
      ```
      git clone https://github.com/your-username/ham-study-buddies.git
      ```
