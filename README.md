@@ -5,8 +5,8 @@ HamStudy Buddies is an iOS game created by Valerie Valentin, Yvett Jimenez, Yael
 ## Features
 
 - **Pomodoro Timer**: Stay focused and productive with the Pomodoro Timer feature.
-- **Task Management**: Manage tasks seamlessly within the app.
-- **Virtual Hamster Companion**: Nurture your virtual hamster companion and their space as you complete tasks.
+- **Task Management**:  Organize tasks effortlessly with the in-app notepad tracker.
+- **Virtual Hamster Companion**: Complete tasks to nurture your virtual hamster and customize their space with decorative items.
 
 # Prerequisites
 
